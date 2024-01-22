@@ -3,6 +3,7 @@ from datetime import datetime
 from typing import List
 import pandas as pd
 
+# Annotators
 CATEG = {'c1': 'group', 'c2': 'subgroupA', 'c3': 'subgroupB'}
 FACTOR = {
     'f0': 'Lgbtq+',
@@ -28,7 +29,9 @@ COFACTOR = {
     'f9': 'dataset', 'f10': 'Question ID'
     }
 
+# Annotations
 HATE_LABELS = {1: 'hateful', 2:'not-hateful', 3:'unclear'}
+# individual binary encoding categories
 TARGET_LABELS = {}
 
 def import_users(u_path: str):
@@ -144,8 +147,9 @@ def load_hateRep(u_path: str, d_path: str):
         annot[c_no] = annot[c_no].apply(lambda x: [] if x == '' else [x])
         # process target group labels
         annot[c_yes] = annot[c_yes].apply(lambda labels: str(labels).split(', ') if labels != '' else [])
-        annot[g] = annot[c_yes].apply(lambda labels: 0 if not labels else 1)
-        # encodings
+        annot[f'{g}_bin'] = annot[c_yes].apply(lambda labels: 0 if not labels else 1)
+        annot[g] = annot.apply(lambda x: 'referring' if x[c_yes] else x[c_no][0].split('_')[-1], axis=1)
+        # individual binary encodings
         annot[f'{g}_cat'] = annot.apply(lambda x: x[c_yes] + x[c_no], axis=1)
         annot, TARGET_LABELS[g] = one_hot_encoding(annot, f'{g}_cat')
     annot.rename(columns={'yes': 'transgender'}, inplace=True)
@@ -169,7 +173,7 @@ def load_hateRep(u_path: str, d_path: str):
     # Final dataset
     data = pd.merge(annot, users, on='User', how='inner')
 
-    return data, samples, annot, users
+    return data, samples, users
 
     
 
