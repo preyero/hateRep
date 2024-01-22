@@ -156,7 +156,8 @@ def load_hateRep(u_path: str, d_path: str):
         annot[c_no].replace(to_replace={'not-referring': f'{g}_not-referring', 'unclear': f'{g}_unclear'}, inplace=True)
         annot[c_no] = annot[c_no].apply(lambda x: [] if x == '' else [x])
         # target group labels
-        annot[c_yes] = annot[c_yes].apply(lambda labels: str(labels).split(', ') if labels != '' else [])
+        annot[c_yes] = annot[c_yes].apply(lambda labels: [f'{g}_other' if l == 'other' else l for l in str(labels).split(', ')]
+                                          if labels != '' else [])
         annot[f'{g}_bin'] = annot[c_yes].apply(lambda labels: 0 if not labels else 1)
         annot[g] = annot.apply(lambda x: 'referring' if x[c_yes] else x[c_no][0].split('_')[-1], axis=1)
         # individual binary encodings
@@ -173,7 +174,7 @@ def load_hateRep(u_path: str, d_path: str):
     # merge by phases 
     annot = pd.merge(annot.loc[annot.Phase==1], annot.loc[annot.Phase==2], on=['User', 'Question ID', 'Question'], how='inner', suffixes=['_1', '_2'])
     # and with semantic context
-    annot = pd.merge(samples, annot, on='Question ID', how='inner')
+    annot = pd.merge(samples, annot, on=['Question ID', 'Question'], how='inner')
     for g in TARGET_GROUPS:
         # change in justifications across phase
         annot[f'justify_change_{g}'] = annot.apply(lambda x: ', '.join(excOuterJoin(x[f'Justify {g.capitalize()}_1'], x[f'Justify {g.capitalize()}_2'])), axis=1)
