@@ -43,7 +43,7 @@ def krippendorf(df: pd.DataFrame, rater_col: str, subject_col: str, rating_col: 
     # Compute Krippendorf's Alpha
     return krippendorff.alpha(reliability_data=rating_table, level_of_measurement="nominal")
 
-def get_alpha_and_deltas(data_subset: pd.DataFrame, label: str):
+def get_alphas_and_delta(data_subset: pd.DataFrame, label: str):
     """ Krippendorff's Alpha in both phases and delta between them """
     alpha_1 = krippendorf(df=data_subset, rater_col='User', subject_col='Question ID', rating_col=f'{label}_1')
     alpha_2 = krippendorf(df=data_subset, rater_col='User', subject_col='Question ID', rating_col=f'{label}_2')
