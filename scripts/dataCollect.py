@@ -174,7 +174,7 @@ def load_hateRep(u_path: str, d_path: str):
     # merge by phases 
     annot = pd.merge(annot.loc[annot.Phase==1], annot.loc[annot.Phase==2], on=['User', 'Question ID', 'Question'], how='inner', suffixes=['_1', '_2'])
     # and with semantic context
-    annot = pd.merge(samples, annot, on=['Question ID', 'Question'], how='inner')
+    annot = pd.merge(samples.drop(columns=['Question']), annot, on=['Question ID'], how='inner')
     for g in TARGET_GROUPS:
         # change in justifications across phase
         annot[f'justify_change_{g}'] = annot.apply(lambda x: ', '.join(excOuterJoin(x[f'Justify {g.capitalize()}_1'], x[f'Justify {g.capitalize()}_2'])), axis=1)
