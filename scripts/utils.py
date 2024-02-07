@@ -2,13 +2,19 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.backends.backend_pdf import PdfPages
 
-def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, p_values_df = None, hide_rows = None):
+def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, p_values_df = None, hide_rows = None, figsize=(10, 7)):
     # Assuming cell_values_df contains the color values and color_values_df contains the values to display
     # Ranges is a list of column indexes if wanting to boldface the maximum value in a subset of the columns
 
 
     # Hide rows by name 
-    
+    if hide_rows is not None:
+        cell_values_df = cell_values_df.drop(hide_rows)
+        color_values_df = color_values_df.drop(hide_rows)
+        if p_values_df is not None:
+            p_values_df = p_values_df.drop(hide_rows)
+
+
     # Set up the color map
     cmap = sns.diverging_palette(0, 120, s=80, l=55, n=256, as_cmap=True)
 
@@ -19,7 +25,7 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
 
 
     # Plot the table with assigned colors
-    fig, ax = plt.subplots(figsize=(10, 8))
+    fig, ax = plt.subplots(figsize=figsize)
     table = plt.table(cellText=cell_values_df.values, cellColours=plt.cm.get_cmap(cmap)(norm(color_values_df.values)),
                     cellLoc='center', colLabels=cell_values_df.columns, rowLabels=cell_values_df.index, loc='center', bbox=[0, 0, 1, 1])
 

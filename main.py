@@ -127,6 +127,8 @@ def subgroup_analysis(df: pd.DataFrame, score: str, categories: List[int], order
 
 # Krippendorff's Alpha and Pearson Correlation
 table_2 = {}
+hide_rows = {'gender':['gender_other', 'non-binary', 'gender_unclear'], 
+             'sexuality': ['asexual', 'sexuality_unclear']}
 for g in dc.TARGET_GROUPS:
     # of annotator demographics
     results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), order_by=table_1_alpha[g])
@@ -141,6 +143,17 @@ for g in dc.TARGET_GROUPS:
                           boldface_ranges=[0, 2, 6], 
                           p_values_df=table_2[f'{g}_p_{p}'][cols])
 
+        # hide rows
+        n_rows = 7 - len(hide_rows[g])
+        export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
+                          color_values_df=table_2[f'{g}_r_{p}'][cols], 
+                          pdf_filename=f'results/krippendorff_with_pearson_pval_increase_{g}_{p}_{'_'.join(cols)}.pdf', 
+                          boldface_ranges=[0, 2, 6], 
+                          p_values_df=table_2[f'{g}_p_{p}'][cols], 
+                          hide_rows=hide_rows[g], 
+                          figsize=(10, 7 - len(hide_rows[g])))    
+    
+    # hide columns
     # plot_1, plot_2 = ['nonLGBT', 'M', 'W',], ['LGBT', 'S', 'G'] 
     # export_table_plot(cell_values_df=table_2[f'{g}_alpha'][plot_1], color_values_df=table_2[f'{g}_delta'][plot_1], pdf_filename=f'results/krippendorff_{g}_{'_'.join(plot_1)}.pdf')
     # export_table_plot(cell_values_df=table_2[f'{g}_alpha'][plot_2], color_values_df=table_2[f'{g}_delta'][plot_2], pdf_filename=f'results/krippendorff_{g}_{'_'.join(plot_2)}.pdf')
