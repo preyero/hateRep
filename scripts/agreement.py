@@ -19,13 +19,11 @@ from sklearn.metrics import cohen_kappa_score
 # https://www.statsmodels.org/stable/generated/statsmodels.stats.inter_rater.to_table.html
 # sample x annotations. BUT no NaN (have to delete them?? i think it does use the information of which labeler for p_e.
 # look kappa with missing data (at random): listwise deletion https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6506991/ 
-# Maybe one against the others? gives one value per annotator.
+# Maybe one against the others? gives one value per annotator and calculate mean + std deviation.
 
 # 2. Fleiss' Kappa: agreement between more than 3 raters (nominal: x in {A, B, C}) > 
 # Kendall for ordinal (A<B<C), intra-class correlation for a metric.
 # https://datatab.net/tutorial/fleiss-kappa
-#from statsmodels.stats.inter_rater import fleiss_kappa
-# https://www.statsmodels.org/stable/generated/statsmodels.stats.inter_rater.aggregate_raters.html
 # from counts of category assigned: Fleiss Kappa can be specially used when participants are rated by different sets of raters. This means that the raters responsible for rating one subject are not assumed to be the same as those responsible for rating another (Fleiss et al., 2003).
 def keep_by_annotation_count(df: pd.DataFrame, by: str, n_counts: int, method: str):
     # Get counts
@@ -35,6 +33,7 @@ def keep_by_annotation_count(df: pd.DataFrame, by: str, n_counts: int, method: s
         return df[ c == n_counts ]
     elif method == 'downsample':
         return
+
 
 def fleiss(df: pd.DataFrame, subject_col: str, rating_col: str, verbose: bool = False):
     # Table of category assignments, e.g. (3 raters),
@@ -62,7 +61,6 @@ def fleiss(df: pd.DataFrame, subject_col: str, rating_col: str, verbose: bool = 
 # https://www.surgehq.ai/blog/inter-rater-reliability-metrics-an-introduction-to-krippendorffs-alpha
 # https://www.lighttag.io/blog/krippendorffs-alpha/
 def krippendorf(df: pd.DataFrame, rater_col: str, subject_col: str, rating_col: str, verbose: bool = False):
-
     if verbose:
         print(f'computing Krippendorf on {rating_col}')
     # Transform to data format, e.g.,
@@ -74,6 +72,7 @@ def krippendorf(df: pd.DataFrame, rater_col: str, subject_col: str, rating_col: 
 
     # Compute Krippendorf's Alpha
     return krippendorff.alpha(reliability_data=rating_table, level_of_measurement="nominal")
+
 
 def get_scores_and_delta(data_subset: pd.DataFrame, score: str, rating_col: str, rater_col: str = 'User', subject_col: str = 'Question ID', verbose: bool = False):
     """ IAA in both phases and delta between them """
