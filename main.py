@@ -30,7 +30,7 @@ print('Imported data with samples, annotations, and user tables')
 example = data[['Question ID', 'User', 'gender_1']].sample(10)
 print(example)
 
-# TABLE 1.1: Inter-annotator agreement scores and delta between phases
+# RESULTS 1.1: Inter-annotator agreement scores and delta between phases
 def analyse_IAA(df: pd.DataFrame, score: str, order_by: Dict[str, pd.DataFrame] = None):
     """ Compute a dictionary with tables of scores of binary categories and generic questions """
     table_1, values, table_1_cols = {}, defaultdict(dict), ['Ph1', 'Ph2', 'Δ']
@@ -61,7 +61,7 @@ print('... unique texts (Fleiss)', len(d_filter['Question ID'].unique()))
 
 # table_1_kappa = analyse_IAA(d_filter, 'fleiss', table_1_alpha)
 
-# TODO: TABLE 1.2: Consistency distribution and table counts for understanding IAA
+# TODO: RESULTS 1.2: Consistency distribution and table counts for understanding IAA
 if not os.path.exists('results'):
     os.mkdir('results')
 def analyse_consistency(labels: List[str]):
@@ -74,7 +74,7 @@ def analyse_consistency(labels: List[str]):
     return
 
 # Reasons for low agreement
-low_agreement = ['heterosexual', 'sexuality_unclear', 'gender_unclear']
+low_agreement = ['sexuality_unclear', 'gender_unclear']
 analyse_consistency(labels=low_agreement)
 
 # Reasons for lower agreement with semantics
@@ -88,39 +88,41 @@ analyse_consistency(labels=[sg for sg in dc.TARGET_LABELS['sexuality'] if sg not
 # Analysis by subgroups
 ################################################
 
-# TABLE 2: Disaggregated IAA scores and correlation with target groups
-def subgroup_analysis(df: pd.DataFrame, score: str, categories: List[int], order_by: pd.DataFrame = None):
+# RESULTS 2: Disaggregated IAA scores and correlation with target groups
+def subgroup_analysis(df: pd.DataFrame, iaa_score: str, categories: List[int], labels: List[str], labels_type: str, order_by: pd.DataFrame = None):
     """ Compute a list of resulting dataframes: with IAA and correlation (R and p-val) on each phase """
+    MANUAL_EXPERT = {'group': {'gender': 'LGBT', 'sexuality': 'LGBT'}, 'subgroupA': {'gender': 'G', 'sexuality': 'S'}}
     values = defaultdict(dict)
     for c in categories:
         print(df[c].value_counts())
         for sc in df[c].unique():
             # for every value in the category
             subset, alphas_1, alphas_2 = df.loc[df[c] == sc], [], []
-            for sg in dc.TARGET_LABELS[g]:
-                alpha_1, alpha_2, _ = get_scores_and_delta(subset, score, sg)
+            for sg in labels:
+                alpha_1, alpha_2, _ = get_scores_and_delta(subset, iaa_score, sg)
                 alphas_1.append(alpha_1)
                 alphas_2.append(alpha_2)
             values['alpha_1'][sc], values['alpha_2'][sc] = alphas_1, alphas_2
         # alignment with highest target group in category c
         for p in dc.PHASES:
-            for i, sg in enumerate(dc.TARGET_LABELS[g]):
+            for i, sg in enumerate(labels):
                 # target group with highest agreement on sg label
-                target = define_expert(values[f'alpha_{p}'], i, c) 
+                target = [MANUAL_EXPERT[c][labels_type] if c in MANUAL_EXPERT and labels_type in MANUAL_EXPERT[c] 
+                          else define_expert(values=values[f'alpha_{p}'], position=i, categ_level=c)][0]
                 target_subset = df.loc[df[c] == target]
                 for src in df[c].unique():
                     src_subset = df.loc[df[c] == src] 
                     pearson = pearson_correlation(src_subset, target_subset, f'{sg}_{p}', 'Question ID') # how much they align with it
                     try:
-                        values[f'r_{p}'][src].append(pearson.statistic)
+                        values[f'r_{p}'][src].append(round(pearson.statistic, 2))
                         values[f'p_{p}'][src].append(pearson.pvalue)
                     except KeyError:
-                        values[f'r_{p}'][src], values[f'p_{p}'][src] = [pearson.statistic], [pearson.pvalue]
+                        values[f'r_{p}'][src], values[f'p_{p}'][src] = [round(pearson.statistic, 2)], [pearson.pvalue]
 
     # index names and sort by of (6 tables: alpha, R, p_val for each phase)
     res_df =  [pd.DataFrame.from_dict(values[k]) for k in values.keys()]
     for i in range(0, len(res_df)):
-        res_df[i].index = dc.TARGET_LABELS[g]
+        res_df[i].index = labels
         if isinstance(order_by, pd.DataFrame):
             res_df[i] = res_df[i].reindex(order_by.index.to_list())
     return res_df
@@ -131,7 +133,7 @@ hide_rows = {'gender':['gender_other', 'non-binary', 'gender_unclear'],
              'sexuality': ['asexual', 'sexuality_unclear']}
 for g in dc.TARGET_GROUPS:
     # of annotator demographics
-    results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), order_by=table_1_alpha[g])
+    results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), labels = dc.TARGET_LABELS[g], labels_type=g, order_by=table_1_alpha[g])
     table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f'{g}_p_1'], table_2[f'{g}_r_2'], table_2[f'{g}_p_2'] = results
 
     # Table plots
@@ -139,7 +141,7 @@ for g in dc.TARGET_GROUPS:
     for p in dc.PHASES:
         export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                           color_values_df=table_2[f'{g}_r_{p}'][cols], 
-                          pdf_filename=f'results/krippendorff_with_pearson_pval_{g}_{p}_{'_'.join(cols)}.pdf', 
+                          pdf_filename=f'results/krippendorff_with_pearsonPval_{g}_{p}_{'_'.join(cols)}.pdf', 
                           boldface_ranges=[0, 2, 6], 
                           p_values_df=table_2[f'{g}_p_{p}'][cols])
 
@@ -147,7 +149,16 @@ for g in dc.TARGET_GROUPS:
         n_rows = 7 - len(hide_rows[g])
         export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                           color_values_df=table_2[f'{g}_r_{p}'][cols], 
-                          pdf_filename=f'results/krippendorff_with_pearson_pval_increase_{g}_{p}_{'_'.join(cols)}.pdf', 
+                          pdf_filename=f'results/krippendorff_with_pearsonPval_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
+                          boldface_ranges=[0, 2, 6], 
+                          p_values_df=table_2[f'{g}_p_{p}'][cols], 
+                          hide_rows=hide_rows[g], 
+                          figsize=(10, 7 - len(hide_rows[g])))  
+
+        # show correlation values instead of agreement scores
+        export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
+                          color_values_df=table_2[f'{g}_r_{p}'][cols], 
+                          pdf_filename=f'results/pearsonR_with_pearsonPval_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
                           boldface_ranges=[0, 2, 6], 
                           p_values_df=table_2[f'{g}_p_{p}'][cols], 
                           hide_rows=hide_rows[g], 
@@ -158,4 +169,13 @@ for g in dc.TARGET_GROUPS:
     # export_table_plot(cell_values_df=table_2[f'{g}_alpha'][plot_1], color_values_df=table_2[f'{g}_delta'][plot_1], pdf_filename=f'results/krippendorff_{g}_{'_'.join(plot_1)}.pdf')
     # export_table_plot(cell_values_df=table_2[f'{g}_alpha'][plot_2], color_values_df=table_2[f'{g}_delta'][plot_2], pdf_filename=f'results/krippendorff_{g}_{'_'.join(plot_2)}.pdf')
 
-
+# TODO: other annotations (not posible pearson on categorical > need to binary encode)
+# g = 'other'
+# results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), labels = dc.TARGET_GROUPS + dc.HATE_QS, labels_type=g, order_by=table_1_alpha[g])
+# table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f'{g}_p_1'], table_2[f'{g}_r_2'], table_2[f'{g}_p_2'] = results
+# for p in dc.PHASES:
+#     export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
+#                   color_values_df=table_2[f'{g}_r_{p}'][cols], 
+#                   pdf_filename=f'results/krippendorff_with_pearsonPval_{g}_{p}_{'_'.join(cols)}.pdf', 
+#                   boldface_ranges=[0, 2, 6], 
+#                   p_values_df=table_2[f'{g}_p_{p}'][cols])
