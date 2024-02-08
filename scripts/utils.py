@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.backends.backend_pdf import PdfPages
 
-def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, p_values_df = None, hide_rows = None, figsize=(10, 7)):
+def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, p_values_df = None, hide_rows = None, figsize=(10, 7), colorbar_label: str=None):
     # Assuming cell_values_df contains the color values and color_values_df contains the values to display
     # Ranges is a list of column indexes if wanting to boldface the maximum value in a subset of the columns
 
@@ -52,7 +52,7 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
     
     # Add color bar
     cbar = fig.colorbar(sm, ax=ax, pad=0.02)
-    cbar.set_label('Correlation Coefficient')
+    cbar.set_label(colorbar_label)
 
     # Hide axes
     ax.axis('off')

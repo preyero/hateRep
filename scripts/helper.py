@@ -42,4 +42,8 @@ def pearson_correlation(src_df: pd.DataFrame, target_df: pd.DataFrame, label: st
     #     print(f' less samples seen in {label}: {to_compare.shape[0]}')
 
     # pearson coeffs and p values
-    return stats.pearsonr(to_compare[f'{label}_src'], to_compare[f'{label}_target'])
+    pearson = stats.pearsonr(to_compare[f'{label}_src'], to_compare[f'{label}_target'])
+    corr_coeff, pval = pearson.statistic, pearson.pvalue
+    # Bonferroni correction: https://www.ibm.com/support/pages/calculation-bonferroni-adjusted-p-values
+    pval_corrected = pval * to_compare.shape[0]
+    return round(corr_coeff, 2), pval_corrected
