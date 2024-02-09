@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import seaborn as sns
+from  matplotlib.colors import LinearSegmentedColormap
 from matplotlib.backends.backend_pdf import PdfPages
 
 def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, p_values_df = None, hide_rows = None, figsize=(10, 7), colorbar_label: str=None):
@@ -16,7 +16,8 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
 
 
     # Set up the color map
-    cmap = sns.diverging_palette(0, 120, s=80, l=55, n=256, as_cmap=True)
+    cmap=LinearSegmentedColormap.from_list('rg',["r", "w", "g"], N=256) 
+
 
     # Create a diverging color bar
     norm = plt.Normalize(-1, 1)
