@@ -6,7 +6,7 @@ from collections import defaultdict
 import scripts.dataCollect as dc
 from scripts.dataCollect import load_hateRep
 from scripts.agreement import get_scores_and_delta, keep_by_annotation_count
-from scripts.helper import define_expert, pearson_correlation
+from scripts.helper import define_expert, pearson_correlation, define_category
 from scripts.utils import export_table_plot
 
 
@@ -40,7 +40,7 @@ def analyse_IAA(df: pd.DataFrame, score: str, order_by: Dict[str, pd.DataFrame] 
             values[g][sg] = get_scores_and_delta(df, score, sg)
         table_1[g] = pd.DataFrame.from_dict(values[g], orient='index', columns=table_1_cols)
     # from the other data annotations
-    for label in dc.TARGET_GROUPS + dc.HATE_QS:
+    for label in [f"{l}_bin" for l in dc.TARGET_GROUPS + dc.HATE_QS]:
         values['other'][label] = get_scores_and_delta(df, score, label)
     table_1['other'] = pd.DataFrame.from_dict(values['other'], orient='index', columns=table_1_cols)
     # sort values by custom list or by delta
@@ -61,35 +61,8 @@ print('... unique texts (Fleiss)', len(d_filter['Question ID'].unique()))
 
 # table_1_kappa = analyse_IAA(d_filter, 'fleiss', table_1_alpha)
 
-# TODO: RESULTS 1.2: Consistency distribution and table counts for understanding IAA
-if not os.path.exists('results'):
-    os.mkdir('results')
-def analyse_consistency(labels: List[str]):
-    # for each binary categories
-    # ... ( get scores ) from categories conceptualised! (formula for each, and here is yes/no)
-    # plot and export distribution with subfigures (consistency_{labels})
-    # ... is the distribution similar for the ones in each subset?
-    # once seen, export json file with label: counts, ids, n_sample_ids
-    # ... especially in the extremes, what are the reasons for (yes/no) changing? considering texts and list of labels
-    return
+# TODO: RESULTS 1.2: Consistency distribution and table counts for understanding changes
 
-consistency = data[['Question ID', 'Question']].groupby('Question ID').first().reset_index()
-# Reasons for low agreement
-low_agreement = ['sexuality_unclear', 'gender_unclear']
-# analyse_consistency(labels=low_agreement)
-# krippendorf between two values?
-# for i, id in enumerate(consistency['Question ID']):
-#     for j, label in enumerate(low_agreement):
-#         subset = data.loc[data['Question ID'] == id]
-#         consistency.iloc[i, 'alpha'] = krippendorff(subset, 'krippendorf', label)
-    
-
-# Reasons for lower agreement with semantics
-lower_with_semantics = ['asexual', 'non-binary', 'gender_other']
-analyse_consistency(labels=lower_with_semantics)
-
-analyse_consistency(labels=[sg for sg in dc.TARGET_LABELS['gender'] if sg not in low_agreement+lower_with_semantics])
-analyse_consistency(labels=[sg for sg in dc.TARGET_LABELS['sexuality'] if sg not in low_agreement+lower_with_semantics])
 
 ################################################
 # Analysis by subgroups
@@ -129,7 +102,7 @@ def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: Li
                     except KeyError:
                         values[f'r_{p}'][src], values[f'p_{p}'][src] = [corr_coeff], [pvalue]
 
-    # index names and sort by of (6 tables: alpha, R, p_val for each phase)
+    # index names and sort by (6 tables: alpha, R, p_val for each phase)
     res_df =  [pd.DataFrame.from_dict(values[k]) for k in values.keys()]
     for i in range(0, len(res_df)):
         res_df[i].index = labels
@@ -157,9 +130,9 @@ for g in dc.TARGET_GROUPS:
                           color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                           pdf_filename=f'results/krippendorff_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
                           boldface_ranges=[0, 2, 6], 
-                          p_values_df=table_2[f'{g}_p_{p}'][cols], 
                           hide_rows=hide_rows[g], 
-                          figsize=(10, 7 - len(hide_rows[g])), colorbar_label='Krippendorff Alpha')  
+                          figsize=(10, 7 - len(hide_rows[g])), 
+                          colorbar_label='Krippendorff Alpha')  
 
         # show correlation values instead of agreement scores
         export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
@@ -183,13 +156,21 @@ for g in dc.TARGET_GROUPS:
     # export_table_plot(cell_values_df=table_2[f'{g}_alpha'][plot_1], color_values_df=table_2[f'{g}_delta'][plot_1], pdf_filename=f'results/krippendorff_{g}_{'_'.join(plot_1)}.pdf')
     # export_table_plot(cell_values_df=table_2[f'{g}_alpha'][plot_2], color_values_df=table_2[f'{g}_delta'][plot_2], pdf_filename=f'results/krippendorff_{g}_{'_'.join(plot_2)}.pdf')
 
-# TODO: other annotations (not posible pearson on categorical > need to binary encode)
-# g = 'other'
-# results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), labels = dc.TARGET_GROUPS + dc.HATE_QS, labels_type=g, order_by=table_1_alpha[g])
-# table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f'{g}_p_1'], table_2[f'{g}_r_2'], table_2[f'{g}_p_2'] = results
-# for p in dc.PHASES:
-#     export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
-#                   color_values_df=table_2[f'{g}_r_{p}'][cols], 
-#                   pdf_filename=f'results/krippendorff_with_pearsonPval_{g}_{p}_{'_'.join(cols)}.pdf', 
-#                   boldface_ranges=[0, 2, 6], 
-#                   p_values_df=table_2[f'{g}_p_{p}'][cols])
+# other annotations 
+g, g_labels = 'other', [f"{l}_bin" for l in dc.TARGET_GROUPS + dc.HATE_QS]
+print(g_labels)
+results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), labels = g_labels, labels_type=g, order_by=table_1_alpha[g])
+table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f'{g}_p_1'], table_2[f'{g}_r_2'], table_2[f'{g}_p_2'] = results
+for p in dc.PHASES:
+    export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
+                  color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
+                  pdf_filename=f'results/krippendorff_{g}_{p}_{'_'.join(cols)}.pdf', 
+                  boldface_ranges=[0, 2, 6], figsize=(10, 4),
+                  colorbar_label='Krippendorff Alpha')
+    
+    export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
+                  color_values_df=table_2[f'{g}_r_{p}'][cols], 
+                  pdf_filename=f'results/pearson_{g}_{p}_{'_'.join(cols)}.pdf', 
+                  boldface_ranges=[0, 2, 6], figsize=(10, 4),
+                  p_values_df=table_2[f'{g}_p_{p}'][cols], 
+                  colorbar_label='Correlation Coefficient')
