@@ -91,6 +91,15 @@ def import_survey(d_path: str):
     return samples, annot, questions
 
 
+def scale_encoding(value: str, scale: List[str]) -> float:
+    """ Encode as number a string on a scale of 3 """
+    if value == scale[0]:
+        return 0
+    elif value == scale[1]:
+        return 0.5
+    elif value == scale[2]:
+        return 1
+    
 def one_hot_encoding(df: pd.DataFrame, col: str):
     """ Expand a df with binary encodings of column with list of string values """
 
@@ -158,14 +167,18 @@ def load_hateRep(u_path: str, d_path: str):
         # target group labels
         annot[c_yes] = annot[c_yes].apply(lambda labels: [f'{g}_other' if l == 'other' else l for l in str(labels).split(', ')]
                                           if labels != '' else [])
-        annot[f'{g}_bin'] = annot[c_yes].apply(lambda labels: 0 if not labels else 1)
+        # annot[f'{g}_bin'] = annot[c_yes].apply(lambda labels: 0 if not labels else 1)
         annot[g] = annot.apply(lambda x: 'referring' if x[c_yes] else x[c_no][0].split('_')[-1], axis=1)
+        annot[f'{g}_bin'] = annot[g].apply(lambda label: scale_encoding(label, ['not-referring', 'unclear', 'referring']))
         # individual binary encodings
         annot[f'{g}_cat'] = annot.apply(lambda x: x[c_yes] + x[c_no], axis=1)
         annot, TARGET_LABELS[g] = one_hot_encoding(annot, f'{g}_cat')
     # rename transgender column
     annot.rename(columns={'yes': 'transgender'}, inplace=True)
     TARGET_LABELS['gender'] = ['transgender' if x == 'yes' else x for x in TARGET_LABELS['gender']]
+    # other labels:
+    for hate_q in HATE_QS:
+        annot[f'{hate_q}_bin'] = annot[hate_q].apply(lambda label: scale_encoding(label, ['not-hateful', 'unclear', 'hateful']))
 
 
     # ... keep unique user table with relevant info
