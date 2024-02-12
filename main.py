@@ -6,8 +6,8 @@ from collections import defaultdict
 import scripts.dataCollect as dc
 from scripts.dataCollect import load_hateRep
 from scripts.agreement import get_scores_and_delta, keep_by_annotation_count
-from scripts.helper import define_expert, pearson_correlation, define_category
-from scripts.utils import export_table_plot
+from scripts.helper import define_expert, pearson_correlation, define_category, TYPES_ANNOT
+from scripts.utils import export_table_plot, export_frequency_plot
 
 
 PROJ_DIR = os.getcwd()
@@ -79,8 +79,39 @@ with open('results/annotation-type_examples', 'w') as output_file:
 sys.stdout = sys.__stdout__
 
 # Plot distribution
+samples.to_csv('results/samples.csv', index=False)
+for g in dc.TARGET_GROUPS:
+    export_frequency_plot(df=samples, 
+                          col1=f"{g}_types_1", 
+                          col2=f"{g}_types_2", 
+                          order=TYPES_ANNOT, 
+                          labels_type=g, 
+                          pdf_filename=f'results/types_freq-plot_{g}.pdf')
 
-# Plot shifts
+# Plot shifts: 'types_shifts_{g}.pdf'
+
+def analyse_consistency(labels: List[List[str]]):
+    # for each binary categories
+    # ... ( get scores ) from categories conceptualised! (formula for each, and here is yes/no)
+    # plot and export distribution with subfigures (consistency_{labels})
+    # ... is the distribution similar for the ones in each subset?
+    # once seen, export json file with label: counts, ids, n_sample_ids
+    # ... especially in the extremes, what are the reasons for (yes/no) changing? considering texts and list of labels
+    return
+# Reasons for low agreement
+low_agreement = ['sexuality_unclear', 'gender_unclear']
+# analyse_consistency(labels=low_agreement)
+# krippendorf between two values?
+# for i, id in enumerate(consistency['Question ID']):
+#     for j, label in enumerate(low_agreement):
+#         subset = data.loc[data['Question ID'] == id]
+#         consistency.iloc[i, 'alpha'] = krippendorff(subset, 'krippendorf', label)
+# Reasons for lower agreement with semantics
+lower_with_semantics = ['asexual', 'non-binary', 'gender_other']
+analyse_consistency(labels=lower_with_semantics)
+# Remaining categories
+analyse_consistency(labels=[sg for sg in dc.TARGET_LABELS['gender'] if sg not in low_agreement+lower_with_semantics])
+analyse_consistency(labels=[sg for sg in dc.TARGET_LABELS['sexuality'] if sg not in low_agreement+lower_with_semantics])
 
 
 ################################################

@@ -45,7 +45,7 @@ def pearson_correlation(src_df: pd.DataFrame, target_df: pd.DataFrame, label: st
 # Categorisation
 #########################
 TYPES_ANNOT = [f'all_{d}' for d in ['not-targeting', 'unclear', 'targeting']] + \
-    [f'divisive_{d}' for d in ['both-targeting', 'one-targeting', 'one-unclear']] + \
+    [f'divisive_{d}' for d in [f'three-{subd}' for subd in ['all-targeting', 'two-targeting', 'one-targeting']]+ [f'two-{subd}' for subd in ['both-targeting', 'one-targeting', 'one-unclear']]] + \
     [f'common_{d}' for d in ['not-targeting', 'unclear', 'targeting-single', 'targeting-multiple']] + \
     ['none']
 def group_by_value(input_data: List[List[str]]):
@@ -89,13 +89,22 @@ def define_category(subset_annot: pd.DataFrame, col: str, labels_type: str) -> s
     elif subgroup_counts[1] >= 2:
         category, second_group = 'divisive', subgroup_annot[1]
         group_opinions = [first_group[0], second_group[0]]
+        if len(subgroup_counts) > 2 and subgroup_counts[2] >= 2:
+            category += '_three'
+            group_opinions.append(subgroup_annot[2][0])
+            if_two = 'two'
+        else:
+            category += '_two'
+            if_two = 'both'
         targeting = check_targeting(group_opinions, [[f'{labels_type}_not-referring'], [f'{labels_type}_unclear']])
-        if len(targeting) == 2:
-            category += '_both-targeting'
+        if len(targeting) == 3:
+            category += '-all-targeting'
+        elif len(targeting) == 2:
+            category += f'-{if_two}-targeting'
         elif len(targeting) == 1:
-            category += '_one-targeting'
-        else: # No other options, but one were unclear: elif [f'{labels_type}_unclear'] in group_opinions:
-            category += '_one-unclear'
+            category += '-one-targeting'
+        else: # No other options, but one were unclear: 
+            category += '-one-unclear'
     # Case 3: one common opinion 
     #  Consider differentiation to one emergent group > this is >= 3, and next is same but == 2
     elif subgroup_counts[0] >= 2:
