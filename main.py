@@ -1,4 +1,4 @@
-import os
+import os, sys
 import pandas as pd
 from typing import List, Dict
 from collections import defaultdict
@@ -30,7 +30,7 @@ print('Imported data with samples, annotations, and user tables')
 example = data[['Question ID', 'User', 'gender_1']].sample(10)
 print(example)
 
-# RESULTS 1.1: Inter-annotator agreement scores and delta between phases
+# ANALYSIS 1.1: Inter-annotator agreement scores and delta between phases
 def analyse_IAA(df: pd.DataFrame, score: str, order_by: Dict[str, pd.DataFrame] = None):
     """ Compute a dictionary with tables of scores of binary categories and generic questions """
     table_1, values, table_1_cols = {}, defaultdict(dict), ['Ph1', 'Ph2', 'Δ']
@@ -61,14 +61,33 @@ print('... unique texts (Fleiss)', len(d_filter['Question ID'].unique()))
 
 # table_1_kappa = analyse_IAA(d_filter, 'fleiss', table_1_alpha)
 
-# TODO: RESULTS 1.2: Consistency distribution and table counts for understanding changes
+# TODO: ANALYSIS 1.2: Types of annotation (distribution and table counts) for understanding changes
+if not os.path.exists('results'):
+    os.mkdir('results')
+data.to_csv('results/data.csv', index=False)
+with open('results/annotation-type_examples', 'w') as output_file:
+    sys.stdout = output_file
+    for id in samples['Question ID']:
+        print('\n\nQUESTION ID: ', id)
+        print(samples.loc[samples['Question ID'] == id, 'Question'])
+        for g in dc.TARGET_GROUPS:
+            for p in dc.PHASES:
+                category = define_category(data.loc[data['Question ID']==id,], f"{g}_cat_{p}", g)
+                #data.loc[data['Question ID']==id,f"{g}_types_{p}"] = category
+                samples.loc[samples['Question ID']==id, f"{g}_types_{p}"] = category
+# Reset sys.stdout to the original value after the specific subpart
+sys.stdout = sys.__stdout__
+
+# Plot distribution
+
+# Plot shifts
 
 
 ################################################
 # Analysis by subgroups
 ################################################
 
-# RESULTS 2: Disaggregated IAA scores and correlation with target groups
+# ANALYSIS 2: Disaggregated IAA scores and correlation with target groups
 def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: List[int], labels: List[str], labels_type: str, order_by: pd.DataFrame = None, manual_expert: bool = True):
     """ Compute a list of resulting dataframes: with IAA and correlation (R and p-val) on each phase """
     if manual_expert:
@@ -78,6 +97,7 @@ def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: Li
     values = defaultdict(dict)
     for c in annotator_categories:
         print(df[c].value_counts())
+        # agreement on each subgroup
         for sc in df[c].unique():
             # for every value in the category
             subset, alphas_1, alphas_2 = df.loc[df[c] == sc], [], []
@@ -120,7 +140,6 @@ for g in dc.TARGET_GROUPS:
     table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f'{g}_p_1'], table_2[f'{g}_r_2'], table_2[f'{g}_p_2'] = results
 
     # Table plots
-    # TODO: two plots (for alpha and changing colorbar to 0-1, and for r)
     cols = ['nonLGBT', 'LGBT', 'M', 'W', 'S', 'G']
     for p in dc.PHASES:
         
