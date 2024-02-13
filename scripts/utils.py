@@ -78,6 +78,7 @@ def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
     # Create the plot
     fig, ax = plt.subplots(figsize=(10, 6))
 
+
     # Plot bars for column1
     bars1 = ax.barh(order, -sorted_freq1, color='blue', label='Phase 1')
 
@@ -90,41 +91,26 @@ def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
         ax.text(bar2.get_width() + 7, bar2.get_y() + bar2.get_height() / 2, f'{freq2:.2f}%', va='center', ha='right', color='orange')
 
     # Set axis labels and legend
-    ax.set_xlabel('Percentage')
+    #ax.set_xlabel('Percentage')
     ax.set_xlim(-45, 45)
     ax.set_xticks(list(range(-40, 0, 10))+list(range(0, 50, 10)))
     ax.set_xticklabels(list(range(40, 0, -10))+list(range(0, 50, 10)))
     ax.set_title(labels_type)
     ax.legend()
 
-    # Export to PDF
-    with PdfPages(pdf_filename) as pdf:
-        pdf.savefig(fig, bbox_inches='tight')
+    # Set y-axis labels and background colors
+    ytick_colors = ['green'] * 3 + ['greenyellow'] * 4 + ['orange'] * 6 + ['red'] 
+    yticks = [i for i in range(len(order))]
+    ax.set_yticks(yticks)
+    ax.set_yticklabels([' '.join(l.split('_')) for l in order], ha='right', color='black', fontsize=10)
+    # Remove the border of the Y-axis
+    # ax.spines['left'].set_visible(False)
+    # ax.spines['right'].set_visible(False)
+    # Add background color rectangles
+    for i, color in enumerate(ytick_colors):
+        rect = plt.Rectangle((-70, i - 0.5), 25, 1, linewidth=0, edgecolor='none', facecolor=color, alpha=0.3, clip_on=False) 
+        ax.add_patch(rect)
 
-    plt.close()
-
-    print(f'Bar plot exported to {pdf_filename}.')
-
-def export_frequency_plot1(df, column1, column2, order_list, labels_type, pdf_filename):
-    # Calculate frequencies for each category in both columns
-    freq1 = df[column1].value_counts(normalize=True).reindex(order_list, fill_value=0) * 100
-    freq2 = df[column2].value_counts(normalize=True).reindex(order_list, fill_value=0) * 100
-
-    # Create a vertical bar plot
-    fig, ax = plt.subplots(figsize=(10, 6))
-    bar_width = 0.35
-    index = range(len(order_list))
-
-    ax.bar(index, freq1, bar_width, label=column1)
-    ax.bar([i + bar_width for i in index], freq2, bar_width, label=column2)
-
-    # Set plot properties
-    ax.set_xlabel('Categories')
-    ax.set_ylabel('Frequency (%)')
-    ax.set_title(labels_type)
-    ax.set_xticks([i + bar_width / 2 for i in index])
-    ax.set_xticklabels(order_list)
-    ax.legend()
 
     # Export to PDF
     with PdfPages(pdf_filename) as pdf:
@@ -135,3 +121,39 @@ def export_frequency_plot1(df, column1, column2, order_list, labels_type, pdf_fi
     print(f'Bar plot exported to {pdf_filename}.')
 
 
+def export_sankey_diagram(df, col1, col2, pdf_filename):
+    # Calculate the links between nodes
+    links = []
+    for i, source in enumerate(df[col1].unique()):
+        for j, target in enumerate(df[col2].unique()):
+            value = len(df[(df[col1] == source) & (df[col2] == target)])
+            if value > 0:
+                links.append({'source': i, 'target': j + len(df[col1].unique()), 'value': value})
+
+    # Calculate the links between nodes
+    links = []
+    for i, source in enumerate(df[col1].unique()):
+        for j, target in enumerate(df[col2].unique()):
+            value = len(df[(df[col1] == source) & (df[col2] == target)])
+            if value > 0:
+                links.append(go.Sankey.link(source=i, target=j + len(df[col1].unique()), value=value))
+
+    # Create nodes for each step
+    nodes = [{'label': label} for label in df[col1].unique()] + [{'label': label} for label in df[col2].unique()]
+
+    # Create Sankey diagram
+    fig = go.Figure(data=[go.Sankey(node=dict(pad=15, thickness=20), link=links, arrangement="snap")])  
+
+    # Set node labels
+    fig.update_layout(title_text="Sankey Diagram", font_size=10)
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="white",
+            font_size=16,
+            font_family="Rockwell"
+        )
+    )
+
+    # Save the plot as a PDF
+    fig.write_pdf(pdf_filename)
+    return

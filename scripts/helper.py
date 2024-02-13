@@ -45,8 +45,8 @@ def pearson_correlation(src_df: pd.DataFrame, target_df: pd.DataFrame, label: st
 # Categorisation
 #########################
 TYPES_ANNOT = [f'all_{d}' for d in ['not-targeting', 'unclear', 'targeting']] + \
-    [f'divisive_{d}' for d in [f'three-{subd}' for subd in ['all-targeting', 'two-targeting', 'one-targeting']]+ [f'two-{subd}' for subd in ['both-targeting', 'one-targeting', 'one-unclear']]] + \
     [f'common_{d}' for d in ['not-targeting', 'unclear', 'targeting-single', 'targeting-multiple']] + \
+    [f'divisive_{d}' for d in [f'two-{subd}' for subd in ['both-targeting', 'one-targeting', 'one-unclear']] + [f'three-{subd}' for subd in ['all-targeting', 'two-targeting', 'one-targeting']]] + \
     ['none']
 def group_by_value(input_data: List[List[str]]):
     # Create a dictionary to store sublists grouped by their unique values
