@@ -1,6 +1,9 @@
+import pandas as pd 
 import matplotlib.pyplot as plt
+import seaborn as sns
 from  matplotlib.colors import LinearSegmentedColormap
 from matplotlib.backends.backend_pdf import PdfPages
+import plotly.graph_objects as go
 
 def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, p_values_df = None, hide_rows = None, figsize=(10, 7), colorbar_label: str=None):
     # Assuming cell_values_df contains the color values and color_values_df contains the values to display
@@ -121,31 +124,31 @@ def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
     print(f'Bar plot exported to {pdf_filename}.')
 
 
-def export_sankey_diagram(df, col1, col2, pdf_filename):
+def export_alluvial_diagram(df, col1, col2, order, labels_type, pdf_filename):
     # Calculate the links between nodes
-    links = []
-    for i, source in enumerate(df[col1].unique()):
-        for j, target in enumerate(df[col2].unique()):
+    values_1, values_2, counts = [], [], []
+    for i, source in enumerate(order):
+        for j, target in enumerate(order):
             value = len(df[(df[col1] == source) & (df[col2] == target)])
             if value > 0:
-                links.append({'source': i, 'target': j + len(df[col1].unique()), 'value': value})
+                values_1.append(source)
+                values_2.append(target)
+                counts.append(value)
 
-    # Calculate the links between nodes
-    links = []
-    for i, source in enumerate(df[col1].unique()):
-        for j, target in enumerate(df[col2].unique()):
-            value = len(df[(df[col1] == source) & (df[col2] == target)])
-            if value > 0:
-                links.append(go.Sankey.link(source=i, target=j + len(df[col1].unique()), value=value))
-
-    # Create nodes for each step
-    nodes = [{'label': label} for label in df[col1].unique()] + [{'label': label} for label in df[col2].unique()]
-
-    # Create Sankey diagram
-    fig = go.Figure(data=[go.Sankey(node=dict(pad=15, thickness=20), link=links, arrangement="snap")])  
+    fig = go.Figure(
+        go.Parcats(
+            dimensions=[
+                {'label': 'Phase 1',
+                 'values': values_1},
+                 {'label': 'Phase 2', 
+                  'values': values_2}
+            ],
+            counts=counts
+        )
+    )
 
     # Set node labels
-    fig.update_layout(title_text="Sankey Diagram", font_size=10)
+    fig.update_layout(title_text=labels_type, font_size=10, title_x=0.5, title_y=0.85)
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="white",
@@ -155,5 +158,29 @@ def export_sankey_diagram(df, col1, col2, pdf_filename):
     )
 
     # Save the plot as a PDF
-    fig.write_pdf(pdf_filename)
-    return
+    fig.write_image(pdf_filename)
+
+
+def export_matrix_viz(df, col1, col2, order, labels_type, pdf_filename):
+    # Create a pivot table
+    pivot_table = pd.crosstab(df[col1], df[col2], margins=True, margins_name='Total')
+
+    # Reorder the pivot table based on the specified order
+    pivot_table = pivot_table.reindex(index=order, columns=order, fill_value=0)
+
+    # Create a heatmap using seaborn
+    fig, ax = plt.subplots(figsize=(10, 6))
+    annot = pivot_table.map(lambda x: f'{x}' if x > 0 else '')
+    sns.heatmap(pivot_table, annot=annot, fmt='', cmap='Blues', cbar=True, linewidths=.5, vmin=0, vmax=50, ax=ax)
+
+    # Set plot title and labels
+    plt.title(labels_type, fontsize=16)
+    ax.set(xlabel="Phase 2", ylabel="Phase 1")
+
+    # Export to PDF
+    with PdfPages(pdf_filename) as pdf:
+        pdf.savefig(fig, bbox_inches='tight')
+
+    plt.close()
+
+    print(f'Matrix exported to {pdf_filename}.')
