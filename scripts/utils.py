@@ -102,7 +102,7 @@ def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
     ax.legend()
 
     # Set y-axis labels and background colors
-    ytick_colors = ['green'] * 3 + ['greenyellow'] * 4 + ['orange'] * 6 + ['red'] 
+    ytick_colors = ['green'] * 3 + ['greenyellow'] * 3 + ['orange'] * 3 + ['red'] 
     yticks = [i for i in range(len(order))]
     ax.set_yticks(yticks)
     ax.set_yticklabels([' '.join(l.split('_')) for l in order], ha='right', color='black', fontsize=10)

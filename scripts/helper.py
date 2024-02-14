@@ -44,9 +44,8 @@ def pearson_correlation(src_df: pd.DataFrame, target_df: pd.DataFrame, label: st
 #########################
 # Categorisation
 #########################
-TYPES_ANNOT = [f'all_{d}' for d in ['not-targeting', 'unclear', 'targeting']] + \
-    [f'common_{d}' for d in ['not-targeting', 'unclear', 'targeting-single', 'targeting-multiple']] + \
-    [f'divisive_{d}' for d in [f'two-{subd}' for subd in ['both-targeting', 'one-targeting', 'one-unclear']] + [f'three-{subd}' for subd in ['all-targeting', 'two-targeting', 'one-targeting']]] + \
+TYPES_ANNOT = [f'{a}_{d}' for a in ['all', 'majority'] for d in ['not-targeting', 'unclear', 'targeting']] + \
+    [f'opinions_{a}' for a in ['one', 'two', 'three']] + \
     ['none']
 def group_by_value(input_data: List[List[str]]):
     # Create a dictionary to store sublists grouped by their unique values
@@ -65,11 +64,6 @@ def group_by_value(input_data: List[List[str]]):
     print(f'{counts} counts of groups: {group}')
     return group, counts
 
-def check_targeting(input_data: List[List[str]], drop_values: List[str]):
-    for drop_value in drop_values:
-        if drop_value in input_data:
-            input_data.remove(drop_value)
-    return input_data
 
 def define_category(subset_annot: pd.DataFrame, col: str, labels_type: str) -> str:
     annotations = subset_annot[col].to_list()
@@ -85,38 +79,24 @@ def define_category(subset_annot: pd.DataFrame, col: str, labels_type: str) -> s
             category += '_unclear'
         else:
             category += '_targeting'
-    # Case 2: at least two opinions (divisive opinion)
-    elif subgroup_counts[1] >= 2:
-        category, second_group = 'divisive', subgroup_annot[1]
-        group_opinions = [first_group[0], second_group[0]]
-        if len(subgroup_counts) > 2 and subgroup_counts[2] >= 2:
-            category += '_three'
-            group_opinions.append(subgroup_annot[2][0])
-            if_two = 'two'
-        else:
-            category += '_two'
-            if_two = 'both'
-        targeting = check_targeting(group_opinions, [[f'{labels_type}_not-referring'], [f'{labels_type}_unclear']])
-        if len(targeting) == 3:
-            category += '-all-targeting'
-        elif len(targeting) == 2:
-            category += f'-{if_two}-targeting'
-        elif len(targeting) == 1:
-            category += '-one-targeting'
-        else: # No other options, but one were unclear: 
-            category += '-one-unclear'
-    # Case 3: one common opinion 
-    #  Consider differentiation to one emergent group > this is >= 3, and next is same but == 2
-    elif subgroup_counts[0] >= 2:
-        category = 'common'
+    # Case 2: there is a majority vote
+    elif subgroup_counts[0] >= 4:
+        category = 'majority'
         if first_group[0] == [f'{labels_type}_not-referring']:
             category += '_not-targeting'
         elif first_group[0] == [f'{labels_type}_unclear']:
             category += '_unclear'
-        elif len(first_group[0]) == 1:
-            category += '_targeting-single'
         else:
-            category += '_targeting-multiple'
+            category += '_targeting'
+    # Case 3: there are different opinions
+    elif subgroup_counts[0] >= 2:
+        category = 'opinions'
+        if len(subgroup_counts) > 2 and subgroup_counts[2] >= 2:
+            category += '_three'
+        elif subgroup_counts[1] >= 2:
+            category += '_two'
+        else:
+            category += '_one'
     # Case 4: no agreement
     else:
         category='none'
