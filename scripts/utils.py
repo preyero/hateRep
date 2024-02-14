@@ -70,7 +70,7 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
     print(f'Table plot exported to {pdf_filename}.')
 
 
-def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
+def export_frequency_plot(df, col1, col2, order,  colors, labels_type, pdf_filename):
     # Calculate frequencies
     freq_col1 = df[col1].value_counts(normalize=True) * 100
     sorted_freq1 = freq_col1.reindex(order, fill_value=0)
@@ -88,12 +88,12 @@ def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
     # Plot bars for column2
     bars2= ax.barh(order, sorted_freq2, color='orange', label='Phase 2')
 
-    # Display Y-axis labels within bars, alternating sides
+    # Display percentages in each bar
     for i, (bar1, freq1, bar2, freq2) in enumerate(zip(bars1, sorted_freq1, bars2, sorted_freq2)):
-        ax.text(bar1.get_width() - 7, bar1.get_y() + bar1.get_height() / 2, f'{freq1:.2f}%', va='center', ha='left', color='blue')
-        ax.text(bar2.get_width() + 7, bar2.get_y() + bar2.get_height() / 2, f'{freq2:.2f}%', va='center', ha='right', color='orange')
+        ax.text(bar1.get_width() - 6.5, bar1.get_y() + bar1.get_height() / 2, f'{freq1:.2f}%', va='center', ha='left', color='blue')
+        ax.text(bar2.get_width() + 6.5, bar2.get_y() + bar2.get_height() / 2, f'{freq2:.2f}%', va='center', ha='right', color='orange')
 
-    # Set axis labels and legend
+    # Set X-axis labels and legend
     #ax.set_xlabel('Percentage')
     ax.set_xlim(-45, 45)
     ax.set_xticks(list(range(-40, 0, 10))+list(range(0, 50, 10)))
@@ -101,18 +101,17 @@ def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
     ax.set_title(labels_type)
     ax.legend()
 
-    # Set y-axis labels and background colors
-    ytick_colors = ['green'] * 3 + ['greenyellow'] * 3 + ['orange'] * 3 + ['red'] 
+    # Set Y-axis labels and background colors
     yticks = [i for i in range(len(order))]
     ax.set_yticks(yticks)
     ax.set_yticklabels([' '.join(l.split('_')) for l in order], ha='right', color='black', fontsize=10)
+    # Add background color rectangles (yticks_color)
+    for i, color in enumerate(colors):
+        rect = plt.Rectangle((-70, i - 0.5), 25, 1, linewidth=0, edgecolor='none', facecolor=color, alpha=0.3, clip_on=False) 
+        ax.add_patch(rect)
     # Remove the border of the Y-axis
     # ax.spines['left'].set_visible(False)
     # ax.spines['right'].set_visible(False)
-    # Add background color rectangles
-    for i, color in enumerate(ytick_colors):
-        rect = plt.Rectangle((-70, i - 0.5), 25, 1, linewidth=0, edgecolor='none', facecolor=color, alpha=0.3, clip_on=False) 
-        ax.add_patch(rect)
 
 
     # Export to PDF
@@ -125,10 +124,11 @@ def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
 
 
 def export_alluvial_diagram(df, col1, col2, order, labels_type, pdf_filename):
+
     # Calculate the links between nodes
     values_1, values_2, counts = [], [], []
-    for i, source in enumerate(order):
-        for j, target in enumerate(order):
+    for source in order:
+        for target in order:
             value = len(df[(df[col1] == source) & (df[col2] == target)])
             if value > 0:
                 values_1.append(source)
@@ -141,7 +141,7 @@ def export_alluvial_diagram(df, col1, col2, order, labels_type, pdf_filename):
                 {'label': 'Phase 1',
                  'values': values_1},
                  {'label': 'Phase 2', 
-                  'values': values_2}
+                  'values': values_2},
             ],
             counts=counts
         )
@@ -149,16 +149,70 @@ def export_alluvial_diagram(df, col1, col2, order, labels_type, pdf_filename):
 
     # Set node labels
     fig.update_layout(title_text=labels_type, font_size=10, title_x=0.5, title_y=0.85)
-    fig.update_layout(
-        hoverlabel=dict(
-            bgcolor="white",
-            font_size=16,
-            font_family="Rockwell"
-        )
-    )
+
 
     # Save the plot as a PDF
     fig.write_image(pdf_filename)
+
+
+def export_sankey_diagram(df, col1, col2, order, colors, labels_type, pdf_filename, opacity=0.9, case=''):
+    
+    # Create nodes (values in col1 and col2 following order)
+    nodes = order + order
+
+    # Create links
+    links_src = [nodes.index(df[col1][i]) for i in range(len(df))]
+    links_dst = [len(order) + order.index(df[col2][i]) for i in range(len(df))]
+
+    # Create a dict to assign a color with opacity to each node in diagram 
+    cmap = {'green': f'rgba(0, 255, 0, {opacity})', 'greenyellow': f'rgba(173,255,47, {opacity})', 'orange': f'rgba(255, 165, 0, {opacity})', 'red': f'rgba(255, 0, 0, {opacity})'}
+    node_color = {n: cmap[c] for n, c in zip(order, colors)}
+
+    # Show nodes in the same order for both sides of the step
+    nodes_col1 = [n for n in range(0, len(order)) if n in links_src]
+    nodes_col2 = [n for n in range(len(order), 2*len(order)) if n in links_dst]
+    nodes_x = [0.1] * len(nodes_col1) + [0.9] * len(nodes_col2)
+    slots_1 = [x / 10.0 for x in range(1, 10, int(10/len(nodes_col1)))][0:len(nodes_col1)]
+    if f"{labels_type}_{case}" == 'gender_all':
+        # frequency of occurrence of opinions_two is much larger than opinions_three and overlaps
+        print(slots_1)
+        slots_1 = [0.1, 0.2] + [c + 0.01 for c in slots_1[2:]]
+        print(slots_1)
+    slots_2 = [x / 10.0 for x in range(1, 10, int(10/len(nodes_col2)))][0:len(nodes_col2)]
+    # if f"{labels_type}_{case}" == 'sexuality_all':
+    #     # one less categories (maj unclear) unaligns step
+    #     print(slots_2)
+    #     slots_2[-2:] = [0.9, 1.0]
+    #     print(slots_2)
+    nodes_y = slots_1 + slots_2 
+
+    # Create Sankey diagram
+    fig = go.Figure(data=[go.Sankey(
+        arrangement='snap',
+        node=dict(
+            pad=15,
+            thickness=15,
+            line=dict(color='black', width=0.5),
+            label=nodes, 
+            x=nodes_x, 
+            y=nodes_y, 
+            color=[node_color[val] for val in nodes]
+        ),
+        link=dict(
+            source=links_src,
+            target=links_dst,
+            value=[1] * len(df),
+            color=[node_color[df[col1][i]].replace(str(opacity), "0.2") for i in range(len(df))]
+        )
+    )])
+
+    # Set node labels
+    fig.update_layout(title_text=labels_type, font_size=10, title_x=0.5, title_y=0.75)
+
+    # Save the plot as a PDF
+    fig.write_image(pdf_filename)
+
+    print(f'Sankey diagram exported to {pdf_filename}.')
 
 
 def export_matrix_viz(df, col1, col2, order, labels_type, pdf_filename):

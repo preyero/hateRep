@@ -20,7 +20,7 @@ def define_expert(values: Dict[str, List[float]], position: int, categ_level: st
         expert_i = 0
     return candidates[expert_i]
 
-# https://towardsdatascience.com/17-types-of-similarity-and-dissimilarity-measures-used-in-data-science-3eb914d2681
+
 def pearson_correlation(src_df: pd.DataFrame, target_df: pd.DataFrame, label: str, id_col: str):
 
     # other studies using correlation and kappa to uncover non-random examiner error: https://pubmed.ncbi.nlm.nih.gov/3455967/
@@ -42,11 +42,14 @@ def pearson_correlation(src_df: pd.DataFrame, target_df: pd.DataFrame, label: st
     return round(corr_coeff, 2), pval_corrected
 
 #########################
-# Categorisation
+# Categorisation: CASE 6 ANNOTATORS
 #########################
 TYPES_ANNOT = [f'{a}_{d}' for a in ['all', 'majority'] for d in ['not-targeting', 'unclear', 'targeting']] + \
     [f'opinions_{a}' for a in ['one', 'two', 'three']] + \
     ['none']
+TYPES_ANNOT_COLOR = ['green'] * 3 + ['greenyellow'] * 3 + ['orange'] * 3 + ['red'] 
+
+
 def group_by_value(input_data: List[List[str]]):
     # Create a dictionary to store sublists grouped by their unique values
     group_dict = {}

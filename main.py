@@ -6,8 +6,9 @@ from collections import defaultdict
 import scripts.dataCollect as dc
 from scripts.dataCollect import load_hateRep
 from scripts.agreement import get_scores_and_delta, keep_by_annotation_count
-from scripts.helper import define_expert, pearson_correlation, define_category, TYPES_ANNOT
-from scripts.utils import export_table_plot, export_frequency_plot, export_alluvial_diagram, export_matrix_viz
+from scripts.helper import define_expert, pearson_correlation, define_category
+import scripts.helper as f
+import scripts.utils as u
 
 
 PROJ_DIR = os.getcwd()
@@ -61,7 +62,7 @@ print('... unique texts (Fleiss)', len(d_filter['Question ID'].unique()))
 
 # table_1_kappa = analyse_IAA(d_filter, 'fleiss', table_1_alpha)
 
-# TODO: ANALYSIS 1.2: Types of annotation (distribution and table counts) for understanding changes
+# ANALYSIS 1.2: Types of hate speech annotation for understanding changes
 if not os.path.exists('results'):
     os.mkdir('results')
 data.to_csv('results/data.csv', index=False)
@@ -73,7 +74,6 @@ with open('results/annotation-type_examples', 'w') as output_file:
         for g in dc.TARGET_GROUPS:
             for p in dc.PHASES:
                 category = define_category(data.loc[data['Question ID']==id,], f"{g}_cat_{p}", g)
-                #data.loc[data['Question ID']==id,f"{g}_types_{p}"] = category
                 samples.loc[samples['Question ID']==id, f"{g}_types_{p}"] = category
 # Reset sys.stdout to the original value after the specific subpart
 sys.stdout = sys.__stdout__
@@ -81,27 +81,29 @@ sys.stdout = sys.__stdout__
 samples.to_csv('results/samples.csv', index=False)
 for g in dc.TARGET_GROUPS:
     # Plot distribution
-    export_frequency_plot(df=samples, 
+    u.export_frequency_plot(df=samples, 
                           col1=f"{g}_types_1", 
                           col2=f"{g}_types_2", 
-                          order=TYPES_ANNOT, 
+                          order=f.TYPES_ANNOT, colors=f.TYPES_ANNOT_COLOR,
                           labels_type=g, 
                           pdf_filename=f'results/types_freq-plot_{g}.pdf')
 
-    # Plot shifts: 'types_shifts_{g}.pdf'
-    export_alluvial_diagram(df=samples, 
+    # Plot shifts
+    u.export_sankey_diagram(df=samples, 
                           col1=f"{g}_types_1", 
                           col2=f"{g}_types_2", 
-                          order=TYPES_ANNOT[::-1], 
+                          order=f.TYPES_ANNOT[::-1], colors=f.TYPES_ANNOT_COLOR[::-1],
                           labels_type=g, 
-                          pdf_filename=f'results/types_shifts-diagram_{g}.pdf')
-    export_matrix_viz(df=samples, 
+                          pdf_filename=f'results/types_shifts-sankey_{g}.pdf', 
+                          case='all')
+    u.export_matrix_viz(df=samples, 
                           col1=f"{g}_types_1", 
                           col2=f"{g}_types_2", 
-                          order=TYPES_ANNOT[::-1], 
+                          order=f.TYPES_ANNOT[::-1], 
                           labels_type=g, 
                           pdf_filename=f'results/types_shifts-matrix_{g}.pdf')
 
+# TODO: with non-LGBT vs LGBT
 
 
 ################################################
@@ -166,7 +168,7 @@ for g in dc.TARGET_GROUPS:
         
         # hide rows
         n_rows = 7 - len(hide_rows[g])
-        export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
+        u.export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                           color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                           pdf_filename=f'results/krippendorff_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
                           boldface_ranges=[0, 2, 6], 
@@ -175,7 +177,7 @@ for g in dc.TARGET_GROUPS:
                           colorbar_label='Krippendorff Alpha')  
 
         # show correlation values instead of agreement scores
-        export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
+        u.export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
                           color_values_df=table_2[f'{g}_r_{p}'][cols], 
                           pdf_filename=f'results/pearson_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
                           boldface_ranges=[0, 2, 6], 
@@ -202,13 +204,13 @@ print(g_labels)
 results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), labels = g_labels, labels_type=g, order_by=table_1_alpha[g])
 table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f'{g}_p_1'], table_2[f'{g}_r_2'], table_2[f'{g}_p_2'] = results
 for p in dc.PHASES:
-    export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
+    u.export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                   color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                   pdf_filename=f'results/krippendorff_{g}_{p}_{'_'.join(cols)}.pdf', 
                   boldface_ranges=[0, 2, 6], figsize=(10, 4),
                   colorbar_label='Krippendorff Alpha')
     
-    export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
+    u.export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
                   color_values_df=table_2[f'{g}_r_{p}'][cols], 
                   pdf_filename=f'results/pearson_{g}_{p}_{'_'.join(cols)}.pdf', 
                   boldface_ranges=[0, 2, 6], figsize=(10, 4),
