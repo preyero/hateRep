@@ -90,12 +90,12 @@ def export_frequency_plot(df, col1, col2, order,  colors, labels_type, pdf_filen
 
     # Display percentages in each bar
     for i, (bar1, freq1, bar2, freq2) in enumerate(zip(bars1, sorted_freq1, bars2, sorted_freq2)):
-        ax.text(bar1.get_width() - 6.5, bar1.get_y() + bar1.get_height() / 2, f'{freq1:.2f}%', va='center', ha='left', color='blue')
-        ax.text(bar2.get_width() + 6.5, bar2.get_y() + bar2.get_height() / 2, f'{freq2:.2f}%', va='center', ha='right', color='orange')
+        ax.text(bar1.get_width() - 7.5, bar1.get_y() + bar1.get_height() / 2, f'{freq1:.2f}%', va='center', ha='left', color='blue')
+        ax.text(bar2.get_width() + 7, bar2.get_y() + bar2.get_height() / 2, f'{freq2:.2f}%', va='center', ha='right', color='orange')
 
     # Set X-axis labels and legend
     #ax.set_xlabel('Percentage')
-    ax.set_xlim(-45, 45)
+    ax.set_xlim(-50, 45)
     ax.set_xticks(list(range(-40, 0, 10))+list(range(0, 50, 10)))
     ax.set_xticklabels(list(range(40, 0, -10))+list(range(0, 50, 10)))
     ax.set_title(labels_type)
@@ -107,11 +107,11 @@ def export_frequency_plot(df, col1, col2, order,  colors, labels_type, pdf_filen
     ax.set_yticklabels([' '.join(l.split('_')) for l in order], ha='right', color='black', fontsize=10)
     # Add background color rectangles (yticks_color)
     for i, color in enumerate(colors):
-        rect = plt.Rectangle((-70, i - 0.5), 25, 1, linewidth=0, edgecolor='none', facecolor=color, alpha=0.3, clip_on=False) 
+        rect = plt.Rectangle((-70, i - 0.5), 20, 1, linewidth=0, edgecolor='none', facecolor=color, alpha=0.3, clip_on=False) 
         ax.add_patch(rect)
     # Remove the border of the Y-axis
-    # ax.spines['left'].set_visible(False)
-    # ax.spines['right'].set_visible(False)
+    #ax.spines['left'].set_visible(False)
+    #ax.spines['right'].set_visible(False)
 
 
     # Export to PDF

@@ -42,13 +42,13 @@ def pearson_correlation(src_df: pd.DataFrame, target_df: pd.DataFrame, label: st
     return round(corr_coeff, 2), pval_corrected
 
 #########################
-# Categorisation: CASE 6 ANNOTATORS
+# Categorisation
 #########################
 TYPES_ANNOT = [f'{a}_{d}' for a in ['all', 'majority'] for d in ['not-targeting', 'unclear', 'targeting']] + \
     [f'opinions_{a}' for a in ['one', 'two', 'three']] + \
     ['none']
-TYPES_ANNOT_COLOR = ['green'] * 3 + ['greenyellow'] * 3 + ['orange'] * 3 + ['red'] 
-
+TYPES_ANNOT_COLOR = ['green'] * 3 + ['greenyellow'] * 3 + ['orange'] * 3 + ['red']
+MAJORITY_BY_ANNOTATIONS = {3: 2, 5: 3, 6: 4, 7: 4, 8: 5}
 
 def group_by_value(input_data: List[List[str]]):
     # Create a dictionary to store sublists grouped by their unique values
@@ -83,7 +83,7 @@ def define_category(subset_annot: pd.DataFrame, col: str, labels_type: str) -> s
         else:
             category += '_targeting'
     # Case 2: there is a majority vote
-    elif subgroup_counts[0] >= 4:
+    elif subgroup_counts[0] >= MAJORITY_BY_ANNOTATIONS[len(annotations)]:
         category = 'majority'
         if first_group[0] == [f'{labels_type}_not-referring']:
             category += '_not-targeting'
