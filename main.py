@@ -7,7 +7,6 @@ import scripts.dataCollect as dc
 from scripts.dataCollect import load_hateRep
 from scripts.agreement import get_scores_and_delta, keep_by_annotation_count
 from scripts.helper import define_expert, pearson_correlation, define_category
-import scripts.helper as f
 import scripts.utils as u
 
 
@@ -25,7 +24,7 @@ print('Imported data with samples, annotations, and user tables')
 
 
 ################################################
-# Analysis on all annotations
+# Inter-annotator agreement scores and delta between phases
 ################################################
 
 example = data[['Question ID', 'User', 'gender_1']].sample(10)
@@ -62,52 +61,75 @@ print('... unique texts (Fleiss)', len(d_filter['Question ID'].unique()))
 
 # table_1_kappa = analyse_IAA(d_filter, 'fleiss', table_1_alpha)
 
+################################################
+# Types of hate speech annotation for understanding changes
+################################################
+
 # ANALYSIS 1.2: Types of hate speech annotation for understanding changes
 if not os.path.exists('results'):
     os.mkdir('results')
-data.to_csv('results/data.csv', index=False)
-with open('results/annotation-type_examples', 'w') as output_file:
-    sys.stdout = output_file
-    for id in samples['Question ID']:
-        print('\n\nQUESTION ID: ', id)
-        print(samples.loc[samples['Question ID'] == id, 'Question'])
-        for g in dc.TARGET_GROUPS:
-            for p in dc.PHASES:
-                category = define_category(data.loc[data['Question ID']==id,], f"{g}_cat_{p}", g)
-                samples.loc[samples['Question ID']==id, f"{g}_types_{p}"] = category
-# Reset sys.stdout to the original value after the specific subpart
-sys.stdout = sys.__stdout__
+# data.to_csv('results/data.csv', index=False)
+    
+def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], types_color: List[str], samples: pd.DataFrame=samples):
+    with open(f'results/annotation-type_examples_{group}', 'w') as output_file:
+        sys.stdout = output_file
+        for id in samples['Question ID']:
+            print('\n\nQUESTION ID: ', id)
+            for g in dc.TARGET_GROUPS:
+                for p in dc.PHASES:
+                    category = define_category(df.loc[df['Question ID']==id,], f"{g}_cat_{p}", g)
+                    samples.loc[samples['Question ID']==id, f"{g}_types_{group}_{p}"] = category
+    # reset sys.stdout to the original value after the specific subpart
+    sys.stdout = sys.__stdout__
+
+    for g in dc.TARGET_GROUPS:
+        # Plot distribution
+        u.export_frequency_plot(df=samples, 
+                            col1=f"{g}_types_{group}_1", 
+                            col2=f"{g}_types_{group}_2", 
+                            order=types_hs, colors=types_color,
+                            labels_type=g, 
+                            pdf_filename=f'results/types_freq-plot_{g}_{group}.pdf')
+
+        # Plot shifts
+        u.export_sankey_diagram(df=samples, 
+                            col1=f"{g}_types_{group}_1", 
+                            col2=f"{g}_types_{group}_2", 
+                            order=types_hs[::-1], colors=types_color[::-1],
+                            labels_type=g, 
+                            pdf_filename=f'results/types_shifts-sankey_{g}_{group}.pdf', 
+                            case=group)
+        u.export_matrix_viz(df=samples, 
+                            col1=f"{g}_types_{group}_1", 
+                            col2=f"{g}_types_{group}_2", 
+                            order=types_hs[::-1], 
+                            labels_type=g, 
+                            pdf_filename=f'results/types_shifts-matrix_{g}_{group}.pdf')
+        
+# Categorisation based on level of disagreement and decision made
+types_hs = [f'{a}_{d}' for a in ['all', 'majority'] for d in ['not-targeting', 'unclear', 'targeting']] + \
+    [f'opinions_{a}' for a in ['one', 'two', 'three']] + \
+    ['none']
+types_color = ['green'] * 3 + ['greenyellow'] * 3 + ['orange'] * 3 + ['red']
+
+analyse_types(df=data, group='all', types_hs=types_hs, types_color=types_color)
 
 samples.to_csv('results/samples.csv', index=False)
-for g in dc.TARGET_GROUPS:
-    # Plot distribution
-    u.export_frequency_plot(df=samples, 
-                          col1=f"{g}_types_1", 
-                          col2=f"{g}_types_2", 
-                          order=f.TYPES_ANNOT, colors=f.TYPES_ANNOT_COLOR,
-                          labels_type=g, 
-                          pdf_filename=f'results/types_freq-plot_{g}.pdf')
+# Categorisation by groups
+# types_hs = [f'{a}_{d}' for a in ['all', 'majority'] for d in ['not-targeting', 'unclear', 'targeting']] + \
+#     ['none']
+# types_color = ['green'] * 3 + ['orange'] * 3 + ['red']
 
-    # Plot shifts
-    u.export_sankey_diagram(df=samples, 
-                          col1=f"{g}_types_1", 
-                          col2=f"{g}_types_2", 
-                          order=f.TYPES_ANNOT[::-1], colors=f.TYPES_ANNOT_COLOR[::-1],
-                          labels_type=g, 
-                          pdf_filename=f'results/types_shifts-sankey_{g}.pdf', 
-                          case='all')
-    u.export_matrix_viz(df=samples, 
-                          col1=f"{g}_types_1", 
-                          col2=f"{g}_types_2", 
-                          order=f.TYPES_ANNOT[::-1], 
-                          labels_type=g, 
-                          pdf_filename=f'results/types_shifts-matrix_{g}.pdf')
+for group in data[dc.CATEG['c1']].unique():
+    print(group)
+    subset = data.loc[data[dc.CATEG['c1']]==group].copy()
+    print(group, ': ', subset.shape)
 
-# TODO: with non-LGBT vs LGBT
+    analyse_types(df=subset, group=group, types_hs=types_hs, types_color=types_color)
 
 
 ################################################
-# Analysis by subgroups
+# Disaggregated IAA scores and correlation with target groups
 ################################################
 
 # ANALYSIS 2: Disaggregated IAA scores and correlation with target groups
