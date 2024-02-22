@@ -215,6 +215,24 @@ def export_sankey_diagram(df, col1, col2, order, colors, labels_type, pdf_filena
     print(f'Sankey diagram exported to {pdf_filename}.')
 
 
+def draw_heatmap(table, pdf_filename, figsize, title, vmax, vmin=0, label_x="", label_y=""):
+
+    # Create a heatmap using seaborn
+    annot = table.map(lambda x: f'{x}' if x > 0 else '')
+    fig, ax = plt.subplots(figsize=figsize)
+    sns.heatmap(table, annot=annot, fmt='', cmap='Blues', cbar=True, linewidths=.5, vmin=vmin, vmax=vmax, ax=ax)
+
+    # Set plot title and labels
+    plt.title(title, fontsize=16)
+    ax.set(xlabel=label_x, ylabel=label_y)
+
+    # Export to PDF
+    with PdfPages(pdf_filename) as pdf:
+        pdf.savefig(fig, bbox_inches='tight')
+
+    plt.close()
+
+
 def export_matrix_viz(df, col1, col2, order, labels_type, pdf_filename):
     # Create a pivot table
     pivot_table = pd.crosstab(df[col1], df[col2], margins=True, margins_name='Total')
@@ -223,18 +241,28 @@ def export_matrix_viz(df, col1, col2, order, labels_type, pdf_filename):
     pivot_table = pivot_table.reindex(index=order, columns=order, fill_value=0)
 
     # Create a heatmap using seaborn
-    fig, ax = plt.subplots(figsize=(10, 6))
-    annot = pivot_table.map(lambda x: f'{x}' if x > 0 else '')
-    sns.heatmap(pivot_table, annot=annot, fmt='', cmap='Blues', cbar=True, linewidths=.5, vmin=0, vmax=50, ax=ax)
-
-    # Set plot title and labels
-    plt.title(labels_type, fontsize=16)
-    ax.set(xlabel="Phase 2", ylabel="Phase 1")
-
-    # Export to PDF
-    with PdfPages(pdf_filename) as pdf:
-        pdf.savefig(fig, bbox_inches='tight')
-
-    plt.close()
+    draw_heatmap(pivot_table, pdf_filename, figsize=(10, 6), title=labels_type, vmax=50, label_x="Phase 2", label_y="Phase 1")
 
     print(f'Matrix exported to {pdf_filename}.')
+
+def export_overlap_count(df, col1, col2, order, labels_type, pdf_filename):
+    # Create a pivot table with counts overlapping in columns
+    pivot_table = pd.crosstab(df[col1], df[col2], margins=True, margins_name='Total')
+    pivot_table = pivot_table.reindex(index=order+['Total'], columns=order+['Total'], fill_value=0)
+
+    # Select relevant columns
+    both_values = pivot_table.values.diagonal()[:-1]
+    col1_values, col2_values = pivot_table.iloc[:-1, -1].values, pivot_table.iloc[-1, :-1].values
+
+    # Show exclusive counts (only in col1, col2, or in both)
+    col1_values = [val - in_both for val, in_both in zip(col1_values, both_values)]
+    col2_values = [val - in_both for val, in_both in zip(col2_values, both_values)]
+
+    col1_tag, col2_tag = ['LGBT' if 'LGBT' in col1 else col1][0], ['nonLGBT' if 'nonLGBT' in col2 else col2][0]
+    counts_matrix = pd.DataFrame(data=[both_values, col1_values, col2_values], columns=order, index=['both', col1_tag, col2_tag])
+
+    # Create a heatmap using seaborn
+    draw_heatmap(counts_matrix.T, pdf_filename, figsize=(4, 3), title=labels_type, vmax=60)
+
+    print(f'Overlaps exported to {pdf_filename}.')
+

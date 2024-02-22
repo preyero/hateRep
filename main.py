@@ -114,18 +114,22 @@ types_color = ['green'] * 3 + ['greenyellow'] * 3 + ['orange'] * 3 + ['red']
 
 analyse_types(df=data, group='all', types_hs=types_hs, types_color=types_color)
 
-samples.to_csv('results/samples.csv', index=False)
 # Categorisation by groups
 # types_hs = [f'{a}_{d}' for a in ['all', 'majority'] for d in ['not-targeting', 'unclear', 'targeting']] + \
 #     ['none']
 # types_color = ['green'] * 3 + ['orange'] * 3 + ['red']
-
 for group in data[dc.CATEG['c1']].unique():
     print(group)
     subset = data.loc[data[dc.CATEG['c1']]==group].copy()
     print(group, ': ', subset.shape)
 
     analyse_types(df=subset, group=group, types_hs=types_hs, types_color=types_color)
+
+samples.to_csv('results/samples.csv', index=False)
+# Categories overlap between c1 groups
+for g in dc.TARGET_GROUPS:
+    for p in dc.PHASES:
+        u.export_overlap_count(samples, col1=f"{g}_types_LGBT_{p}", col2=f"{g}_types_nonLGBT_{p}", order=types_hs[::-1], labels_type=g, pdf_filename=f'results/types_overlap_{g}_Phase{p}.pdf')
 
 
 ################################################
