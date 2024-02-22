@@ -44,8 +44,6 @@ def pearson_correlation(src_df: pd.DataFrame, target_df: pd.DataFrame, label: st
 #########################
 # Categorisation
 #########################
-MAJORITY_BY_ANNOTATIONS = {3: 2, 4: 3, 5: 3, 6: 4, 7: 4, 8: 5}
-
 def group_by_value(input_data: List[List[str]]):
     # Create a dictionary to store sublists grouped by their unique values
     group_dict = {}
@@ -64,6 +62,12 @@ def group_by_value(input_data: List[List[str]]):
     return group, counts
 
 
+def is_majority(same: int, total: int):
+    if same > total/2:
+        return True
+    else:
+        return False
+
 def define_category(subset_annot: pd.DataFrame, col: str, labels_type: str) -> str:
     annotations = subset_annot[col].to_list()
     print(len(annotations), annotations)
@@ -79,7 +83,7 @@ def define_category(subset_annot: pd.DataFrame, col: str, labels_type: str) -> s
         else:
             category += '_targeting'
     # Case 2: there is a majority vote
-    elif len(annotations) > 2 and subgroup_counts[0] >= MAJORITY_BY_ANNOTATIONS[len(annotations)]:
+    elif len(annotations) > 2 and is_majority(subgroup_counts[0], len(annotations)):
         category = 'majority'
         if first_group[0] == [f'{labels_type}_not-referring']:
             category += '_not-targeting'
@@ -98,6 +102,8 @@ def define_category(subset_annot: pd.DataFrame, col: str, labels_type: str) -> s
             category += '_one'
     # Case 4: no agreement
     else:
-        category='none'
+        category='no-agreement'
     print(category)
     return category
+
+# TODO: check opinions as opinions_targeting, opinions_not-targeting

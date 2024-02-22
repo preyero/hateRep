@@ -70,7 +70,7 @@ if not os.path.exists('results'):
     os.mkdir('results')
 # data.to_csv('results/data.csv', index=False)
     
-def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], types_color: List[str], samples: pd.DataFrame=samples):
+def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], samples: pd.DataFrame=samples):
     with open(f'results/annotation-type_examples_{group}', 'w') as output_file:
         sys.stdout = output_file
         for id in samples['Question ID']:
@@ -87,7 +87,7 @@ def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], types_color
         u.export_frequency_plot(df=samples, 
                             col1=f"{g}_types_{group}_1", 
                             col2=f"{g}_types_{group}_2", 
-                            order=types_hs, colors=types_color,
+                            order=types_hs, 
                             labels_type=g, 
                             pdf_filename=f'results/types_freq-plot_{g}_{group}.pdf')
 
@@ -95,7 +95,7 @@ def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], types_color
         u.export_sankey_diagram(df=samples, 
                             col1=f"{g}_types_{group}_1", 
                             col2=f"{g}_types_{group}_2", 
-                            order=types_hs[::-1], colors=types_color[::-1],
+                            order=types_hs[::-1], 
                             labels_type=g, 
                             pdf_filename=f'results/types_shifts-sankey_{g}_{group}.pdf', 
                             case=group)
@@ -109,10 +109,9 @@ def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], types_color
 # Categorisation based on level of disagreement and decision made
 types_hs = [f'{a}_{d}' for a in ['all', 'majority'] for d in ['not-targeting', 'unclear', 'targeting']] + \
     [f'opinions_{a}' for a in ['one', 'two', 'three']] + \
-    ['none']
-types_color = ['green'] * 3 + ['greenyellow'] * 3 + ['orange'] * 3 + ['red']
+    ['no-agreement']
 
-analyse_types(df=data, group='all', types_hs=types_hs, types_color=types_color)
+analyse_types(df=data, group='all', types_hs=types_hs)
 
 # Categorisation by groups
 # types_hs = [f'{a}_{d}' for a in ['all', 'majority'] for d in ['not-targeting', 'unclear', 'targeting']] + \
@@ -123,7 +122,7 @@ for group in data[dc.CATEG['c1']].unique():
     subset = data.loc[data[dc.CATEG['c1']]==group].copy()
     print(group, ': ', subset.shape)
 
-    analyse_types(df=subset, group=group, types_hs=types_hs, types_color=types_color)
+    analyse_types(df=subset, group=group, types_hs=types_hs)
 
 samples.to_csv('results/samples.csv', index=False)
 # Categories overlap between c1 groups

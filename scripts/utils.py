@@ -70,7 +70,26 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
     print(f'Table plot exported to {pdf_filename}.')
 
 
-def export_frequency_plot(df, col1, col2, order,  colors, labels_type, pdf_filename):
+CATEGORIES_Gr = [f'all_{d}'for d in ['not-targeting', 'unclear', 'targeting']]
+CATEGORIES_GrYl = [f'majority_{d}'for d in ['not-targeting', 'unclear', 'targeting']]
+CATEGORIES_Or = [f'opinions_{a}' for a in ['one', 'two', 'three']]
+CATEGORIES_Rd = ['no-agreement']
+def draw_color(categories):
+    colors = []
+    for category in categories:
+        if category in CATEGORIES_Gr:
+            colors.append('green')
+        elif category in CATEGORIES_GrYl:
+            colors.append('greenyellow')
+        elif category in CATEGORIES_Or:
+            colors.append('orange')
+        elif category in CATEGORIES_Rd:
+            colors.append('red')
+        else:
+            raise Exception(f'Unrecognised category type: {category}')
+    return colors
+
+def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
     # Calculate frequencies
     freq_col1 = df[col1].value_counts(normalize=True) * 100
     sorted_freq1 = freq_col1.reindex(order, fill_value=0)
@@ -106,6 +125,7 @@ def export_frequency_plot(df, col1, col2, order,  colors, labels_type, pdf_filen
     ax.set_yticks(yticks)
     ax.set_yticklabels([' '.join(l.split('_')) for l in order], ha='right', color='black', fontsize=10)
     # Add background color rectangles (yticks_color)
+    colors = draw_color(order)
     for i, color in enumerate(colors):
         rect = plt.Rectangle((-70, i - 0.5), 20, 1, linewidth=0, edgecolor='none', facecolor=color, alpha=0.3, clip_on=False) 
         ax.add_patch(rect)
@@ -155,7 +175,7 @@ def export_alluvial_diagram(df, col1, col2, order, labels_type, pdf_filename):
     fig.write_image(pdf_filename)
 
 
-def export_sankey_diagram(df, col1, col2, order, colors, labels_type, pdf_filename, opacity=0.9, case=''):
+def export_sankey_diagram(df, col1, col2, order, labels_type, pdf_filename, opacity=0.9, case=''):
     
     # Create nodes (values in col1 and col2 following order)
     nodes = order + order
@@ -166,6 +186,7 @@ def export_sankey_diagram(df, col1, col2, order, colors, labels_type, pdf_filena
 
     # Create a dict to assign a color with opacity to each node in diagram 
     cmap = {'green': f'rgba(0, 255, 0, {opacity})', 'greenyellow': f'rgba(173,255,47, {opacity})', 'orange': f'rgba(255, 165, 0, {opacity})', 'red': f'rgba(255, 0, 0, {opacity})'}
+    colors = draw_color(order)
     node_color = {n: cmap[c] for n, c in zip(order, colors)}
 
     # Show nodes in the same order for both sides of the step
