@@ -69,10 +69,10 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
 
     print(f'Table plot exported to {pdf_filename}.')
 
-
-CATEGORIES_Gr = [f'all_{d}'for d in ['not-targeting', 'unclear', 'targeting']]
-CATEGORIES_GrYl = [f'majority_{d}'for d in ['not-targeting', 'unclear', 'targeting']]
-CATEGORIES_Or = [f'opinions_{a}' for a in ['one', 'two', 'three']]
+DECISIONS = ['targeting', 'unclear', 'not-targeting']
+CATEGORIES_Gr = [f'all_{d}'for d in DECISIONS]
+CATEGORIES_GrYl = [f'majority_{d}'for d in DECISIONS]
+CATEGORIES_Or = [f'opinions_{a}' for a in ['one', 'two', 'three'] + DECISIONS]
 CATEGORIES_Rd = ['no-agreement']
 def draw_color(categories):
     colors = []
@@ -194,12 +194,16 @@ def export_sankey_diagram(df, col1, col2, order, labels_type, pdf_filename, opac
     nodes_col2 = [n for n in range(len(order), 2*len(order)) if n in links_dst]
     nodes_x = [0.1] * len(nodes_col1) + [0.9] * len(nodes_col2)
     slots_1 = [x / 10.0 for x in range(1, 10, int(10/len(nodes_col1)))][0:len(nodes_col1)]
-    if f"{labels_type}_{case}" == 'gender_all':
-        # frequency of occurrence of opinions_two is much larger than opinions_three and overlaps
-        print(slots_1)
-        slots_1 = [0.1, 0.2] + [c + 0.01 for c in slots_1[2:]]
-        print(slots_1)
     slots_2 = [x / 10.0 for x in range(1, 10, int(10/len(nodes_col2)))][0:len(nodes_col2)]
+    if f"{labels_type}_{case}" == 'gender_all':
+        # frequency of occurrence of opinions_targeting is much larger than opinions_unclear and overlaps
+        print(slots_1)
+        slots_1 = [0.1, 0.2, 0.3] + [c + 0.01 for c in slots_1[3:]]
+        print(slots_1)
+        # frequency of occurrence of majority_targeting is much larger than majority_not-targeting and overlaps
+        print(slots_2)
+        slots_2 = [0.1, 0.2, 0.3, 0.4, 0.5] + [c + 0.01 for c in slots_2[5:]]
+        print(slots_2)
     # if f"{labels_type}_{case}" == 'sexuality_all':
     #     # one less categories (maj unclear) unaligns step
     #     print(slots_2)

@@ -107,8 +107,7 @@ def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], samples: pd
                             pdf_filename=f'results/types_shifts-matrix_{g}_{group}.pdf')
         
 # Categorisation based on level of disagreement and decision made
-types_hs = [f'{a}_{d}' for a in ['all', 'majority'] for d in ['not-targeting', 'unclear', 'targeting']] + \
-    [f'opinions_{a}' for a in ['one', 'two', 'three']] + \
+types_hs = [f'{a}_{d}' for a in ['all', 'majority', 'opinions'] for d in u.DECISIONS] + \
     ['no-agreement']
 
 analyse_types(df=data, group='all', types_hs=types_hs)

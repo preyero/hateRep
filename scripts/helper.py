@@ -68,11 +68,12 @@ def is_majority(same: int, total: int):
     else:
         return False
 
+
 def define_category(subset_annot: pd.DataFrame, col: str, labels_type: str) -> str:
     annotations = subset_annot[col].to_list()
     print(len(annotations), annotations)
-    subgroup_annot, subgroup_counts = group_by_value(annotations)
-    first_group = subgroup_annot[0]
+    subgroup_annots, subgroup_counts = group_by_value(annotations)
+    first_group = subgroup_annots[0]
     # Case 1: all are the same
     if subgroup_counts[0] == len(annotations):
         category = 'all'
@@ -93,17 +94,18 @@ def define_category(subset_annot: pd.DataFrame, col: str, labels_type: str) -> s
             category += '_targeting'
     # Case 3: there are different opinions
     elif subgroup_counts[0] >= 2:
-        category = 'opinions'
-        if len(subgroup_counts) > 2 and subgroup_counts[2] >= 2:
-            category += '_three'
-        elif subgroup_counts[1] >= 2:
-            category += '_two'
-        else:
-            category += '_one'
+        subcat, i = '_not-targeting', 0
+        while i < len(subgroup_annots) and subgroup_counts[i] >= 2:
+            subgroup_annot = subgroup_annots[i]
+            if subgroup_annot[0][0] not in [f'{labels_type}_not-referring', f'{labels_type}_unclear']:
+                subcat = '_targeting'
+                break
+            if subgroup_annot[0] == [f'{labels_type}_unclear']:
+                subcat = '_unclear'
+            i += 1
+        category = 'opinions' + subcat
     # Case 4: no agreement
     else:
         category='no-agreement'
     print(category)
     return category
-
-# TODO: check opinions as opinions_targeting, opinions_not-targeting
