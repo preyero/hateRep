@@ -1,0 +1,3600 @@
+
+
+QUESTION ID:  2
+4 [['women'], ['women'], ['women'], ['gender_not-referring']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+4 [['women'], ['women', 'gender_unclear'], ['women'], ['gender_not-referring']]
+[2, 1, 1] counts of groups: [[['women'], ['women']], [['women', 'gender_unclear']], [['gender_not-referring']]]
+opinions_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  3
+3 [['gender_not-referring'], ['men', 'women', 'yes'], ['men', 'women']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['men', 'women', 'yes']], [['men', 'women']]]
+no-agreement
+3 [['women'], ['men', 'women', 'non-binary', 'gender_other', 'yes', 'gender_unclear'], ['men', 'women']]
+[1, 1, 1] counts of groups: [[['women']], [['men', 'women', 'non-binary', 'gender_other', 'yes', 'gender_unclear']], [['men', 'women']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  4
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  5
+3 [['gender_not-referring'], ['women', 'gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women', 'gender_not-referring']]]
+majority_not-targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  6
+4 [['gender_not-referring'], ['women'], ['men', 'women'], ['women']]
+[2, 1, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']], [['men', 'women']]]
+opinions_targeting
+4 [['women'], ['women'], ['men', 'women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['men', 'women']]]
+majority_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  7
+3 [['gender_not-referring'], ['women'], ['women', 'gender_not-referring']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['women']], [['women', 'gender_not-referring']]]
+no-agreement
+3 [['women', 'gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'gender_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  8
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  9
+3 [['women'], ['women'], ['gender_unclear']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_unclear']]]
+majority_targeting
+3 [['women'], ['women'], ['gender_unclear']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_unclear']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  11
+3 [['gender_not-referring'], ['women', 'gender_unclear'], ['gender_unclear']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['women', 'gender_unclear']], [['gender_unclear']]]
+no-agreement
+3 [['women'], ['gender_not-referring'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  12
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['gender_unclear'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_unclear']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual']]]
+majority_not-targeting
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual']]
+[1, 1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual']]]
+no-agreement
+
+
+QUESTION ID:  13
+3 [['gender_unclear'], ['men', 'women'], ['gender_not-referring']]
+[1, 1, 1] counts of groups: [[['gender_unclear']], [['men', 'women']], [['gender_not-referring']]]
+no-agreement
+3 [['gender_unclear'], ['gender_unclear'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_unclear'], ['gender_unclear']], [['gender_not-referring']]]
+majority_unclear
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  15
+2 [['gender_not-referring'], ['gender_unclear']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['gender_unclear']]]
+no-agreement
+2 [['gender_not-referring'], ['gender_not-referring']]
+[2] counts of groups: [[['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_unclear'], ['bisexual']]
+[1, 1] counts of groups: [[['sexuality_unclear']], [['bisexual']]]
+no-agreement
+
+
+QUESTION ID:  16
+3 [['gender_not-referring'], ['gender_not-referring'], ['men']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men']]]
+majority_not-targeting
+3 [['gender_not-referring'], ['gender_unclear'], ['men', 'gender_not-referring']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['gender_unclear']], [['men', 'gender_not-referring']]]
+no-agreement
+3 [['homosexual', 'bisexual'], ['bisexual'], ['bisexual']]
+[2, 1] counts of groups: [[['bisexual'], ['bisexual']], [['homosexual', 'bisexual']]]
+majority_targeting
+3 [['bisexual'], ['bisexual'], ['bisexual']]
+[3] counts of groups: [[['bisexual'], ['bisexual'], ['bisexual']]]
+all_targeting
+
+
+QUESTION ID:  17
+2 [['men'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['men']], [['gender_not-referring']]]
+no-agreement
+2 [['gender_not-referring'], ['gender_unclear']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['gender_unclear']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  18
+2 [['women'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['women']], [['gender_not-referring']]]
+no-agreement
+2 [['women'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['women']], [['gender_not-referring']]]
+no-agreement
+2 [['heterosexual'], ['sexuality_not-referring']]
+[1, 1] counts of groups: [[['heterosexual']], [['sexuality_not-referring']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  19
+3 [['gender_not-referring'], ['women'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women']]]
+majority_not-targeting
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  20
+5 [['women'], ['women'], ['gender_not-referring'], ['women'], ['women']]
+[4, 1] counts of groups: [[['women'], ['women'], ['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+5 [['women'], ['women'], ['gender_not-referring'], ['men', 'women'], ['women']]
+[3, 1, 1] counts of groups: [[['women'], ['women'], ['women']], [['gender_not-referring']], [['men', 'women']]]
+majority_targeting
+5 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring'], ['heterosexual'], ['sexuality_not-referring']]
+[3, 1, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']], [['heterosexual']]]
+majority_not-targeting
+5 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual'], ['sexuality_unclear']]
+[3, 1, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  21
+2 [['women'], ['gender_other', 'gender_unclear']]
+[1, 1] counts of groups: [[['women']], [['gender_other', 'gender_unclear']]]
+no-agreement
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_other', 'sexuality_unclear']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_other', 'sexuality_unclear']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  22
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  23
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_unclear']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+3 [['gender_not-referring'], ['gender_unclear'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+3 [['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual'], ['sexuality_unclear']]
+[1, 1, 1] counts of groups: [[['homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['homosexual']], [['sexuality_unclear']]]
+no-agreement
+3 [['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['sexuality_unclear'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other']]
+[2, 1] counts of groups: [[['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['sexuality_unclear']]]
+majority_targeting
+
+
+QUESTION ID:  24
+3 [['men'], ['men'], ['men']]
+[3] counts of groups: [[['men'], ['men'], ['men']]]
+all_targeting
+3 [['men'], ['men'], ['men']]
+[3] counts of groups: [[['men'], ['men'], ['men']]]
+all_targeting
+3 [['homosexual'], ['heterosexual', 'homosexual'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['heterosexual', 'homosexual']]]
+majority_targeting
+3 [['homosexual'], ['heterosexual', 'homosexual'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['heterosexual', 'homosexual']]]
+majority_targeting
+
+
+QUESTION ID:  25
+3 [['men'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men']]]
+majority_not-targeting
+3 [['men'], ['gender_not-referring'], ['men']]
+[2, 1] counts of groups: [[['men'], ['men']], [['gender_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['homosexual'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['homosexual']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['bisexual'], ['sexuality_unclear']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['bisexual']], [['sexuality_unclear']]]
+no-agreement
+
+
+QUESTION ID:  26
+3 [['gender_not-referring'], ['men', 'women'], ['men', 'women']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['gender_not-referring']]]
+majority_targeting
+3 [['men', 'women'], ['men', 'women'], ['men', 'women']]
+[3] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['heterosexual'], ['heterosexual', 'homosexual']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual']], [['heterosexual', 'homosexual']]]
+no-agreement
+3 [['sexuality_not-referring'], ['heterosexual'], ['heterosexual', 'homosexual']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual']], [['heterosexual', 'homosexual']]]
+no-agreement
+
+
+QUESTION ID:  27
+3 [['gender_not-referring'], ['men'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men']]]
+majority_not-targeting
+3 [['men'], ['men'], ['men', 'women']]
+[2, 1] counts of groups: [[['men'], ['men']], [['men', 'women']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  28
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_unclear']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  29
+4 [['women'], ['women'], ['gender_unclear'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['gender_unclear']]]
+majority_targeting
+4 [['women'], ['women', 'gender_other'], ['women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['women', 'gender_other']]]
+majority_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  30
+3 [['men', 'women'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men', 'women']]]
+majority_targeting
+3 [['men', 'women'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men', 'women']]]
+majority_targeting
+3 [['heterosexual'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[1, 1, 1] counts of groups: [[['heterosexual']], [['sexuality_not-referring']], [['sexuality_unclear']]]
+no-agreement
+3 [['heterosexual'], ['heterosexual'], ['heterosexual']]
+[3] counts of groups: [[['heterosexual'], ['heterosexual'], ['heterosexual']]]
+all_targeting
+
+
+QUESTION ID:  31
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  32
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  33
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_unclear'], ['sexuality_not-referring']]
+[1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  34
+2 [['women'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['women']], [['gender_not-referring']]]
+no-agreement
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_unclear']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']]]
+no-agreement
+
+
+QUESTION ID:  35
+3 [['gender_not-referring'], ['women', 'gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women', 'gender_not-referring']]]
+majority_not-targeting
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['heterosexual'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  36
+4 [['gender_not-referring'], ['gender_not-referring'], ['women', 'non-binary'], ['gender_not-referring']]
+[3, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']], [['women', 'non-binary']]]
+majority_not-targeting
+4 [['women'], ['gender_not-referring'], ['women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual']]]
+majority_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  37
+3 [['gender_not-referring'], ['men', 'women'], ['men', 'women']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['men', 'women'], ['men', 'women']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['women']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['heterosexual'], ['sexuality_unclear']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual']], [['sexuality_unclear']]]
+no-agreement
+3 [['sexuality_not-referring'], ['heterosexual'], ['sexuality_unclear']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual']], [['sexuality_unclear']]]
+no-agreement
+
+
+QUESTION ID:  38
+4 [['women'], ['women'], ['women'], ['women', 'gender_unclear']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['women', 'gender_unclear']]]
+majority_targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual', 'sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'sexuality_not-referring']]]
+majority_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  40
+2 [['women'], ['non-binary']]
+[1, 1] counts of groups: [[['women']], [['non-binary']]]
+no-agreement
+2 [['women'], ['women', 'non-binary']]
+[1, 1] counts of groups: [[['women']], [['women', 'non-binary']]]
+no-agreement
+2 [['heterosexual'], ['homosexual']]
+[1, 1] counts of groups: [[['heterosexual']], [['homosexual']]]
+no-agreement
+2 [['homosexual'], ['homosexual']]
+[2] counts of groups: [[['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  41
+3 [['gender_unclear'], ['gender_not-referring'], ['gender_unclear']]
+[2, 1] counts of groups: [[['gender_unclear'], ['gender_unclear']], [['gender_not-referring']]]
+majority_unclear
+3 [['men'], ['men'], ['men']]
+[3] counts of groups: [[['men'], ['men'], ['men']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  43
+3 [['women'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women']]]
+majority_not-targeting
+3 [['women'], ['women'], ['gender_unclear']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_unclear']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  44
+3 [['men'], ['men'], ['men']]
+[3] counts of groups: [[['men'], ['men'], ['men']]]
+all_targeting
+3 [['men'], ['gender_not-referring'], ['gender_unclear']]
+[1, 1, 1] counts of groups: [[['men']], [['gender_not-referring']], [['gender_unclear']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  45
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  46
+3 [['gender_unclear'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_unclear']]]
+majority_targeting
+3 [['gender_unclear'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_unclear']]]
+majority_targeting
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  47
+2 [['men'], ['men', 'women']]
+[1, 1] counts of groups: [[['men']], [['men', 'women']]]
+no-agreement
+2 [['men', 'women'], ['women']]
+[1, 1] counts of groups: [[['men', 'women']], [['women']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  48
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['heterosexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+3 [['heterosexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  49
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  50
+3 [['non-binary', 'yes'], ['gender_unclear'], ['non-binary']]
+[1, 1, 1] counts of groups: [[['non-binary', 'yes']], [['gender_unclear']], [['non-binary']]]
+no-agreement
+3 [['men', 'women', 'non-binary', 'yes'], ['men'], ['men', 'non-binary', 'gender_other']]
+[1, 1, 1] counts of groups: [[['men', 'women', 'non-binary', 'yes']], [['men']], [['men', 'non-binary', 'gender_other']]]
+no-agreement
+3 [['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual'], ['homosexual', 'bisexual', 'sexuality_other']]
+[1, 1, 1] counts of groups: [[['homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['homosexual']], [['homosexual', 'bisexual', 'sexuality_other']]]
+no-agreement
+3 [['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['sexuality_other'], ['homosexual', 'bisexual', 'sexuality_other']]
+[1, 1, 1] counts of groups: [[['homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['sexuality_other']], [['homosexual', 'bisexual', 'sexuality_other']]]
+no-agreement
+
+
+QUESTION ID:  51
+2 [['women'], ['gender_unclear']]
+[1, 1] counts of groups: [[['women']], [['gender_unclear']]]
+no-agreement
+2 [['women'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['women']], [['gender_not-referring']]]
+no-agreement
+2 [['sexuality_other'], ['homosexual']]
+[1, 1] counts of groups: [[['sexuality_other']], [['homosexual']]]
+no-agreement
+2 [['sexuality_other'], ['homosexual']]
+[1, 1] counts of groups: [[['sexuality_other']], [['homosexual']]]
+no-agreement
+
+
+QUESTION ID:  52
+2 [['men'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['men']], [['gender_not-referring']]]
+no-agreement
+2 [['men'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['men']], [['gender_not-referring']]]
+no-agreement
+2 [['homosexual'], ['homosexual']]
+[2] counts of groups: [[['homosexual'], ['homosexual']]]
+all_targeting
+2 [['homosexual'], ['homosexual']]
+[2] counts of groups: [[['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  53
+3 [['men'], ['women'], ['men']]
+[2, 1] counts of groups: [[['men'], ['men']], [['women']]]
+majority_targeting
+3 [['men'], ['men', 'women', 'non-binary', 'gender_other'], ['men', 'women']]
+[1, 1, 1] counts of groups: [[['men']], [['men', 'women', 'non-binary', 'gender_other']], [['men', 'women']]]
+no-agreement
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  54
+3 [['men'], ['men'], ['non-binary', 'gender_other']]
+[2, 1] counts of groups: [[['men'], ['men']], [['non-binary', 'gender_other']]]
+majority_targeting
+3 [['men'], ['men'], ['non-binary', 'gender_other']]
+[2, 1] counts of groups: [[['men'], ['men']], [['non-binary', 'gender_other']]]
+majority_targeting
+3 [['homosexual'], ['homosexual'], ['homosexual', 'bisexual', 'sexuality_other']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['homosexual', 'bisexual', 'sexuality_other']]]
+majority_targeting
+3 [['homosexual'], ['homosexual'], ['homosexual', 'sexuality_other']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['homosexual', 'sexuality_other']]]
+majority_targeting
+
+
+QUESTION ID:  55
+3 [['gender_not-referring'], ['men'], ['men']]
+[2, 1] counts of groups: [[['men'], ['men']], [['gender_not-referring']]]
+majority_targeting
+3 [['gender_unclear'], ['men'], ['men']]
+[2, 1] counts of groups: [[['men'], ['men']], [['gender_unclear']]]
+majority_targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  56
+3 [['gender_not-referring'], ['gender_not-referring'], ['men']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men']]]
+majority_not-targeting
+3 [['gender_not-referring'], ['gender_not-referring'], ['men']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men']]]
+majority_not-targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  57
+3 [['gender_not-referring'], ['gender_not-referring'], ['men']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men']]]
+majority_not-targeting
+3 [['men', 'women'], ['men'], ['men']]
+[2, 1] counts of groups: [[['men'], ['men']], [['men', 'women']]]
+majority_targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  58
+3 [['women'], ['women'], ['men']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men']]]
+majority_targeting
+3 [['women'], ['men', 'women'], ['gender_unclear']]
+[1, 1, 1] counts of groups: [[['women']], [['men', 'women']], [['gender_unclear']]]
+no-agreement
+3 [['homosexual'], ['sexuality_not-referring'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['sexuality_not-referring']]]
+majority_targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  59
+3 [['gender_not-referring'], ['gender_not-referring'], ['men']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men']]]
+majority_not-targeting
+3 [['men'], ['men'], ['men']]
+[3] counts of groups: [[['men'], ['men'], ['men']]]
+all_targeting
+3 [['sexuality_not-referring'], ['homosexual'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['sexuality_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['homosexual'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['sexuality_not-referring']]]
+majority_targeting
+
+
+QUESTION ID:  60
+4 [['gender_not-referring'], ['women'], ['women'], ['women', 'gender_not-referring']]
+[2, 1, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']], [['women', 'gender_not-referring']]]
+opinions_targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual', 'sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual', 'sexuality_not-referring']]]
+majority_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  61
+2 [['women'], ['women', 'yes']]
+[1, 1] counts of groups: [[['women']], [['women', 'yes']]]
+no-agreement
+2 [['women'], ['women', 'yes']]
+[1, 1] counts of groups: [[['women']], [['women', 'yes']]]
+no-agreement
+2 [['sexuality_unclear'], ['sexuality_not-referring']]
+[1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  62
+3 [['women'], ['women', 'gender_other'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'gender_other']]]
+majority_targeting
+3 [['women', 'yes'], ['women', 'gender_other'], ['women']]
+[1, 1, 1] counts of groups: [[['women', 'yes']], [['women', 'gender_other']], [['women']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  63
+3 [['men', 'women'], ['gender_unclear'], ['men', 'women']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['gender_unclear']]]
+majority_targeting
+3 [['men', 'women'], ['men', 'women'], ['men', 'women']]
+[3] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  64
+4 [['gender_unclear'], ['gender_unclear'], ['women'], ['women']]
+[2, 2] counts of groups: [[['gender_unclear'], ['gender_unclear']], [['women'], ['women']]]
+opinions_targeting
+4 [['gender_other'], ['gender_unclear'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_other']], [['gender_unclear']]]
+opinions_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  65
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women'], ['men', 'women', 'non-binary', 'gender_other'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men', 'women', 'non-binary', 'gender_other']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['heterosexual', 'bisexual']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']], [['heterosexual', 'bisexual']]]
+no-agreement
+
+
+QUESTION ID:  66
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_other']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_other']]]
+majority_not-targeting
+
+
+QUESTION ID:  67
+2 [['women'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['women']], [['gender_not-referring']]]
+no-agreement
+2 [['men', 'women', 'non-binary', 'gender_other'], ['men', 'women', 'gender_not-referring']]
+[1, 1] counts of groups: [[['men', 'women', 'non-binary', 'gender_other']], [['men', 'women', 'gender_not-referring']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_unclear'], ['sexuality_not-referring']]
+[1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']]]
+no-agreement
+
+
+QUESTION ID:  68
+2 [['gender_not-referring'], ['women']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['women']]]
+no-agreement
+2 [['gender_not-referring'], ['women']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['women']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  69
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['men', 'women'], ['women', 'gender_unclear'], ['men']]
+[1, 1, 1] counts of groups: [[['men', 'women']], [['women', 'gender_unclear']], [['men']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  70
+3 [['gender_not-referring'], ['men', 'women', 'gender_not-referring'], ['women', 'gender_other', 'gender_not-referring']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['men', 'women', 'gender_not-referring']], [['women', 'gender_other', 'gender_not-referring']]]
+no-agreement
+3 [['women'], ['women'], ['women', 'gender_not-referring']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'gender_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_other', 'sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_other', 'sexuality_not-referring']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  71
+3 [['women'], ['women'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  72
+3 [['women'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women']]]
+majority_not-targeting
+3 [['women'], ['men'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['heterosexual'], ['sexuality_not-referring'], ['heterosexual']]
+[2, 1] counts of groups: [[['heterosexual'], ['heterosexual']], [['sexuality_not-referring']]]
+majority_targeting
+
+
+QUESTION ID:  73
+3 [['gender_not-referring'], ['men', 'women', 'non-binary', 'yes'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men', 'women', 'non-binary', 'yes']]]
+majority_not-targeting
+3 [['gender_unclear'], ['men', 'women', 'non-binary', 'yes'], ['men', 'women']]
+[1, 1, 1] counts of groups: [[['gender_unclear']], [['men', 'women', 'non-binary', 'yes']], [['men', 'women']]]
+no-agreement
+3 [['homosexual'], ['heterosexual', 'homosexual', 'bisexual'], ['homosexual', 'sexuality_not-referring']]
+[1, 1, 1] counts of groups: [[['homosexual']], [['heterosexual', 'homosexual', 'bisexual']], [['homosexual', 'sexuality_not-referring']]]
+no-agreement
+3 [['homosexual'], ['heterosexual', 'homosexual', 'bisexual', 'asexual'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['heterosexual', 'homosexual', 'bisexual', 'asexual']]]
+majority_targeting
+
+
+QUESTION ID:  74
+3 [['gender_not-referring'], ['gender_unclear'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+3 [['gender_not-referring'], ['gender_unclear'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+3 [['homosexual', 'sexuality_not-referring'], ['homosexual'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['homosexual', 'sexuality_not-referring']]]
+majority_targeting
+
+
+QUESTION ID:  75
+3 [['gender_not-referring'], ['women'], ['men', 'women']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['women']], [['men', 'women']]]
+no-agreement
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['homosexual', 'sexuality_not-referring'], ['homosexual']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['homosexual', 'sexuality_not-referring']], [['homosexual']]]
+no-agreement
+3 [['homosexual', 'sexuality_not-referring'], ['sexuality_not-referring'], ['homosexual']]
+[1, 1, 1] counts of groups: [[['homosexual', 'sexuality_not-referring']], [['sexuality_not-referring']], [['homosexual']]]
+no-agreement
+
+
+QUESTION ID:  76
+3 [['men'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men']]]
+majority_not-targeting
+3 [['gender_unclear'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  77
+3 [['gender_other'], ['gender_other'], ['men', 'women', 'non-binary', 'gender_other']]
+[2, 1] counts of groups: [[['gender_other'], ['gender_other']], [['men', 'women', 'non-binary', 'gender_other']]]
+majority_targeting
+3 [['gender_not-referring'], ['gender_other'], ['men', 'women', 'non-binary', 'gender_other']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['gender_other']], [['men', 'women', 'non-binary', 'gender_other']]]
+no-agreement
+3 [['sexuality_other'], ['sexuality_other'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']]
+[2, 1] counts of groups: [[['sexuality_other'], ['sexuality_other']], [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_other'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_other']], [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']]]
+no-agreement
+
+
+QUESTION ID:  78
+4 [['men', 'women', 'non-binary', 'yes'], ['men', 'women', 'non-binary', 'gender_other', 'yes'], ['men', 'women', 'non-binary', 'gender_other', 'yes'], ['men', 'women', 'non-binary', 'gender_other']]
+[2, 1, 1] counts of groups: [[['men', 'women', 'non-binary', 'gender_other', 'yes'], ['men', 'women', 'non-binary', 'gender_other', 'yes']], [['men', 'women', 'non-binary', 'yes']], [['men', 'women', 'non-binary', 'gender_other']]]
+opinions_targeting
+4 [['yes', 'gender_unclear'], ['men', 'women', 'non-binary', 'gender_other', 'yes'], ['men', 'women', 'non-binary', 'yes'], ['men', 'women', 'non-binary', 'gender_other', 'yes']]
+[2, 1, 1] counts of groups: [[['men', 'women', 'non-binary', 'gender_other', 'yes'], ['men', 'women', 'non-binary', 'gender_other', 'yes']], [['yes', 'gender_unclear']], [['men', 'women', 'non-binary', 'yes']]]
+opinions_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_other'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_other']]]
+majority_not-targeting
+4 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  79
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['gender_unclear'], ['women'], ['women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['gender_unclear']]]
+majority_targeting
+4 [['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual']]]
+majority_not-targeting
+4 [['sexuality_unclear'], ['heterosexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']], [['heterosexual']]]
+opinions_not-targeting
+
+
+QUESTION ID:  80
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women', 'gender_not-referring'], ['women', 'yes'], ['women', 'gender_other']]
+[1, 1, 1] counts of groups: [[['women', 'gender_not-referring']], [['women', 'yes']], [['women', 'gender_other']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  81
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  82
+3 [['gender_not-referring'], ['women'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women']]]
+majority_not-targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  83
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  84
+3 [['women'], ['gender_not-referring'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['heterosexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+3 [['heterosexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  85
+4 [['gender_not-referring'], ['women'], ['women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+4 [['gender_unclear'], ['women'], ['women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['gender_unclear']]]
+majority_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  86
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women', 'non-binary', 'gender_other'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'non-binary', 'gender_other']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  87
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['heterosexual', 'sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'sexuality_not-referring']]]
+majority_not-targeting
+
+
+QUESTION ID:  88
+3 [['men'], ['men', 'women'], ['women']]
+[1, 1, 1] counts of groups: [[['men']], [['men', 'women']], [['women']]]
+no-agreement
+3 [['men', 'women'], ['men', 'women'], ['men', 'women']]
+[3] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['heterosexual'], ['heterosexual']]
+[2, 1] counts of groups: [[['heterosexual'], ['heterosexual']], [['sexuality_not-referring']]]
+majority_targeting
+3 [['sexuality_unclear'], ['heterosexual'], ['heterosexual']]
+[2, 1] counts of groups: [[['heterosexual'], ['heterosexual']], [['sexuality_unclear']]]
+majority_targeting
+
+
+QUESTION ID:  89
+3 [['women'], ['women', 'yes'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'yes']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  90
+4 [['non-binary'], ['gender_unclear'], ['non-binary', 'gender_unclear'], ['gender_unclear']]
+[2, 1, 1] counts of groups: [[['gender_unclear'], ['gender_unclear']], [['non-binary']], [['non-binary', 'gender_unclear']]]
+opinions_unclear
+4 [['women'], ['gender_not-referring'], ['non-binary', 'gender_not-referring'], ['women']]
+[2, 1, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']], [['non-binary', 'gender_not-referring']]]
+opinions_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 2] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['sexuality_not-referring'], ['sexuality_not-referring']]]
+opinions_unclear
+
+
+QUESTION ID:  91
+3 [['men'], ['gender_not-referring'], ['gender_unclear']]
+[1, 1, 1] counts of groups: [[['men']], [['gender_not-referring']], [['gender_unclear']]]
+no-agreement
+3 [['men'], ['women'], ['men']]
+[2, 1] counts of groups: [[['men'], ['men']], [['women']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['homosexual']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['homosexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  92
+4 [['gender_not-referring'], ['men', 'women'], ['men', 'women'], ['men', 'women']]
+[3, 1] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']], [['gender_not-referring']]]
+majority_targeting
+4 [['women'], ['men', 'women'], ['men', 'women'], ['men', 'women']]
+[3, 1] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']], [['women']]]
+majority_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual']]]
+majority_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  93
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women', 'yes'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'yes']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  94
+4 [['gender_not-referring'], ['women', 'gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']], [['women', 'gender_not-referring']]]
+majority_not-targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  95
+4 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[4] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+4 [['gender_not-referring'], ['gender_not-referring'], ['women'], ['gender_unclear']]
+[2, 1, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women']], [['gender_unclear']]]
+opinions_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  96
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_other'], ['sexuality_not-referring']]
+[1, 1] counts of groups: [[['sexuality_other']], [['sexuality_not-referring']]]
+no-agreement
+2 [['sexuality_unclear'], ['sexuality_not-referring']]
+[1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']]]
+no-agreement
+
+
+QUESTION ID:  97
+3 [['men'], ['men'], ['men']]
+[3] counts of groups: [[['men'], ['men'], ['men']]]
+all_targeting
+3 [['women'], ['men', 'women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men', 'women']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  98
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  99
+3 [['women'], ['women', 'gender_not-referring'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women', 'gender_not-referring'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'gender_not-referring']]]
+majority_targeting
+3 [['heterosexual', 'bisexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'bisexual']]]
+majority_not-targeting
+3 [['heterosexual', 'homosexual', 'bisexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  100
+2 [['gender_not-referring'], ['women']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['women']]]
+no-agreement
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  101
+3 [['gender_not-referring'], ['women'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women']]]
+majority_not-targeting
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  102
+4 [['gender_not-referring'], ['women'], ['men', 'women'], ['gender_not-referring']]
+[2, 1, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women']], [['men', 'women']]]
+opinions_not-targeting
+4 [['men', 'women'], ['men', 'women'], ['women', 'gender_not-referring'], ['women']]
+[2, 1, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['women', 'gender_not-referring']], [['women']]]
+opinions_targeting
+4 [['sexuality_not-referring'], ['sexuality_unclear'], ['heterosexual'], ['sexuality_not-referring']]
+[2, 1, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']], [['heterosexual']]]
+opinions_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  103
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women', 'non-binary', 'gender_other'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'non-binary', 'gender_other']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  104
+3 [['women'], ['women', 'gender_not-referring'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['heterosexual'], ['heterosexual'], ['heterosexual']]
+[3] counts of groups: [[['heterosexual'], ['heterosexual'], ['heterosexual']]]
+all_targeting
+3 [['heterosexual'], ['heterosexual'], ['heterosexual']]
+[3] counts of groups: [[['heterosexual'], ['heterosexual'], ['heterosexual']]]
+all_targeting
+
+
+QUESTION ID:  105
+4 [['men', 'women'], ['women'], ['women'], ['men', 'women']]
+[2, 2] counts of groups: [[['men', 'women'], ['men', 'women']], [['women'], ['women']]]
+opinions_targeting
+4 [['women'], ['women'], ['men', 'women'], ['men', 'women']]
+[2, 2] counts of groups: [[['women'], ['women']], [['men', 'women'], ['men', 'women']]]
+opinions_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['homosexual']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['homosexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  106
+4 [['women'], ['women'], ['women'], ['men', 'women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['men', 'women']]]
+majority_targeting
+4 [['women'], ['women'], ['women'], ['men', 'women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['men', 'women']]]
+majority_targeting
+4 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+4 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  107
+3 [['women'], ['gender_not-referring'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  108
+2 [['men', 'women'], ['women']]
+[1, 1] counts of groups: [[['men', 'women']], [['women']]]
+no-agreement
+2 [['men', 'women'], ['women']]
+[1, 1] counts of groups: [[['men', 'women']], [['women']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  109
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_unclear'], ['sexuality_not-referring']]
+[1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  110
+4 [['gender_not-referring'], ['gender_not-referring'], ['women', 'gender_not-referring'], ['gender_not-referring']]
+[3, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']], [['women', 'gender_not-referring']]]
+majority_not-targeting
+4 [['women'], ['women', 'gender_not-referring'], ['women'], ['gender_unclear']]
+[2, 1, 1] counts of groups: [[['women'], ['women']], [['women', 'gender_not-referring']], [['gender_unclear']]]
+opinions_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  111
+4 [['women'], ['gender_not-referring'], ['women', 'non-binary'], ['women']]
+[2, 1, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']], [['women', 'non-binary']]]
+opinions_targeting
+4 [['women'], ['gender_not-referring'], ['women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  112
+3 [['women'], ['men', 'women'], ['gender_not-referring']]
+[1, 1, 1] counts of groups: [[['women']], [['men', 'women']], [['gender_not-referring']]]
+no-agreement
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_other'], ['sexuality_other']]
+[2, 1] counts of groups: [[['sexuality_other'], ['sexuality_other']], [['sexuality_not-referring']]]
+majority_targeting
+
+
+QUESTION ID:  113
+2 [['women', 'gender_not-referring'], ['women']]
+[1, 1] counts of groups: [[['women', 'gender_not-referring']], [['women']]]
+no-agreement
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  114
+3 [['gender_not-referring'], ['men', 'women'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men', 'women']]]
+majority_not-targeting
+3 [['men', 'women'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men', 'women']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['homosexual']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']], [['homosexual']]]
+no-agreement
+
+
+QUESTION ID:  115
+2 [['gender_not-referring'], ['gender_not-referring']]
+[2] counts of groups: [[['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+2 [['men'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['men']], [['gender_not-referring']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  116
+3 [['gender_unclear'], ['gender_not-referring'], ['men', 'gender_not-referring']]
+[1, 1, 1] counts of groups: [[['gender_unclear']], [['gender_not-referring']], [['men', 'gender_not-referring']]]
+no-agreement
+3 [['gender_unclear'], ['men', 'women', 'gender_not-referring'], ['gender_not-referring']]
+[1, 1, 1] counts of groups: [[['gender_unclear']], [['men', 'women', 'gender_not-referring']], [['gender_not-referring']]]
+no-agreement
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['bisexual', 'sexuality_not-referring']]
+[1, 1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']], [['bisexual', 'sexuality_not-referring']]]
+no-agreement
+3 [['homosexual'], ['sexuality_not-referring'], ['heterosexual']]
+[1, 1, 1] counts of groups: [[['homosexual']], [['sexuality_not-referring']], [['heterosexual']]]
+no-agreement
+
+
+QUESTION ID:  117
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  118
+3 [['women'], ['gender_not-referring'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['women', 'gender_other']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'gender_other']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['heterosexual', 'homosexual', 'bisexual']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']], [['heterosexual', 'homosexual', 'bisexual']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['heterosexual']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']], [['heterosexual']]]
+no-agreement
+
+
+QUESTION ID:  119
+3 [['men', 'women'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men', 'women']]]
+majority_targeting
+3 [['men', 'women'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men', 'women']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  120
+3 [['men'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men']]]
+majority_not-targeting
+3 [['gender_unclear'], ['men'], ['gender_not-referring']]
+[1, 1, 1] counts of groups: [[['gender_unclear']], [['men']], [['gender_not-referring']]]
+no-agreement
+3 [['homosexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['homosexual']]]
+majority_not-targeting
+3 [['sexuality_unclear'], ['heterosexual', 'sexuality_not-referring'], ['sexuality_not-referring']]
+[1, 1, 1] counts of groups: [[['sexuality_unclear']], [['heterosexual', 'sexuality_not-referring']], [['sexuality_not-referring']]]
+no-agreement
+
+
+QUESTION ID:  121
+4 [['gender_not-referring'], ['gender_not-referring'], ['men', 'gender_not-referring'], ['men']]
+[2, 1, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men', 'gender_not-referring']], [['men']]]
+opinions_not-targeting
+4 [['gender_not-referring'], ['gender_unclear'], ['gender_unclear'], ['gender_unclear']]
+[3, 1] counts of groups: [[['gender_unclear'], ['gender_unclear'], ['gender_unclear']], [['gender_not-referring']]]
+majority_unclear
+4 [['homosexual'], ['homosexual'], ['homosexual'], ['homosexual']]
+[4] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+4 [['homosexual'], ['homosexual'], ['homosexual'], ['homosexual']]
+[4] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  122
+4 [['gender_unclear'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+4 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[4] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+4 [['homosexual'], ['homosexual'], ['homosexual'], ['homosexual']]
+[4] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+4 [['homosexual'], ['homosexual'], ['homosexual'], ['homosexual', 'sexuality_not-referring']]
+[3, 1] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']], [['homosexual', 'sexuality_not-referring']]]
+majority_targeting
+
+
+QUESTION ID:  123
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+3 [['men', 'women'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men', 'women']]]
+majority_not-targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+3 [['heterosexual', 'homosexual', 'bisexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  124
+3 [['gender_not-referring'], ['women'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women']]]
+majority_not-targeting
+3 [['gender_unclear'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+3 [['homosexual'], ['homosexual'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['sexuality_not-referring']]]
+majority_targeting
+3 [['homosexual'], ['homosexual'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['sexuality_unclear']]]
+majority_targeting
+
+
+QUESTION ID:  125
+2 [['men', 'women'], ['men', 'women']]
+[2] counts of groups: [[['men', 'women'], ['men', 'women']]]
+all_targeting
+2 [['men', 'women'], ['men']]
+[1, 1] counts of groups: [[['men', 'women']], [['men']]]
+no-agreement
+2 [['heterosexual'], ['heterosexual']]
+[2] counts of groups: [[['heterosexual'], ['heterosexual']]]
+all_targeting
+2 [['heterosexual', 'homosexual'], ['heterosexual']]
+[1, 1] counts of groups: [[['heterosexual', 'homosexual']], [['heterosexual']]]
+no-agreement
+
+
+QUESTION ID:  126
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  127
+3 [['men', 'women'], ['women', 'gender_not-referring'], ['gender_unclear']]
+[1, 1, 1] counts of groups: [[['men', 'women']], [['women', 'gender_not-referring']], [['gender_unclear']]]
+no-agreement
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['heterosexual'], ['heterosexual', 'sexuality_not-referring'], ['sexuality_other', 'sexuality_unclear']]
+[1, 1, 1] counts of groups: [[['heterosexual']], [['heterosexual', 'sexuality_not-referring']], [['sexuality_other', 'sexuality_unclear']]]
+no-agreement
+3 [['sexuality_other'], ['heterosexual', 'homosexual', 'bisexual'], ['sexuality_unclear']]
+[1, 1, 1] counts of groups: [[['sexuality_other']], [['heterosexual', 'homosexual', 'bisexual']], [['sexuality_unclear']]]
+no-agreement
+
+
+QUESTION ID:  128
+4 [['women'], ['women'], ['women'], ['men', 'women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['men', 'women']]]
+majority_targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual'], ['heterosexual']]
+[2, 2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual'], ['heterosexual']]]
+opinions_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  129
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['women'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['women']], [['gender_not-referring']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  130
+4 [['women'], ['gender_not-referring'], ['women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+4 [['men', 'women'], ['men', 'women'], ['men', 'women'], ['women']]
+[3, 1] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']], [['women']]]
+majority_targeting
+4 [['homosexual'], ['homosexual'], ['homosexual'], ['homosexual', 'sexuality_other']]
+[3, 1] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']], [['homosexual', 'sexuality_other']]]
+majority_targeting
+4 [['homosexual'], ['homosexual'], ['homosexual'], ['homosexual']]
+[4] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  131
+2 [['women'], ['women', 'gender_not-referring']]
+[1, 1] counts of groups: [[['women']], [['women', 'gender_not-referring']]]
+no-agreement
+2 [['men', 'women'], ['women']]
+[1, 1] counts of groups: [[['men', 'women']], [['women']]]
+no-agreement
+2 [['heterosexual', 'homosexual'], ['heterosexual', 'homosexual', 'sexuality_not-referring']]
+[1, 1] counts of groups: [[['heterosexual', 'homosexual']], [['heterosexual', 'homosexual', 'sexuality_not-referring']]]
+no-agreement
+2 [['heterosexual', 'homosexual'], ['homosexual']]
+[1, 1] counts of groups: [[['heterosexual', 'homosexual']], [['homosexual']]]
+no-agreement
+
+
+QUESTION ID:  132
+2 [['gender_not-referring'], ['women']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['women']]]
+no-agreement
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['homosexual']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['homosexual']]]
+no-agreement
+2 [['sexuality_not-referring'], ['homosexual']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['homosexual']]]
+no-agreement
+
+
+QUESTION ID:  133
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+3 [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other']]
+[2, 1] counts of groups: [[['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['homosexual', 'bisexual', 'asexual', 'sexuality_other']]]
+majority_targeting
+3 [['sexuality_other'], ['sexuality_not-referring'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other']]
+[1, 1, 1] counts of groups: [[['sexuality_other']], [['sexuality_not-referring']], [['homosexual', 'bisexual', 'asexual', 'sexuality_other']]]
+no-agreement
+
+
+QUESTION ID:  134
+3 [['gender_not-referring'], ['men', 'women', 'non-binary', 'gender_other'], ['women']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['men', 'women', 'non-binary', 'gender_other']], [['women']]]
+no-agreement
+3 [['women'], ['men', 'women', 'non-binary', 'gender_other'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men', 'women', 'non-binary', 'gender_other']]]
+majority_targeting
+3 [['homosexual'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other']]
+[1, 1, 1] counts of groups: [[['homosexual']], [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['homosexual', 'bisexual', 'asexual', 'sexuality_other']]]
+no-agreement
+3 [['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['heterosexual', 'bisexual', 'sexuality_other']]
+[1, 1, 1] counts of groups: [[['homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['heterosexual', 'bisexual', 'sexuality_other']]]
+no-agreement
+
+
+QUESTION ID:  135
+3 [['men', 'women', 'non-binary', 'gender_other', 'yes'], ['gender_not-referring'], ['non-binary', 'gender_other']]
+[1, 1, 1] counts of groups: [[['men', 'women', 'non-binary', 'gender_other', 'yes']], [['gender_not-referring']], [['non-binary', 'gender_other']]]
+no-agreement
+3 [['gender_not-referring'], ['gender_not-referring'], ['non-binary', 'gender_other']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['non-binary', 'gender_other']]]
+majority_not-targeting
+3 [['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual', 'bisexual'], ['asexual', 'sexuality_other']]
+[1, 1, 1] counts of groups: [[['homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['homosexual', 'bisexual']], [['asexual', 'sexuality_other']]]
+no-agreement
+3 [['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other']]
+[3] counts of groups: [[['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other']]]
+all_targeting
+
+
+QUESTION ID:  136
+4 [['gender_not-referring'], ['women'], ['gender_other', 'gender_not-referring'], ['gender_not-referring']]
+[2, 1, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women']], [['gender_other', 'gender_not-referring']]]
+opinions_not-targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_unclear'], ['sexuality_not-referring'], ['homosexual', 'sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']], [['homosexual', 'sexuality_not-referring']]]
+opinions_not-targeting
+4 [['sexuality_other'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual', 'bisexual', 'asexual'], ['homosexual']]
+[1, 1, 1, 1] counts of groups: [[['sexuality_other']], [['homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['homosexual', 'bisexual', 'asexual']], [['homosexual']]]
+no-agreement
+
+
+QUESTION ID:  137
+2 [['men', 'women', 'non-binary'], ['women', 'gender_not-referring']]
+[1, 1] counts of groups: [[['men', 'women', 'non-binary']], [['women', 'gender_not-referring']]]
+no-agreement
+2 [['non-binary'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['non-binary']], [['gender_not-referring']]]
+no-agreement
+2 [['sexuality_other'], ['homosexual']]
+[1, 1] counts of groups: [[['sexuality_other']], [['homosexual']]]
+no-agreement
+2 [['homosexual', 'bisexual'], ['homosexual', 'bisexual']]
+[2] counts of groups: [[['homosexual', 'bisexual'], ['homosexual', 'bisexual']]]
+all_targeting
+
+
+QUESTION ID:  138
+3 [['gender_unclear'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_unclear']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+3 [['heterosexual', 'homosexual', 'bisexual', 'sexuality_other'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[1, 1, 1] counts of groups: [[['heterosexual', 'homosexual', 'bisexual', 'sexuality_other']], [['sexuality_unclear']], [['sexuality_not-referring']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_other'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_other']], [['homosexual', 'bisexual', 'asexual', 'sexuality_other']]]
+no-agreement
+
+
+QUESTION ID:  139
+4 [['gender_other'], ['men', 'women', 'non-binary', 'yes'], ['yes'], ['non-binary', 'gender_other', 'yes', 'gender_unclear']]
+[1, 1, 1, 1] counts of groups: [[['gender_other']], [['men', 'women', 'non-binary', 'yes']], [['yes']], [['non-binary', 'gender_other', 'yes', 'gender_unclear']]]
+no-agreement
+4 [['yes'], ['men', 'women', 'non-binary', 'gender_other', 'yes'], ['men', 'women', 'non-binary'], ['men', 'women', 'yes']]
+[1, 1, 1, 1] counts of groups: [[['yes']], [['men', 'women', 'non-binary', 'gender_other', 'yes']], [['men', 'women', 'non-binary']], [['men', 'women', 'yes']]]
+no-agreement
+4 [['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual'], ['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual', 'sexuality_other', 'sexuality_not-referring']]
+[2, 1, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual']], [['heterosexual', 'homosexual', 'bisexual', 'sexuality_other', 'sexuality_not-referring']]]
+opinions_not-targeting
+4 [['heterosexual'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']], [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']]]
+opinions_not-targeting
+
+
+QUESTION ID:  140
+2 [['men'], ['men']]
+[2] counts of groups: [[['men'], ['men']]]
+all_targeting
+2 [['men'], ['men']]
+[2] counts of groups: [[['men'], ['men']]]
+all_targeting
+2 [['homosexual'], ['homosexual']]
+[2] counts of groups: [[['homosexual'], ['homosexual']]]
+all_targeting
+2 [['homosexual'], ['homosexual']]
+[2] counts of groups: [[['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  141
+2 [['men', 'women'], ['women']]
+[1, 1] counts of groups: [[['men', 'women']], [['women']]]
+no-agreement
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['homosexual'], ['homosexual']]
+[2] counts of groups: [[['homosexual'], ['homosexual']]]
+all_targeting
+2 [['homosexual'], ['homosexual']]
+[2] counts of groups: [[['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  142
+2 [['men'], ['men']]
+[2] counts of groups: [[['men'], ['men']]]
+all_targeting
+2 [['men'], ['men']]
+[2] counts of groups: [[['men'], ['men']]]
+all_targeting
+2 [['heterosexual'], ['heterosexual']]
+[2] counts of groups: [[['heterosexual'], ['heterosexual']]]
+all_targeting
+2 [['heterosexual'], ['heterosexual']]
+[2] counts of groups: [[['heterosexual'], ['heterosexual']]]
+all_targeting
+
+
+QUESTION ID:  143
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['men', 'women'], ['women']]
+[1, 1] counts of groups: [[['men', 'women']], [['women']]]
+no-agreement
+2 [['sexuality_other'], ['sexuality_unclear']]
+[1, 1] counts of groups: [[['sexuality_other']], [['sexuality_unclear']]]
+no-agreement
+2 [['homosexual', 'sexuality_other'], ['homosexual']]
+[1, 1] counts of groups: [[['homosexual', 'sexuality_other']], [['homosexual']]]
+no-agreement
+
+
+QUESTION ID:  144
+4 [['men'], ['men', 'gender_not-referring'], ['men'], ['men']]
+[3, 1] counts of groups: [[['men'], ['men'], ['men']], [['men', 'gender_not-referring']]]
+majority_targeting
+4 [['men'], ['men'], ['men'], ['men']]
+[4] counts of groups: [[['men'], ['men'], ['men'], ['men']]]
+all_targeting
+4 [['homosexual'], ['homosexual', 'sexuality_not-referring'], ['homosexual', 'sexuality_not-referring'], ['homosexual']]
+[2, 2] counts of groups: [[['homosexual'], ['homosexual']], [['homosexual', 'sexuality_not-referring'], ['homosexual', 'sexuality_not-referring']]]
+opinions_targeting
+4 [['homosexual'], ['homosexual'], ['homosexual'], ['homosexual']]
+[4] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  145
+3 [['men', 'women'], ['women'], ['men', 'women']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['women']]]
+majority_targeting
+3 [['men', 'women'], ['women'], ['men']]
+[1, 1, 1] counts of groups: [[['men', 'women']], [['women']], [['men']]]
+no-agreement
+3 [['homosexual', 'bisexual', 'sexuality_other'], ['homosexual'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['homosexual', 'bisexual', 'sexuality_other']]]
+majority_targeting
+3 [['homosexual'], ['homosexual'], ['homosexual']]
+[3] counts of groups: [[['homosexual'], ['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  146
+3 [['men'], ['gender_unclear'], ['men', 'women']]
+[1, 1, 1] counts of groups: [[['men']], [['gender_unclear']], [['men', 'women']]]
+no-agreement
+3 [['men'], ['men', 'women'], ['men', 'women']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['men']]]
+majority_targeting
+3 [['heterosexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+3 [['heterosexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  147
+2 [['women'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['women']], [['gender_not-referring']]]
+no-agreement
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['heterosexual'], ['sexuality_not-referring']]
+[1, 1] counts of groups: [[['heterosexual']], [['sexuality_not-referring']]]
+no-agreement
+2 [['heterosexual'], ['sexuality_not-referring']]
+[1, 1] counts of groups: [[['heterosexual']], [['sexuality_not-referring']]]
+no-agreement
+
+
+QUESTION ID:  148
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['women'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['women']], [['gender_not-referring']]]
+no-agreement
+2 [['sexuality_unclear'], ['sexuality_not-referring']]
+[1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']]]
+no-agreement
+2 [['sexuality_unclear'], ['sexuality_not-referring']]
+[1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']]]
+no-agreement
+
+
+QUESTION ID:  149
+2 [['gender_not-referring'], ['men']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['men']]]
+no-agreement
+2 [['men'], ['men', 'yes']]
+[1, 1] counts of groups: [[['men']], [['men', 'yes']]]
+no-agreement
+2 [['homosexual'], ['homosexual']]
+[2] counts of groups: [[['homosexual'], ['homosexual']]]
+all_targeting
+2 [['homosexual', 'bisexual'], ['homosexual']]
+[1, 1] counts of groups: [[['homosexual', 'bisexual']], [['homosexual']]]
+no-agreement
+
+
+QUESTION ID:  150
+3 [['men', 'women'], ['men'], ['men']]
+[2, 1] counts of groups: [[['men'], ['men']], [['men', 'women']]]
+majority_targeting
+3 [['men', 'women'], ['men', 'women'], ['men']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['men']]]
+majority_targeting
+3 [['homosexual'], ['heterosexual', 'sexuality_unclear'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['heterosexual', 'sexuality_unclear']]]
+majority_targeting
+3 [['homosexual'], ['heterosexual'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['heterosexual']]]
+majority_targeting
+
+
+QUESTION ID:  151
+4 [['men', 'women'], ['men', 'women'], ['women'], ['women']]
+[2, 2] counts of groups: [[['men', 'women'], ['men', 'women']], [['women'], ['women']]]
+opinions_targeting
+4 [['men', 'women'], ['men', 'women'], ['men', 'women'], ['women']]
+[3, 1] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']], [['women']]]
+majority_targeting
+4 [['sexuality_unclear'], ['sexuality_not-referring'], ['heterosexual'], ['heterosexual', 'sexuality_not-referring']]
+[1, 1, 1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']], [['heterosexual']], [['heterosexual', 'sexuality_not-referring']]]
+no-agreement
+4 [['sexuality_unclear'], ['heterosexual'], ['heterosexual'], ['sexuality_unclear']]
+[2, 2] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['heterosexual'], ['heterosexual']]]
+opinions_targeting
+
+
+QUESTION ID:  152
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_unclear'], ['heterosexual'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['heterosexual']]]
+majority_unclear
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  153
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  154
+3 [['men', 'women'], ['men', 'women'], ['women', 'gender_not-referring']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['women', 'gender_not-referring']]]
+majority_targeting
+3 [['men', 'women'], ['men', 'women'], ['men', 'women']]
+[3] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']]]
+all_targeting
+3 [['heterosexual', 'homosexual'], ['heterosexual'], ['heterosexual', 'sexuality_unclear']]
+[1, 1, 1] counts of groups: [[['heterosexual', 'homosexual']], [['heterosexual']], [['heterosexual', 'sexuality_unclear']]]
+no-agreement
+3 [['heterosexual', 'bisexual'], ['heterosexual'], ['heterosexual', 'bisexual']]
+[2, 1] counts of groups: [[['heterosexual', 'bisexual'], ['heterosexual', 'bisexual']], [['heterosexual']]]
+majority_targeting
+
+
+QUESTION ID:  155
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+3 [['men', 'women'], ['gender_not-referring'], ['gender_unclear']]
+[1, 1, 1] counts of groups: [[['men', 'women']], [['gender_not-referring']], [['gender_unclear']]]
+no-agreement
+3 [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']]]
+majority_not-targeting
+3 [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[1, 1, 1] counts of groups: [[['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['sexuality_unclear']], [['sexuality_not-referring']]]
+no-agreement
+
+
+QUESTION ID:  156
+2 [['men'], ['men', 'non-binary', 'gender_other']]
+[1, 1] counts of groups: [[['men']], [['men', 'non-binary', 'gender_other']]]
+no-agreement
+2 [['men'], ['men', 'women', 'non-binary', 'gender_other']]
+[1, 1] counts of groups: [[['men']], [['men', 'women', 'non-binary', 'gender_other']]]
+no-agreement
+2 [['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual', 'sexuality_other']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual', 'sexuality_other']]]
+no-agreement
+2 [['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']]]
+no-agreement
+
+
+QUESTION ID:  157
+3 [['men'], ['gender_not-referring'], ['women']]
+[1, 1, 1] counts of groups: [[['men']], [['gender_not-referring']], [['women']]]
+no-agreement
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  159
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  160
+4 [['women'], ['women'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 2] counts of groups: [[['women'], ['women']], [['gender_not-referring'], ['gender_not-referring']]]
+opinions_targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_other']]
+[2, 1, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']], [['sexuality_other']]]
+opinions_not-targeting
+
+
+QUESTION ID:  161
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  162
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  163
+3 [['men', 'women'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men', 'women']]]
+majority_targeting
+3 [['men', 'women'], ['women', 'yes'], ['women']]
+[1, 1, 1] counts of groups: [[['men', 'women']], [['women', 'yes']], [['women']]]
+no-agreement
+3 [['sexuality_not-referring'], ['heterosexual'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['heterosexual']]
+[1, 1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']], [['heterosexual']]]
+no-agreement
+
+
+QUESTION ID:  164
+2 [['gender_not-referring'], ['men']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['men']]]
+no-agreement
+2 [['gender_not-referring'], ['men']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['men']]]
+no-agreement
+2 [['homosexual'], ['homosexual']]
+[2] counts of groups: [[['homosexual'], ['homosexual']]]
+all_targeting
+2 [['homosexual'], ['heterosexual', 'homosexual']]
+[1, 1] counts of groups: [[['homosexual']], [['heterosexual', 'homosexual']]]
+no-agreement
+
+
+QUESTION ID:  165
+4 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['women']]
+[3, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']], [['women']]]
+majority_not-targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  166
+4 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[4] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+4 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[4] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  167
+3 [['gender_not-referring'], ['men', 'women'], ['women', 'gender_not-referring']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['men', 'women']], [['women', 'gender_not-referring']]]
+no-agreement
+3 [['men', 'women'], ['men', 'women'], ['men', 'women']]
+[3] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['heterosexual'], ['heterosexual', 'sexuality_not-referring']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual']], [['heterosexual', 'sexuality_not-referring']]]
+no-agreement
+3 [['sexuality_not-referring'], ['heterosexual'], ['heterosexual', 'bisexual']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual']], [['heterosexual', 'bisexual']]]
+no-agreement
+
+
+QUESTION ID:  168
+2 [['women', 'non-binary'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['women', 'non-binary']], [['gender_not-referring']]]
+no-agreement
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['homosexual'], ['heterosexual']]
+[1, 1] counts of groups: [[['homosexual']], [['heterosexual']]]
+no-agreement
+2 [['bisexual'], ['heterosexual']]
+[1, 1] counts of groups: [[['bisexual']], [['heterosexual']]]
+no-agreement
+
+
+QUESTION ID:  169
+4 [['men', 'women', 'non-binary'], ['women', 'yes'], ['women'], ['men']]
+[1, 1, 1, 1] counts of groups: [[['men', 'women', 'non-binary']], [['women', 'yes']], [['women']], [['men']]]
+no-agreement
+4 [['women'], ['women'], ['women'], ['men', 'women', 'gender_unclear']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['men', 'women', 'gender_unclear']]]
+majority_targeting
+4 [['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_unclear']]
+[4] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_unclear']]]
+all_unclear
+4 [['sexuality_unclear'], ['heterosexual'], ['heterosexual'], ['sexuality_unclear']]
+[2, 2] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['heterosexual'], ['heterosexual']]]
+opinions_targeting
+
+
+QUESTION ID:  170
+3 [['gender_not-referring'], ['men', 'women'], ['men']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['men', 'women']], [['men']]]
+no-agreement
+3 [['men', 'women'], ['men', 'women'], ['men', 'women']]
+[3] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['heterosexual'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  171
+3 [['men'], ['gender_unclear'], ['men']]
+[2, 1] counts of groups: [[['men'], ['men']], [['gender_unclear']]]
+majority_targeting
+3 [['gender_not-referring'], ['gender_unclear'], ['men']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['gender_unclear']], [['men']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  172
+4 [['men', 'women'], ['men', 'women'], ['men', 'women'], ['women', 'gender_unclear']]
+[3, 1] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']], [['women', 'gender_unclear']]]
+majority_targeting
+4 [['men', 'women'], ['gender_not-referring'], ['women'], ['women']]
+[2, 1, 1] counts of groups: [[['women'], ['women']], [['men', 'women']], [['gender_not-referring']]]
+opinions_targeting
+4 [['bisexual'], ['sexuality_not-referring'], ['heterosexual'], ['sexuality_not-referring']]
+[2, 1, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['bisexual']], [['heterosexual']]]
+opinions_not-targeting
+4 [['sexuality_other'], ['sexuality_not-referring'], ['heterosexual', 'bisexual'], ['sexuality_not-referring']]
+[2, 1, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_other']], [['heterosexual', 'bisexual']]]
+opinions_not-targeting
+
+
+QUESTION ID:  173
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  174
+2 [['gender_unclear'], ['women']]
+[1, 1] counts of groups: [[['gender_unclear']], [['women']]]
+no-agreement
+2 [['men', 'women', 'non-binary', 'gender_other'], ['gender_unclear']]
+[1, 1] counts of groups: [[['men', 'women', 'non-binary', 'gender_other']], [['gender_unclear']]]
+no-agreement
+2 [['sexuality_unclear'], ['heterosexual']]
+[1, 1] counts of groups: [[['sexuality_unclear']], [['heterosexual']]]
+no-agreement
+2 [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['sexuality_unclear']]
+[1, 1] counts of groups: [[['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['sexuality_unclear']]]
+no-agreement
+
+
+QUESTION ID:  175
+3 [['women'], ['gender_unclear'], ['men', 'women']]
+[1, 1, 1] counts of groups: [[['women']], [['gender_unclear']], [['men', 'women']]]
+no-agreement
+3 [['gender_unclear'], ['gender_unclear'], ['men', 'women', 'yes']]
+[2, 1] counts of groups: [[['gender_unclear'], ['gender_unclear']], [['men', 'women', 'yes']]]
+majority_unclear
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual']]
+[1, 1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual']]]
+no-agreement
+
+
+QUESTION ID:  176
+4 [['women'], ['gender_not-referring'], ['women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_unclear'], ['heterosexual', 'homosexual', 'bisexual', 'sexuality_other'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1, 1] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['heterosexual', 'homosexual', 'bisexual', 'sexuality_other']], [['sexuality_not-referring']]]
+opinions_unclear
+4 [['sexuality_unclear'], ['heterosexual', 'homosexual', 'bisexual', 'sexuality_other'], ['sexuality_other'], ['sexuality_other']]
+[2, 1, 1] counts of groups: [[['sexuality_other'], ['sexuality_other']], [['sexuality_unclear']], [['heterosexual', 'homosexual', 'bisexual', 'sexuality_other']]]
+opinions_targeting
+
+
+QUESTION ID:  178
+3 [['women'], ['women', 'gender_not-referring'], ['gender_not-referring']]
+[1, 1, 1] counts of groups: [[['women']], [['women', 'gender_not-referring']], [['gender_not-referring']]]
+no-agreement
+3 [['women'], ['women'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['heterosexual', 'sexuality_not-referring'], ['heterosexual']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual', 'sexuality_not-referring']], [['heterosexual']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  179
+4 [['gender_unclear'], ['women'], ['men'], ['gender_not-referring']]
+[1, 1, 1, 1] counts of groups: [[['gender_unclear']], [['women']], [['men']], [['gender_not-referring']]]
+no-agreement
+4 [['women'], ['women'], ['men', 'women'], ['gender_not-referring']]
+[2, 1, 1] counts of groups: [[['women'], ['women']], [['men', 'women']], [['gender_not-referring']]]
+opinions_targeting
+4 [['sexuality_unclear'], ['sexuality_not-referring'], ['homosexual'], ['sexuality_not-referring']]
+[2, 1, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']], [['homosexual']]]
+opinions_not-targeting
+4 [['sexuality_unclear'], ['sexuality_not-referring'], ['heterosexual', 'homosexual'], ['sexuality_not-referring']]
+[2, 1, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']], [['heterosexual', 'homosexual']]]
+opinions_not-targeting
+
+
+QUESTION ID:  180
+2 [['yes'], ['yes']]
+[2] counts of groups: [[['yes'], ['yes']]]
+all_targeting
+2 [['men', 'yes'], ['men']]
+[1, 1] counts of groups: [[['men', 'yes']], [['men']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_unclear'], ['sexuality_unclear']]
+[2] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']]]
+all_unclear
+
+
+QUESTION ID:  181
+2 [['women'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['women']], [['gender_not-referring']]]
+no-agreement
+2 [['women'], ['men']]
+[1, 1] counts of groups: [[['women']], [['men']]]
+no-agreement
+2 [['heterosexual'], ['sexuality_not-referring']]
+[1, 1] counts of groups: [[['heterosexual']], [['sexuality_not-referring']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  182
+4 [['women'], ['women'], ['men', 'women'], ['women', 'gender_not-referring']]
+[2, 1, 1] counts of groups: [[['women'], ['women']], [['men', 'women']], [['women', 'gender_not-referring']]]
+opinions_targeting
+4 [['women'], ['men', 'women'], ['men', 'women'], ['men', 'women']]
+[3, 1] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']], [['women']]]
+majority_targeting
+4 [['heterosexual'], ['sexuality_unclear'], ['heterosexual'], ['heterosexual']]
+[3, 1] counts of groups: [[['heterosexual'], ['heterosexual'], ['heterosexual']], [['sexuality_unclear']]]
+majority_targeting
+4 [['heterosexual'], ['sexuality_unclear'], ['heterosexual'], ['heterosexual']]
+[3, 1] counts of groups: [[['heterosexual'], ['heterosexual'], ['heterosexual']], [['sexuality_unclear']]]
+majority_targeting
+
+
+QUESTION ID:  183
+3 [['gender_not-referring'], ['gender_unclear'], ['women']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['gender_unclear']], [['women']]]
+no-agreement
+3 [['gender_not-referring'], ['gender_unclear'], ['women']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['gender_unclear']], [['women']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['sexuality_not-referring']]]
+majority_unclear
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['sexuality_not-referring']]]
+majority_unclear
+
+
+QUESTION ID:  184
+2 [['gender_not-referring'], ['women']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['women']]]
+no-agreement
+2 [['gender_not-referring'], ['gender_not-referring']]
+[2] counts of groups: [[['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  185
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_other']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_other']]]
+majority_not-targeting
+3 [['gender_not-referring'], ['non-binary'], ['gender_other']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['non-binary']], [['gender_other']]]
+no-agreement
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_other']]
+[1, 1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']], [['sexuality_other']]]
+no-agreement
+3 [['sexuality_other'], ['sexuality_other'], ['sexuality_other']]
+[3] counts of groups: [[['sexuality_other'], ['sexuality_other'], ['sexuality_other']]]
+all_targeting
+
+
+QUESTION ID:  186
+2 [['gender_not-referring'], ['gender_other']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['gender_other']]]
+no-agreement
+2 [['gender_unclear'], ['gender_other']]
+[1, 1] counts of groups: [[['gender_unclear']], [['gender_other']]]
+no-agreement
+2 [['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['sexuality_other']]
+[1, 1] counts of groups: [[['homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['sexuality_other']]]
+no-agreement
+2 [['sexuality_other'], ['sexuality_other']]
+[2] counts of groups: [[['sexuality_other'], ['sexuality_other']]]
+all_targeting
+
+
+QUESTION ID:  187
+4 [['women'], ['gender_not-referring'], ['women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  188
+3 [['men', 'women'], ['men', 'women'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['gender_not-referring']]]
+majority_targeting
+3 [['men', 'women'], ['women'], ['men', 'women']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['women']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  189
+3 [['gender_unclear'], ['men', 'gender_unclear'], ['gender_not-referring']]
+[1, 1, 1] counts of groups: [[['gender_unclear']], [['men', 'gender_unclear']], [['gender_not-referring']]]
+no-agreement
+3 [['men', 'women', 'non-binary', 'gender_other', 'gender_unclear'], ['men'], ['gender_unclear']]
+[1, 1, 1] counts of groups: [[['men', 'women', 'non-binary', 'gender_other', 'gender_unclear']], [['men']], [['gender_unclear']]]
+no-agreement
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other', 'sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other', 'sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  191
+3 [['women'], ['men'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men']]]
+majority_targeting
+3 [['men', 'women'], ['men', 'women'], ['women']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['women']]]
+majority_targeting
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  192
+3 [['men', 'women'], ['gender_unclear'], ['gender_not-referring']]
+[1, 1, 1] counts of groups: [[['men', 'women']], [['gender_unclear']], [['gender_not-referring']]]
+no-agreement
+3 [['men', 'women'], ['gender_unclear'], ['gender_not-referring']]
+[1, 1, 1] counts of groups: [[['men', 'women']], [['gender_unclear']], [['gender_not-referring']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['sexuality_not-referring']]]
+majority_unclear
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['sexuality_not-referring']]]
+majority_unclear
+
+
+QUESTION ID:  193
+4 [['gender_not-referring'], ['gender_unclear'], ['men'], ['men']]
+[2, 1, 1] counts of groups: [[['men'], ['men']], [['gender_not-referring']], [['gender_unclear']]]
+opinions_targeting
+4 [['men', 'gender_not-referring'], ['gender_unclear'], ['gender_not-referring'], ['men']]
+[1, 1, 1, 1] counts of groups: [[['men', 'gender_not-referring']], [['gender_unclear']], [['gender_not-referring']], [['men']]]
+no-agreement
+4 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear'], ['sexuality_unclear']]]
+opinions_unclear
+4 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear'], ['sexuality_unclear']]]
+opinions_unclear
+
+
+QUESTION ID:  194
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_unclear']]
+[3] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_unclear']]]
+all_unclear
+3 [['heterosexual', 'homosexual', 'bisexual', 'sexuality_other'], ['sexuality_other'], ['sexuality_other']]
+[2, 1] counts of groups: [[['sexuality_other'], ['sexuality_other']], [['heterosexual', 'homosexual', 'bisexual', 'sexuality_other']]]
+majority_targeting
+
+
+QUESTION ID:  195
+4 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[4] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+4 [['gender_unclear'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+4 [['sexuality_unclear'], ['homosexual', 'bisexual'], ['homosexual', 'sexuality_other'], ['sexuality_not-referring']]
+[1, 1, 1, 1] counts of groups: [[['sexuality_unclear']], [['homosexual', 'bisexual']], [['homosexual', 'sexuality_other']], [['sexuality_not-referring']]]
+no-agreement
+4 [['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 2] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['sexuality_not-referring'], ['sexuality_not-referring']]]
+opinions_unclear
+
+
+QUESTION ID:  196
+3 [['men', 'women'], ['men', 'women'], ['men', 'women']]
+[3] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']]]
+all_targeting
+3 [['men', 'women'], ['men', 'women'], ['men', 'women']]
+[3] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['heterosexual'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+3 [['sexuality_unclear'], ['heterosexual'], ['heterosexual', 'sexuality_not-referring']]
+[1, 1, 1] counts of groups: [[['sexuality_unclear']], [['heterosexual']], [['heterosexual', 'sexuality_not-referring']]]
+no-agreement
+
+
+QUESTION ID:  197
+2 [['gender_not-referring'], ['gender_not-referring']]
+[2] counts of groups: [[['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+2 [['gender_not-referring'], ['gender_not-referring']]
+[2] counts of groups: [[['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_unclear']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_unclear']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']]]
+no-agreement
+
+
+QUESTION ID:  198
+2 [['gender_not-referring'], ['women']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['women']]]
+no-agreement
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_unclear']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_unclear']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']]]
+no-agreement
+
+
+QUESTION ID:  199
+3 [['men', 'women', 'non-binary', 'gender_other'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men', 'women', 'non-binary', 'gender_other']]]
+majority_not-targeting
+3 [['gender_unclear'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  200
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+3 [['gender_not-referring'], ['gender_unclear'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_other'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_other']]]
+majority_not-targeting
+
+
+QUESTION ID:  201
+3 [['gender_not-referring'], ['men', 'women'], ['men', 'women']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['gender_not-referring']]]
+majority_targeting
+3 [['men', 'women'], ['men', 'women'], ['women', 'gender_not-referring']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['women', 'gender_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['sexuality_not-referring']]]
+majority_unclear
+3 [['sexuality_not-referring'], ['heterosexual'], ['heterosexual']]
+[2, 1] counts of groups: [[['heterosexual'], ['heterosexual']], [['sexuality_not-referring']]]
+majority_targeting
+
+
+QUESTION ID:  202
+4 [['gender_not-referring'], ['gender_not-referring'], ['gender_unclear'], ['men']]
+[2, 1, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']], [['men']]]
+opinions_not-targeting
+4 [['gender_not-referring'], ['gender_unclear'], ['gender_unclear'], ['gender_not-referring']]
+[2, 2] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear'], ['gender_unclear']]]
+opinions_unclear
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_unclear']]
+[2, 2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear'], ['sexuality_unclear']]]
+opinions_unclear
+4 [['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_unclear']], [['sexuality_not-referring']]]
+majority_unclear
+
+
+QUESTION ID:  203
+4 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[4] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+4 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[4] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  204
+4 [['gender_not-referring'], ['gender_unclear'], ['gender_other', 'gender_unclear'], ['men']]
+[1, 1, 1, 1] counts of groups: [[['gender_not-referring']], [['gender_unclear']], [['gender_other', 'gender_unclear']], [['men']]]
+no-agreement
+4 [['women'], ['gender_unclear'], ['women', 'gender_unclear'], ['men', 'women']]
+[1, 1, 1, 1] counts of groups: [[['women']], [['gender_unclear']], [['women', 'gender_unclear']], [['men', 'women']]]
+no-agreement
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_other'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_other']]]
+majority_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  205
+3 [['men', 'women'], ['men'], ['men', 'women']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['men']]]
+majority_targeting
+3 [['men', 'women'], ['women'], ['men', 'women']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['women']]]
+majority_targeting
+3 [['heterosexual'], ['heterosexual'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['heterosexual'], ['heterosexual']], [['sexuality_not-referring']]]
+majority_targeting
+3 [['heterosexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  206
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  207
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  208
+3 [['women'], ['gender_not-referring'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['heterosexual']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  209
+3 [['gender_not-referring'], ['women'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women']]]
+majority_not-targeting
+3 [['gender_not-referring'], ['gender_unclear'], ['gender_unclear']]
+[2, 1] counts of groups: [[['gender_unclear'], ['gender_unclear']], [['gender_not-referring']]]
+majority_unclear
+3 [['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['sexuality_not-referring']]]
+majority_unclear
+3 [['homosexual'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[1, 1, 1] counts of groups: [[['homosexual']], [['sexuality_unclear']], [['sexuality_not-referring']]]
+no-agreement
+
+
+QUESTION ID:  210
+3 [['men', 'women'], ['men', 'women', 'non-binary', 'gender_other'], ['gender_not-referring']]
+[1, 1, 1] counts of groups: [[['men', 'women']], [['men', 'women', 'non-binary', 'gender_other']], [['gender_not-referring']]]
+no-agreement
+3 [['men', 'women'], ['men', 'women', 'non-binary', 'gender_other'], ['women']]
+[1, 1, 1] counts of groups: [[['men', 'women']], [['men', 'women', 'non-binary', 'gender_other']], [['women']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  211
+4 [['women'], ['men', 'women'], ['women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['men', 'women']]]
+majority_targeting
+4 [['women'], ['gender_unclear'], ['men', 'women'], ['women']]
+[2, 1, 1] counts of groups: [[['women'], ['women']], [['gender_unclear']], [['men', 'women']]]
+opinions_targeting
+4 [['sexuality_not-referring'], ['heterosexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+4 [['heterosexual'], ['heterosexual', 'sexuality_not-referring'], ['heterosexual'], ['sexuality_not-referring']]
+[2, 1, 1] counts of groups: [[['heterosexual'], ['heterosexual']], [['heterosexual', 'sexuality_not-referring']], [['sexuality_not-referring']]]
+opinions_targeting
+
+
+QUESTION ID:  212
+3 [['women'], ['women', 'gender_other'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'gender_other']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  213
+3 [['women'], ['women'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  214
+2 [['gender_not-referring'], ['men', 'women']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['men', 'women']]]
+no-agreement
+2 [['gender_not-referring'], ['women']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['women']]]
+no-agreement
+2 [['sexuality_not-referring'], ['heterosexual']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual']]]
+no-agreement
+2 [['sexuality_not-referring'], ['heterosexual']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual']]]
+no-agreement
+
+
+QUESTION ID:  215
+2 [['gender_not-referring'], ['men']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['men']]]
+no-agreement
+2 [['men'], ['men']]
+[2] counts of groups: [[['men'], ['men']]]
+all_targeting
+2 [['homosexual'], ['homosexual']]
+[2] counts of groups: [[['homosexual'], ['homosexual']]]
+all_targeting
+2 [['homosexual'], ['homosexual']]
+[2] counts of groups: [[['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  216
+3 [['men', 'women'], ['men', 'women'], ['men']]
+[2, 1] counts of groups: [[['men', 'women'], ['men', 'women']], [['men']]]
+majority_targeting
+3 [['men'], ['men', 'women', 'non-binary', 'yes'], ['men']]
+[2, 1] counts of groups: [[['men'], ['men']], [['men', 'women', 'non-binary', 'yes']]]
+majority_targeting
+3 [['heterosexual'], ['heterosexual', 'homosexual', 'bisexual'], ['homosexual']]
+[1, 1, 1] counts of groups: [[['heterosexual']], [['heterosexual', 'homosexual', 'bisexual']], [['homosexual']]]
+no-agreement
+3 [['homosexual'], ['heterosexual', 'homosexual', 'bisexual', 'asexual'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['heterosexual', 'homosexual', 'bisexual', 'asexual']]]
+majority_targeting
+
+
+QUESTION ID:  217
+3 [['gender_not-referring'], ['men'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men']]]
+majority_not-targeting
+3 [['men'], ['gender_unclear'], ['gender_not-referring']]
+[1, 1, 1] counts of groups: [[['men']], [['gender_unclear']], [['gender_not-referring']]]
+no-agreement
+3 [['homosexual'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[1, 1, 1] counts of groups: [[['homosexual']], [['sexuality_unclear']], [['sexuality_not-referring']]]
+no-agreement
+3 [['homosexual'], ['sexuality_unclear'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other']]
+[1, 1, 1] counts of groups: [[['homosexual']], [['sexuality_unclear']], [['homosexual', 'bisexual', 'asexual', 'sexuality_other']]]
+no-agreement
+
+
+QUESTION ID:  218
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+3 [['gender_not-referring'], ['gender_unclear'], ['women']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['gender_unclear']], [['women']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['sexuality_not-referring']]]
+majority_unclear
+
+
+QUESTION ID:  219
+4 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['gender_unclear']]
+[3, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+4 [['gender_not-referring'], ['gender_not-referring'], ['men', 'gender_unclear'], ['men', 'women']]
+[2, 1, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['men', 'gender_unclear']], [['men', 'women']]]
+opinions_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  222
+3 [['men', 'gender_unclear'], ['men'], ['gender_unclear']]
+[1, 1, 1] counts of groups: [[['men', 'gender_unclear']], [['men']], [['gender_unclear']]]
+no-agreement
+3 [['men', 'women', 'non-binary', 'gender_other', 'gender_unclear'], ['men'], ['men']]
+[2, 1] counts of groups: [[['men'], ['men']], [['men', 'women', 'non-binary', 'gender_other', 'gender_unclear']]]
+majority_targeting
+3 [['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['sexuality_not-referring']]]
+majority_unclear
+3 [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other', 'sexuality_unclear'], ['heterosexual', 'homosexual'], ['sexuality_not-referring']]
+[1, 1, 1] counts of groups: [[['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other', 'sexuality_unclear']], [['heterosexual', 'homosexual']], [['sexuality_not-referring']]]
+no-agreement
+
+
+QUESTION ID:  223
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_unclear']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+3 [['gender_unclear'], ['gender_not-referring'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['gender_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_other', 'sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_other', 'sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_unclear'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_unclear'], ['sexuality_unclear']], [['sexuality_not-referring']]]
+majority_unclear
+
+
+QUESTION ID:  224
+3 [['gender_unclear'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_unclear']]]
+majority_targeting
+3 [['women', 'non-binary'], ['women'], ['men', 'women']]
+[1, 1, 1] counts of groups: [[['women', 'non-binary']], [['women']], [['men', 'women']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['homosexual', 'bisexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['homosexual', 'bisexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  225
+4 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring'], ['women']]
+[3, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']], [['women']]]
+majority_not-targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  228
+3 [['men', 'yes'], ['yes'], ['gender_other', 'yes']]
+[1, 1, 1] counts of groups: [[['men', 'yes']], [['yes']], [['gender_other', 'yes']]]
+no-agreement
+3 [['women', 'yes'], ['gender_not-referring'], ['men', 'yes']]
+[1, 1, 1] counts of groups: [[['women', 'yes']], [['gender_not-referring']], [['men', 'yes']]]
+no-agreement
+3 [['homosexual'], ['homosexual'], ['homosexual', 'bisexual', 'sexuality_other']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['homosexual', 'bisexual', 'sexuality_other']]]
+majority_targeting
+3 [['homosexual'], ['homosexual', 'sexuality_other'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['homosexual', 'sexuality_other']]]
+majority_targeting
+
+
+QUESTION ID:  229
+3 [['men'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men']]]
+majority_targeting
+3 [['women', 'gender_other'], ['women', 'gender_unclear'], ['women']]
+[1, 1, 1] counts of groups: [[['women', 'gender_other']], [['women', 'gender_unclear']], [['women']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  230
+3 [['men', 'women', 'non-binary', 'gender_other', 'yes'], ['gender_not-referring'], ['gender_other', 'yes']]
+[1, 1, 1] counts of groups: [[['men', 'women', 'non-binary', 'gender_other', 'yes']], [['gender_not-referring']], [['gender_other', 'yes']]]
+no-agreement
+3 [['men', 'yes'], ['men', 'yes', 'gender_not-referring'], ['gender_other', 'yes']]
+[1, 1, 1] counts of groups: [[['men', 'yes']], [['men', 'yes', 'gender_not-referring']], [['gender_other', 'yes']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_other', 'sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_other', 'sexuality_not-referring']]]
+majority_not-targeting
+
+
+QUESTION ID:  231
+2 [['yes'], ['yes']]
+[2] counts of groups: [[['yes'], ['yes']]]
+all_targeting
+2 [['yes'], ['yes']]
+[2] counts of groups: [[['yes'], ['yes']]]
+all_targeting
+2 [['sexuality_not-referring'], ['homosexual']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['homosexual']]]
+no-agreement
+2 [['homosexual'], ['homosexual']]
+[2] counts of groups: [[['homosexual'], ['homosexual']]]
+all_targeting
+
+
+QUESTION ID:  232
+3 [['women', 'yes'], ['yes'], ['yes']]
+[2, 1] counts of groups: [[['yes'], ['yes']], [['women', 'yes']]]
+majority_targeting
+3 [['men', 'yes'], ['yes'], ['yes', 'gender_not-referring']]
+[1, 1, 1] counts of groups: [[['men', 'yes']], [['yes']], [['yes', 'gender_not-referring']]]
+no-agreement
+3 [['heterosexual', 'homosexual', 'sexuality_other', 'sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[1, 1, 1] counts of groups: [[['heterosexual', 'homosexual', 'sexuality_other', 'sexuality_not-referring']], [['sexuality_unclear']], [['sexuality_not-referring']]]
+no-agreement
+3 [['heterosexual'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  234
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['women'], ['women', 'yes'], ['women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['women', 'yes']]]
+majority_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  235
+2 [['women'], ['gender_unclear']]
+[1, 1] counts of groups: [[['women']], [['gender_unclear']]]
+no-agreement
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  236
+2 [['women'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['women']], [['gender_not-referring']]]
+no-agreement
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  237
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['gender_not-referring'], ['men', 'women', 'non-binary', 'gender_other'], ['men', 'women']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['men', 'women', 'non-binary', 'gender_other']], [['men', 'women']]]
+no-agreement
+3 [['homosexual'], ['heterosexual', 'homosexual'], ['homosexual']]
+[2, 1] counts of groups: [[['homosexual'], ['homosexual']], [['heterosexual', 'homosexual']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual', 'sexuality_other'], ['heterosexual', 'homosexual']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual', 'sexuality_other']], [['heterosexual', 'homosexual']]]
+no-agreement
+
+
+QUESTION ID:  238
+4 [['men', 'women', 'non-binary', 'gender_other'], ['men', 'women', 'non-binary', 'gender_other'], ['gender_not-referring'], ['men', 'women', 'non-binary', 'gender_other']]
+[3, 1] counts of groups: [[['men', 'women', 'non-binary', 'gender_other'], ['men', 'women', 'non-binary', 'gender_other'], ['men', 'women', 'non-binary', 'gender_other']], [['gender_not-referring']]]
+majority_targeting
+4 [['men', 'women', 'non-binary', 'gender_other'], ['men', 'women', 'non-binary', 'gender_other', 'yes'], ['gender_not-referring'], ['men', 'women', 'non-binary', 'gender_other', 'yes']]
+[2, 1, 1] counts of groups: [[['men', 'women', 'non-binary', 'gender_other', 'yes'], ['men', 'women', 'non-binary', 'gender_other', 'yes']], [['men', 'women', 'non-binary', 'gender_other']], [['gender_not-referring']]]
+opinions_targeting
+4 [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']]
+[3, 1] counts of groups: [[['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['homosexual']]]
+majority_targeting
+4 [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['heterosexual', 'homosexual', 'bisexual', 'sexuality_other'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other']]
+[2, 1, 1] counts of groups: [[['homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']], [['heterosexual', 'homosexual', 'bisexual', 'sexuality_other']]]
+opinions_targeting
+
+
+QUESTION ID:  239
+4 [['men', 'women'], ['women'], ['women'], ['men']]
+[2, 1, 1] counts of groups: [[['women'], ['women']], [['men', 'women']], [['men']]]
+opinions_targeting
+4 [['men', 'women'], ['women'], ['men', 'women'], ['men', 'women']]
+[3, 1] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']], [['women']]]
+majority_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[4] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  240
+4 [['men', 'women'], ['men', 'women'], ['men', 'women'], ['men', 'women']]
+[4] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women'], ['men', 'women']]]
+all_targeting
+4 [['men'], ['men', 'women'], ['men', 'women'], ['men', 'women']]
+[3, 1] counts of groups: [[['men', 'women'], ['men', 'women'], ['men', 'women']], [['men']]]
+majority_targeting
+4 [['sexuality_not-referring'], ['heterosexual'], ['heterosexual'], ['heterosexual']]
+[3, 1] counts of groups: [[['heterosexual'], ['heterosexual'], ['heterosexual']], [['sexuality_not-referring']]]
+majority_targeting
+4 [['heterosexual'], ['heterosexual'], ['heterosexual'], ['heterosexual']]
+[4] counts of groups: [[['heterosexual'], ['heterosexual'], ['heterosexual'], ['heterosexual']]]
+all_targeting
+
+
+QUESTION ID:  241
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+3 [['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]
+[3] counts of groups: [[['gender_not-referring'], ['gender_not-referring'], ['gender_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  242
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  243
+3 [['gender_not-referring'], ['women'], ['gender_not-referring']]
+[2, 1] counts of groups: [[['gender_not-referring'], ['gender_not-referring']], [['women']]]
+majority_not-targeting
+3 [['men', 'women', 'gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men', 'women', 'gender_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  244
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  245
+4 [['gender_not-referring'], ['women'], ['women'], ['women']]
+[3, 1] counts of groups: [[['women'], ['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+4 [['women'], ['women'], ['women'], ['women']]
+[4] counts of groups: [[['women'], ['women'], ['women'], ['women']]]
+all_targeting
+4 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+4 [['sexuality_not-referring'], ['sexuality_unclear'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']], [['sexuality_unclear']]]
+majority_not-targeting
+
+
+QUESTION ID:  246
+2 [['gender_other', 'gender_unclear'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['gender_other', 'gender_unclear']], [['gender_not-referring']]]
+no-agreement
+2 [['non-binary', 'gender_other'], ['gender_not-referring']]
+[1, 1] counts of groups: [[['non-binary', 'gender_other']], [['gender_not-referring']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  247
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_unclear']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']]]
+no-agreement
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  248
+3 [['women'], ['gender_not-referring'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+3 [['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]
+[3] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  249
+3 [['women'], ['women'], ['men', 'women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men', 'women']]]
+majority_targeting
+3 [['women'], ['women'], ['women']]
+[3] counts of groups: [[['women'], ['women'], ['women']]]
+all_targeting
+3 [['sexuality_unclear'], ['sexuality_not-referring'], ['heterosexual']]
+[1, 1, 1] counts of groups: [[['sexuality_unclear']], [['sexuality_not-referring']], [['heterosexual']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['heterosexual']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']], [['heterosexual']]]
+no-agreement
+
+
+QUESTION ID:  250
+2 [['women'], ['men', 'women']]
+[1, 1] counts of groups: [[['women']], [['men', 'women']]]
+no-agreement
+2 [['women'], ['women']]
+[2] counts of groups: [[['women'], ['women']]]
+all_targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+2 [['sexuality_not-referring'], ['sexuality_not-referring']]
+[2] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']]]
+all_not-targeting
+
+
+QUESTION ID:  251
+2 [['gender_not-referring'], ['women']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['women']]]
+no-agreement
+2 [['gender_not-referring'], ['women']]
+[1, 1] counts of groups: [[['gender_not-referring']], [['women']]]
+no-agreement
+2 [['sexuality_not-referring'], ['heterosexual']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual']]]
+no-agreement
+2 [['sexuality_not-referring'], ['heterosexual']]
+[1, 1] counts of groups: [[['sexuality_not-referring']], [['heterosexual']]]
+no-agreement
+
+
+QUESTION ID:  252
+3 [['gender_not-referring'], ['women'], ['men', 'women']]
+[1, 1, 1] counts of groups: [[['gender_not-referring']], [['women']], [['men', 'women']]]
+no-agreement
+3 [['women'], ['women'], ['men', 'women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['men', 'women']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'homosexual', 'bisexual', 'asexual', 'sexuality_other']]]
+majority_not-targeting
+3 [['sexuality_not-referring'], ['heterosexual', 'bisexual'], ['sexuality_not-referring']]
+[2, 1] counts of groups: [[['sexuality_not-referring'], ['sexuality_not-referring']], [['heterosexual', 'bisexual']]]
+majority_not-targeting
+
+
+QUESTION ID:  253
+3 [['gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['gender_not-referring']]]
+majority_targeting
+3 [['women', 'gender_not-referring'], ['women'], ['women']]
+[2, 1] counts of groups: [[['women'], ['women']], [['women', 'gender_not-referring']]]
+majority_targeting
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['heterosexual']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']], [['heterosexual']]]
+no-agreement
+3 [['sexuality_not-referring'], ['sexuality_unclear'], ['heterosexual', 'homosexual', 'bisexual', 'sexuality_other']]
+[1, 1, 1] counts of groups: [[['sexuality_not-referring']], [['sexuality_unclear']], [['heterosexual', 'homosexual', 'bisexual', 'sexuality_other']]]
+no-agreement
