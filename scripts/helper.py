@@ -109,3 +109,32 @@ def define_category(subset_annot: pd.DataFrame, col: str, labels_type: str) -> s
         category='no-agreement'
     print(category)
     return category
+
+
+def process_rationale(d: pd.DataFrame, annot: pd.DataFrame, labels_type: str):
+    """ Print counts and unique entities learnt with semantics in c1 groups """
+    N, agreed = d.shape[0],  ['all', 'majority', 'opinions']
+    yes = [f'{a}_targeting' for a in agreed]
+    no = [f'{a}_not-targeting' for a in agreed] # + [f'{a}_unclear' for a in agreed] + ['no-agreement']
+    replace = {k:'no' for k in no} | {k:'yes' for k in yes}
+    replace_c = [f'{labels_type}_types_{sg}_{p}' for sg in ['LGBT', 'nonLGBT'] for p in ['1', '2']]
+    d[replace_c] = d[replace_c].replace(to_replace=replace)
+    for sg in ['LGBT', 'nonLGBT']:
+        print(f'\n\n\n PROCESSING {labels_type} for {sg}')
+        # Get IDs of new posts targeting 
+        ids = d.loc[(d[f'{labels_type}_types_{sg}_1']=='no') & (d[f'{labels_type}_types_{sg}_2']=='yes'), 'Question ID'].to_list()
+        # Filter rationales in texts(new in justify_change_{labels_type}), full in justify)
+        subset = annot.loc[annot['Question ID'].isin(ids)]
+        print(f'{sg}: {round(len(ids)/N*100, 2)}% ({len(ids)})')
+        for id in ids:
+            print('\n\nQUESTION ID: ', id)
+            subset_id = subset.loc[subset['Question ID']==id]
+            print(subset_id['Question'].to_list()[0])
+            print(f'\n {sg}:')
+            print(subset_id.loc[subset_id['group']==sg, [f'{labels_type}_cat_2', f'justify_change_{labels_type}', f'Justify {labels_type.capitalize()}_2']])
+
+            other_sg = ['LGBT' if sg == 'nonLGBT' else 'nonLGBT'][0]
+            print(f'\n by {other_sg}')
+            print(subset_id.loc[subset_id['group']==other_sg, [f'{labels_type}_cat_2', f'justify_change_{labels_type}', f'Justify {labels_type.capitalize()}_2']])            
+
+    return

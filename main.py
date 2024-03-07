@@ -6,7 +6,8 @@ from collections import defaultdict
 import scripts.dataCollect as dc
 from scripts.dataCollect import load_hateRep
 from scripts.agreement import get_scores_and_delta, keep_by_annotation_count
-from scripts.helper import define_expert, pearson_correlation, define_category
+from scripts.helper import define_expert, pearson_correlation
+from scripts.helper import define_category, process_rationale
 import scripts.utils as u
 
 
@@ -33,7 +34,7 @@ print(example)
 # ANALYSIS 1.1: Inter-annotator agreement scores and delta between phases
 def analyse_IAA(df: pd.DataFrame, score: str, order_by: Dict[str, pd.DataFrame] = None):
     """ Compute a dictionary with tables of scores of binary categories and generic questions """
-    table_1, values, table_1_cols = {}, defaultdict(dict), ['Ph1', 'Ph2', 'Δ']
+    table_1, values, table_1_cols = {}, defaultdict(dict), ['Ph1', 'Ph2', '$\Delta$']
     # from gender and sexuality binary categories
     for g in dc.TARGET_GROUPS:
         for sg in dc.TARGET_LABELS[g]:
@@ -48,12 +49,21 @@ def analyse_IAA(df: pd.DataFrame, score: str, order_by: Dict[str, pd.DataFrame] 
         if order_by and t in order_by.keys():
             table_1[t] = table_1[t].reindex(order_by[t].index.to_list())
         else:
-            table_1[t].sort_values(by='Δ', inplace=True) 
+            table_1[t].sort_values(by='$\Delta$', inplace=True) 
     return table_1
 
 # Krippendorff's Alpha 
 print('... unique texts (Krippendorff)', len(data['Question ID'].unique()))
 table_1_alpha = analyse_IAA(data, 'krippendorf')
+
+if not os.path.exists('results'):
+    os.mkdir('results')
+for key, table in table_1_alpha.items():
+    with open(f'results/krippendorff_{key}.tex', 'w') as f:
+        f.write(table.to_latex(#index=False,
+                  formatters={"name": str.upper},
+                  float_format="{:.3f}".format))
+
 
 # Fleiss Kappa scores keeping only those with 6 annotations
 d_filter = keep_by_annotation_count(df=data, by='Question ID', n_counts=6, method='filter') 
@@ -64,10 +74,9 @@ print('... unique texts (Fleiss)', len(d_filter['Question ID'].unique()))
 ################################################
 # Types of hate speech annotation for understanding changes
 ################################################
+# TODO: preprocesar los labels del Y-axis para quitar underscores y quizas en bold los targeting.
 
 # ANALYSIS 1.2: Types of hate speech annotation for understanding changes
-if not os.path.exists('results'):
-    os.mkdir('results')
 # data.to_csv('results/data.csv', index=False)
     
 def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], samples: pd.DataFrame=samples):
@@ -113,9 +122,6 @@ types_hs = [f'{a}_{d}' for a in ['all', 'majority', 'opinions'] for d in u.DECIS
 analyse_types(df=data, group='all', types_hs=types_hs)
 
 # Categorisation by groups
-# types_hs = [f'{a}_{d}' for a in ['all', 'majority'] for d in ['not-targeting', 'unclear', 'targeting']] + \
-#     ['none']
-# types_color = ['green'] * 3 + ['orange'] * 3 + ['red']
 for group in data[dc.CATEG['c1']].unique():
     print(group)
     subset = data.loc[data[dc.CATEG['c1']]==group].copy()
@@ -124,12 +130,17 @@ for group in data[dc.CATEG['c1']].unique():
     analyse_types(df=subset, group=group, types_hs=types_hs)
 
 samples.to_csv('results/samples.csv', index=False)
-# Categories overlap between c1 groups
 for g in dc.TARGET_GROUPS:
+    # Categories overlap between c1 groups
     for p in dc.PHASES:
         u.export_overlap_count(samples, col1=f"{g}_types_LGBT_{p}", col2=f"{g}_types_nonLGBT_{p}", order=types_hs[::-1], labels_type=g, pdf_filename=f'results/types_overlap_{g}_Phase{p}.pdf')
+    # Entitites learnt
+    with open(f'results/types_learned_{g}', 'w') as output_file:
+        sys.stdout = output_file
+        process_rationale(samples, data, labels_type=g)
+        sys.stdout = sys.__stdout__
 
-
+    
 ################################################
 # Disaggregated IAA scores and correlation with target groups
 ################################################
