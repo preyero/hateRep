@@ -5,7 +5,42 @@ from  matplotlib.colors import LinearSegmentedColormap
 from matplotlib.backends.backend_pdf import PdfPages
 import plotly.graph_objects as go
 
-def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, p_values_df = None, hide_rows = None, figsize=(10, 7), colorbar_label: str=None):
+#plt.rcParams.update({'font.size': 22})
+SMALL_SIZE = 15
+MEDIUM_SIZE = 17
+BIGGER_SIZE = 19
+
+plt.rc('font', size=MEDIUM_SIZE)          # controls default text sizes
+plt.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
+plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=MEDIUM_SIZE)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=MEDIUM_SIZE)    # fontsize of the tick labels
+plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
+plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
+
+def clean_text(texts):
+    clean_texts = []
+    for t in texts:
+        
+        # Remove underscore
+        clean_t = t.split('_')
+
+        # Make short
+        if clean_t[0] == 'Is the hate speech targeting?':
+            clean_t[0] = 'Hate speech \ntargeting?'
+
+        # Remove redundant info
+        if 'bin' not in clean_t and ('gender' in clean_t or 'sexuality' in clean_t):
+            clean_t = clean_t[1:]
+        if 'bin' in clean_t:
+            clean_t = clean_t[:-1]
+
+        # Clean label
+        clean_texts.append(' '.join(clean_t))
+    return clean_texts
+
+
+def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, p_values_df = None, hide_rows = None, figsize=(10, 7), colorbar_label: str=None, phase: str=None):
     # Assuming cell_values_df contains the color values and color_values_df contains the values to display
     # Ranges is a list of column indexes if wanting to boldface the maximum value in a subset of the columns
 
@@ -18,8 +53,15 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
             p_values_df = p_values_df.drop(hide_rows)
 
 
+    # Pretty labels
+    row_labels = cell_values_df.index.to_list()
+    row_labels = clean_text(row_labels)
+
     # Set up the color map
-    cmap=LinearSegmentedColormap.from_list('rg',["r", "w", "g"], N=256) 
+    if colorbar_label == 'Correlation Coefficient':
+        cmap = sns.diverging_palette(0, 120, s=80, l=55, n=256, as_cmap=True)
+    else:
+        cmap=LinearSegmentedColormap.from_list('rg',["r", "w", "g"], N=256) 
 
 
     # Create a diverging color bar
@@ -30,8 +72,16 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
 
     # Plot the table with assigned colors
     fig, ax = plt.subplots(figsize=figsize)
-    table = plt.table(cellText=cell_values_df.values, cellColours=plt.cm.get_cmap(cmap)(norm(color_values_df.values)),
-                    cellLoc='center', colLabels=cell_values_df.columns, rowLabels=cell_values_df.index, loc='center', bbox=[0, 0, 1, 1])
+    if phase == '1':
+        # include rows labels
+        table = plt.table(cellText=cell_values_df.values, cellColours=plt.cm.get_cmap(cmap)(norm(color_values_df.values)),
+                        cellLoc='center', colLabels=cell_values_df.columns, rowLabels=row_labels, loc='center', bbox=[0, 0, 1, 1])
+    else:
+                table = plt.table(cellText=cell_values_df.values, cellColours=plt.cm.get_cmap(cmap)(norm(color_values_df.values)),
+                        cellLoc='center', colLabels=cell_values_df.columns, loc='center', bbox=[0, 0, 1, 1])
+
+    
+    ax.set_title(f'Phase {phase}', fontsize=MEDIUM_SIZE)
 
     # Add significance
     if p_values_df is not None:
@@ -53,10 +103,13 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
             max_idx = row[boldface_ranges[j]:boldface_ranges[j+1]].argmax()
             table[i+1, boldface_ranges[j] + max_idx].get_text().set_weight('bold')
     
-    
-    # Add color bar
-    cbar = fig.colorbar(sm, ax=ax, pad=0.02)
-    cbar.set_label(colorbar_label)
+    # Adjust by phase (1 is on left with index, 2 is on right with colorbar)
+    #if phase == '2':
+        # Add color bar
+        # cbar = fig.colorbar(sm, ax=ax, pad=0.02)
+        # cbar.set_label(colorbar_label, fontsize=SMALL_SIZE)
+
+        # Remove index
 
     # Hide axes
     ax.axis('off')
@@ -109,12 +162,12 @@ def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
 
     # Display percentages in each bar
     for i, (bar1, freq1, bar2, freq2) in enumerate(zip(bars1, sorted_freq1, bars2, sorted_freq2)):
-        ax.text(bar1.get_width() - 7.5, bar1.get_y() + bar1.get_height() / 2, f'{freq1:.2f}%', va='center', ha='left', color='blue')
-        ax.text(bar2.get_width() + 7, bar2.get_y() + bar2.get_height() / 2, f'{freq2:.2f}%', va='center', ha='right', color='orange')
+        ax.text(bar1.get_width() - 10.5, bar1.get_y() + bar1.get_height() / 2, f'{freq1:.2f}%', va='center', ha='left', color='blue')
+        ax.text(bar2.get_width() + 11.5, bar2.get_y() + bar2.get_height() / 2, f'{freq2:.2f}%', va='center', ha='right', color='orange')
 
     # Set X-axis labels and legend
     #ax.set_xlabel('Percentage')
-    ax.set_xlim(-50, 45)
+    ax.set_xlim(-52, 50)
     ax.set_xticks(list(range(-40, 0, 10))+list(range(0, 50, 10)))
     ax.set_xticklabels(list(range(40, 0, -10))+list(range(0, 50, 10)))
     ax.set_title(labels_type)
@@ -123,11 +176,11 @@ def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
     # Set Y-axis labels and background colors
     yticks = [i for i in range(len(order))]
     ax.set_yticks(yticks)
-    ax.set_yticklabels([' '.join(l.split('_')) for l in order], ha='right', color='black', fontsize=10)
+    ax.set_yticklabels(clean_text(order), ha='right', color='black', fontsize=SMALL_SIZE)
     # Add background color rectangles (yticks_color)
     colors = draw_color(order)
     for i, color in enumerate(colors):
-        rect = plt.Rectangle((-70, i - 0.5), 20, 1, linewidth=0, edgecolor='none', facecolor=color, alpha=0.3, clip_on=False) 
+        rect = plt.Rectangle((-83, i - 0.5), 31, 1, linewidth=0, edgecolor='none', facecolor=color, alpha=0.3, clip_on=False) 
         ax.add_patch(rect)
     # Remove the border of the Y-axis
     #ax.spines['left'].set_visible(False)
@@ -204,11 +257,14 @@ def export_sankey_diagram(df, col1, col2, order, labels_type, pdf_filename, opac
         print(slots_2)
         slots_2 = [0.1, 0.2, 0.3, 0.4, 0.5] + [c + 0.01 for c in slots_2[5:]]
         print(slots_2)
-    # if f"{labels_type}_{case}" == 'sexuality_all':
-    #     # one less categories (maj unclear) unaligns step
-    #     print(slots_2)
-    #     slots_2[-2:] = [0.9, 1.0]
-    #     print(slots_2)
+    if f"{labels_type}_{case}" == 'sexuality_all':
+        # one less categories (maj unclear) unaligns step
+        # print(slots_2)
+        # slots_2[-3:] = [0.8, 0.9, 1.0]
+        # print(slots_2)
+        print(slots_2)
+        slots_2 = [c + 0.05 for c in slots_2[:-4]] + [0.65, 0.75, 0.85, 0.95]
+        print(slots_2)
     nodes_y = slots_1 + slots_2 
 
     # Create Sankey diagram
@@ -232,7 +288,7 @@ def export_sankey_diagram(df, col1, col2, order, labels_type, pdf_filename, opac
     )])
 
     # Set node labels
-    fig.update_layout(title_text=labels_type, font_size=10, title_x=0.5, title_y=0.75)
+    fig.update_layout(title_text=labels_type, font_size=MEDIUM_SIZE, title_x=0.5, title_y=0.75)
 
     # Save the plot as a PDF
     fig.write_image(pdf_filename)
@@ -250,6 +306,7 @@ def draw_heatmap(table, pdf_filename, figsize, title, vmax, vmin=0, label_x="", 
     # Set plot title and labels
     plt.title(title, fontsize=16)
     ax.set(xlabel=label_x, ylabel=label_y)
+    ax.set_yticklabels(clean_text(table.index), ha='right', color='black', fontsize=SMALL_SIZE)
 
     # Export to PDF
     with PdfPages(pdf_filename) as pdf:
@@ -287,7 +344,7 @@ def export_overlap_count(df, col1, col2, order, labels_type, pdf_filename):
     counts_matrix = pd.DataFrame(data=[both_values, col1_values, col2_values], columns=order, index=['both', col1_tag, col2_tag])
 
     # Create a heatmap using seaborn
-    draw_heatmap(counts_matrix.T, pdf_filename, figsize=(4, 3), title=labels_type, vmax=60)
+    draw_heatmap(counts_matrix.T, pdf_filename, figsize=(5, 4), title=labels_type, vmax=60)
 
     print(f'Overlaps exported to {pdf_filename}.')
 

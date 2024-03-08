@@ -209,7 +209,7 @@ for g in dc.TARGET_GROUPS:
                           boldface_ranges=[0, 2, 6], 
                           hide_rows=hide_rows[g], 
                           figsize=(10, 7 - len(hide_rows[g])), 
-                          colorbar_label='Krippendorff Alpha')  
+                          colorbar_label='Krippendorff Alpha', phase = p)  
 
         # show correlation values instead of agreement scores
         u.export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
@@ -219,7 +219,7 @@ for g in dc.TARGET_GROUPS:
                           p_values_df=table_2[f'{g}_p_{p}'][cols], 
                           hide_rows=hide_rows[g], 
                           figsize=(10, 7 - len(hide_rows[g])), 
-                          colorbar_label='Correlation Coefficient')
+                          colorbar_label='Correlation Coefficient', phase = p)
 
         # # mixed
         # export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
@@ -243,11 +243,11 @@ for p in dc.PHASES:
                   color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                   pdf_filename=f'results/krippendorff_{g}_{p}_{'_'.join(cols)}.pdf', 
                   boldface_ranges=[0, 2, 6], figsize=(10, 4),
-                  colorbar_label='Krippendorff Alpha')
+                  colorbar_label='Krippendorff Alpha', phase = p)
     
     u.export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
                   color_values_df=table_2[f'{g}_r_{p}'][cols], 
                   pdf_filename=f'results/pearson_{g}_{p}_{'_'.join(cols)}.pdf', 
                   boldface_ranges=[0, 2, 6], figsize=(10, 4),
                   p_values_df=table_2[f'{g}_p_{p}'][cols], 
-                  colorbar_label='Correlation Coefficient')
+                  colorbar_label='Correlation Coefficient', phase = p)
