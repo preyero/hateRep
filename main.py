@@ -58,8 +58,12 @@ table_1_alpha = analyse_IAA(data, 'krippendorf')
 
 if not os.path.exists('results'):
     os.mkdir('results')
+    os.mkdir('results/1_agreement')
+    os.mkdir('results/2_alignment')
+    os.mkdir('results/3_categorisation')
+
 for key, table in table_1_alpha.items():
-    with open(f'results/krippendorff_{key}.tex', 'w') as f:
+    with open(f'results/1_agreement/krippendorff_{key}.tex', 'w') as f:
         f.write(table.to_latex(#index=False,
                   formatters={"name": str.upper},
                   float_format="{:.3f}".format))
@@ -79,8 +83,8 @@ print('... unique texts (Fleiss)', len(d_filter['Question ID'].unique()))
 # ANALYSIS 1.2: Types of hate speech annotation for understanding changes
 # data.to_csv('results/data.csv', index=False)
     
-def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], samples: pd.DataFrame=samples):
-    with open(f'results/annotation-type_examples_{group}', 'w') as output_file:
+def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], samples: pd.DataFrame=samples, export_plots: bool = False):
+    with open(f'results/3_categorisation/annotation-type_examples_{group}', 'w') as output_file:
         sys.stdout = output_file
         for id in samples['Question ID']:
             print('\n\nQUESTION ID: ', id)
@@ -91,35 +95,36 @@ def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], samples: pd
     # reset sys.stdout to the original value after the specific subpart
     sys.stdout = sys.__stdout__
 
-    for g in dc.TARGET_GROUPS:
-        # Plot distribution
-        u.export_frequency_plot(df=samples, 
-                            col1=f"{g}_types_{group}_1", 
-                            col2=f"{g}_types_{group}_2", 
-                            order=types_hs, 
-                            labels_type=g, 
-                            pdf_filename=f'results/types_freq-plot_{g}_{group}.pdf')
+    if export_plots:
+        for g in dc.TARGET_GROUPS:
+            # Plot distribution
+            u.export_frequency_plot(df=samples, 
+                                col1=f"{g}_types_{group}_1", 
+                                col2=f"{g}_types_{group}_2", 
+                                order=types_hs, 
+                                labels_type=g, 
+                                pdf_filename=f'results/3_categorisation/types_freq-plot_{g}_{group}.pdf')
 
-        # Plot shifts
-        u.export_sankey_diagram(df=samples, 
-                            col1=f"{g}_types_{group}_1", 
-                            col2=f"{g}_types_{group}_2", 
-                            order=types_hs[::-1], 
-                            labels_type=g, 
-                            pdf_filename=f'results/types_shifts-sankey_{g}_{group}.pdf', 
-                            case=group)
-        u.export_matrix_viz(df=samples, 
-                            col1=f"{g}_types_{group}_1", 
-                            col2=f"{g}_types_{group}_2", 
-                            order=types_hs[::-1], 
-                            labels_type=g, 
-                            pdf_filename=f'results/types_shifts-matrix_{g}_{group}.pdf')
+            # Plot shifts
+            u.export_sankey_diagram(df=samples, 
+                                col1=f"{g}_types_{group}_1", 
+                                col2=f"{g}_types_{group}_2", 
+                                order=types_hs[::-1], 
+                                labels_type=g, 
+                                pdf_filename=f'results/3_categorisation/types_shifts-sankey_{g}_{group}.pdf', 
+                                case=group)
+            u.export_matrix_viz(df=samples, 
+                                col1=f"{g}_types_{group}_1", 
+                                col2=f"{g}_types_{group}_2", 
+                                order=types_hs[::-1], 
+                                labels_type=g, 
+                                pdf_filename=f'results/3_categorisation/types_shifts-matrix_{g}_{group}.pdf')
         
 # Categorisation based on level of disagreement and decision made
 types_hs = [f'{a}_{d}' for a in ['all', 'majority', 'opinions'] for d in u.DECISIONS] + \
     ['no-agreement']
 
-analyse_types(df=data, group='all', types_hs=types_hs)
+analyse_types(df=data, group='all', types_hs=types_hs, export_plots=True)
 
 # Categorisation by groups
 for group in data[dc.CATEG['c1']].unique():
@@ -133,9 +138,9 @@ samples.to_csv('results/samples.csv', index=False)
 for g in dc.TARGET_GROUPS:
     # Categories overlap between c1 groups
     for p in dc.PHASES:
-        u.export_overlap_count(samples, col1=f"{g}_types_LGBT_{p}", col2=f"{g}_types_nonLGBT_{p}", order=types_hs[::-1], labels_type=g, pdf_filename=f'results/types_overlap_{g}_Phase{p}.pdf')
+        u.export_overlap_count(samples, col1=f"{g}_types_LGBT_{p}", col2=f"{g}_types_nonLGBT_{p}", order=types_hs[::-1], labels_type=g, pdf_filename=f'results/3_categorisation/types_overlap_{g}_Phase{p}.pdf')
     # Entitites learnt
-    with open(f'results/types_learned_{g}', 'w') as output_file:
+    with open(f'results/3_categorisation/types_learned_{g}', 'w') as output_file:
         sys.stdout = output_file
         process_rationale(samples, data, labels_type=g)
         sys.stdout = sys.__stdout__
@@ -205,7 +210,7 @@ for g in dc.TARGET_GROUPS:
         n_rows = 7 - len(hide_rows[g])
         u.export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                           color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
-                          pdf_filename=f'results/krippendorff_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
+                          pdf_filename=f'results/1_agreement/krippendorff_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
                           boldface_ranges=[0, 2, 6], 
                           hide_rows=hide_rows[g], 
                           figsize=(10, 7 - len(hide_rows[g])), 
@@ -214,24 +219,13 @@ for g in dc.TARGET_GROUPS:
         # show correlation values instead of agreement scores
         u.export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
                           color_values_df=table_2[f'{g}_r_{p}'][cols], 
-                          pdf_filename=f'results/pearson_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
+                          pdf_filename=f'results/2_alignment/pearson_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
                           boldface_ranges=[0, 2, 6], 
                           p_values_df=table_2[f'{g}_p_{p}'][cols], 
                           hide_rows=hide_rows[g], 
                           figsize=(10, 7 - len(hide_rows[g])), 
                           colorbar_label='Correlation Coefficient', phase = p)
 
-        # # mixed
-        # export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
-        #                   color_values_df=table_2[f'{g}_r_{p}'][cols], 
-        #                   pdf_filename=f'results/krippendorff_with_pearsonPval_{g}_{p}_{'_'.join(cols)}.pdf', 
-        #                   boldface_ranges=[0, 2, 6], 
-        #                   p_values_df=table_2[f'{g}_p_{p}'][cols])    
-    
-    # hide columns
-    # plot_1, plot_2 = ['nonLGBT', 'M', 'W',], ['LGBT', 'S', 'G'] 
-    # export_table_plot(cell_values_df=table_2[f'{g}_alpha'][plot_1], color_values_df=table_2[f'{g}_delta'][plot_1], pdf_filename=f'results/krippendorff_{g}_{'_'.join(plot_1)}.pdf')
-    # export_table_plot(cell_values_df=table_2[f'{g}_alpha'][plot_2], color_values_df=table_2[f'{g}_delta'][plot_2], pdf_filename=f'results/krippendorff_{g}_{'_'.join(plot_2)}.pdf')
 
 # other annotations 
 g, g_labels = 'other', [f"{l}_bin" for l in dc.TARGET_GROUPS + dc.HATE_QS]
@@ -241,13 +235,13 @@ table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f
 for p in dc.PHASES:
     u.export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                   color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
-                  pdf_filename=f'results/krippendorff_{g}_{p}_{'_'.join(cols)}.pdf', 
+                  pdf_filename=f'results/1_agreement/krippendorff_{g}_{p}_{'_'.join(cols)}.pdf', 
                   boldface_ranges=[0, 2, 6], figsize=(10, 4),
                   colorbar_label='Krippendorff Alpha', phase = p)
     
     u.export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
                   color_values_df=table_2[f'{g}_r_{p}'][cols], 
-                  pdf_filename=f'results/pearson_{g}_{p}_{'_'.join(cols)}.pdf', 
+                  pdf_filename=f'results/2_alignment/pearson_{g}_{p}_{'_'.join(cols)}.pdf', 
                   boldface_ranges=[0, 2, 6], figsize=(10, 4),
                   p_values_df=table_2[f'{g}_p_{p}'][cols], 
                   colorbar_label='Correlation Coefficient', phase = p)
