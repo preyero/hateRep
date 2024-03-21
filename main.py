@@ -197,6 +197,7 @@ def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: Li
 table_2 = {}
 hide_rows = {'gender':['gender_other', 'non-binary', 'gender_unclear'], 
              'sexuality': ['asexual', 'sexuality_unclear']}
+hide_columns = False
 for g in dc.TARGET_GROUPS:
     # of annotator demographics
     results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), labels = dc.TARGET_LABELS[g], labels_type=g, order_by=table_1_alpha[g])
@@ -213,6 +214,7 @@ for g in dc.TARGET_GROUPS:
                           pdf_filename=f'results/1_agreement/krippendorff_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
                           boldface_ranges=[0, 2, 6], 
                           hide_rows=hide_rows[g], 
+                          hide_columns=hide_columns,
                           figsize=(10, 7 - len(hide_rows[g])), 
                           colorbar_label='Krippendorff Alpha', phase = p)  
 
@@ -223,8 +225,10 @@ for g in dc.TARGET_GROUPS:
                           boldface_ranges=[0, 2, 6], 
                           p_values_df=table_2[f'{g}_p_{p}'][cols], 
                           hide_rows=hide_rows[g], 
+                          hide_columns=hide_columns,
                           figsize=(10, 7 - len(hide_rows[g])), 
                           colorbar_label='Correlation Coefficient', phase = p)
+    hide_columns = True
 
 
 # other annotations 
@@ -236,12 +240,16 @@ for p in dc.PHASES:
     u.export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                   color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                   pdf_filename=f'results/1_agreement/krippendorff_{g}_{p}_{'_'.join(cols)}.pdf', 
-                  boldface_ranges=[0, 2, 6], figsize=(10, 4),
+                  boldface_ranges=[0, 2, 6], 
+                  hide_columns=hide_columns,
+                  figsize=(10, 4),
                   colorbar_label='Krippendorff Alpha', phase = p)
     
     u.export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
                   color_values_df=table_2[f'{g}_r_{p}'][cols], 
                   pdf_filename=f'results/2_alignment/pearson_{g}_{p}_{'_'.join(cols)}.pdf', 
-                  boldface_ranges=[0, 2, 6], figsize=(10, 4),
+                  boldface_ranges=[0, 2, 6], 
                   p_values_df=table_2[f'{g}_p_{p}'][cols], 
+                  hide_columns=hide_columns,
+                  figsize=(10, 4),
                   colorbar_label='Correlation Coefficient', phase = p)

@@ -40,7 +40,7 @@ def clean_text(texts):
     return clean_texts
 
 
-def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, p_values_df = None, hide_rows = None, figsize=(10, 7), colorbar_label: str=None, phase: str=None):
+def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, p_values_df = None, hide_rows = None, hide_columns=False, figsize=(10, 7), colorbar_label: str=None, phase: str=None):
     # Assuming cell_values_df contains the color values and color_values_df contains the values to display
     # Ranges is a list of column indexes if wanting to boldface the maximum value in a subset of the columns
 
@@ -51,11 +51,16 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
         color_values_df = color_values_df.drop(hide_rows)
         if p_values_df is not None:
             p_values_df = p_values_df.drop(hide_rows)
-
-
+    
     # Pretty labels
     row_labels = cell_values_df.index.to_list()
     row_labels = clean_text(row_labels)
+    # Show on condition
+    if phase == '1':
+        rowLabels = row_labels
+    else:
+        rowLabels = [None]*len(row_labels)
+
 
     # Set up the color map
     if colorbar_label == 'Correlation Coefficient':
@@ -72,16 +77,19 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
 
     # Plot the table with assigned colors
     fig, ax = plt.subplots(figsize=figsize)
-    if phase == '1':
-        # include rows labels
+    if hide_columns:
         table = plt.table(cellText=cell_values_df.values, cellColours=plt.cm.get_cmap(cmap)(norm(color_values_df.values)),
-                        cellLoc='center', colLabels=cell_values_df.columns, rowLabels=row_labels, loc='center', bbox=[0, 0, 1, 1])
+                     cellLoc='center', loc='center', bbox=[0, 0, 1, 1], rowLabels=rowLabels)
+        offset = 0
     else:
-                table = plt.table(cellText=cell_values_df.values, cellColours=plt.cm.get_cmap(cmap)(norm(color_values_df.values)),
-                        cellLoc='center', colLabels=cell_values_df.columns, loc='center', bbox=[0, 0, 1, 1])
+        table = plt.table(cellText=cell_values_df.values, cellColours=plt.cm.get_cmap(cmap)(norm(color_values_df.values)),
+                            cellLoc='center', loc='center', bbox=[0, 0, 1, 1], rowLabels=rowLabels, 
+                            colLabels=cell_values_df.columns)
+        offset = 1
 
-    
-    ax.set_title(f'Phase {phase}', fontsize=MEDIUM_SIZE)
+
+    if not hide_columns:
+        ax.set_title(f'Phase {phase}', fontsize=MEDIUM_SIZE)
 
     # Add significance
     if p_values_df is not None:
@@ -92,7 +100,7 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
                     value += "$^{{**}}$"
                 elif p_val < 0.05:
                     value += "$^*$"
-                table[i + 1, j].get_text().set_text(value)
+                table[i + offset, j].get_text().set_text(value)
 
     # Boldface highest value in each row (by columns subset, if ranges)
     if not boldface_ranges:
@@ -101,15 +109,13 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
     for i, row in enumerate(cell_values_df.values):
         for j in range(len(boldface_ranges)-1):
             max_idx = row[boldface_ranges[j]:boldface_ranges[j+1]].argmax()
-            table[i+1, boldface_ranges[j] + max_idx].get_text().set_weight('bold')
+            table[i + offset, boldface_ranges[j] + max_idx].get_text().set_weight('bold')
     
     # Adjust by phase (1 is on left with index, 2 is on right with colorbar)
     #if phase == '2':
         # Add color bar
         # cbar = fig.colorbar(sm, ax=ax, pad=0.02)
         # cbar.set_label(colorbar_label, fontsize=SMALL_SIZE)
-
-        # Remove index
 
     # Hide axes
     ax.axis('off')
