@@ -63,6 +63,12 @@ def fleiss(df: pd.DataFrame, subject_col: str, rating_col: str, verbose: bool = 
 def krippendorf(df: pd.DataFrame, rater_col: str, subject_col: str, rating_col: str, verbose: bool = False):
     if verbose:
         print(f'computing Krippendorf on {rating_col}')
+
+    # Select values as nominal or ordinal
+    if '_bin' in rating_col:
+        level = "ordinal"
+    else:
+        level = "nominal"
     # Transform to data format, e.g.,
     # rating_table = [[np.nan, np.nan, np.nan, np.nan, np.nan, 3, 4, 1, 2, 1, 1, 3, 3, np.nan, 3], # User/Rater 1
     #                 [1, np.nan, 2, 1, 3, 3, 4, 3, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan], # User/Rater 2
@@ -71,7 +77,7 @@ def krippendorf(df: pd.DataFrame, rater_col: str, subject_col: str, rating_col: 
     rating_table = df.values.tolist()
 
     # Compute Krippendorf's Alpha
-    return krippendorff.alpha(reliability_data=rating_table, level_of_measurement="nominal")
+    return krippendorff.alpha(reliability_data=rating_table, level_of_measurement=level)
 
 
 def get_scores_and_delta(data_subset: pd.DataFrame, score: str, rating_col: str, rater_col: str = 'User', subject_col: str = 'Question ID', verbose: bool = False):
