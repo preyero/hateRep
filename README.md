@@ -17,18 +17,18 @@ The data files are organised within two folders:
 * *Annotators*: anonymised demographic tables exported from Prolific's database. Participant appear under only one of the following categories, subject to: being a (i) heterosexual cisgender man (M_MH), (ii) a heterosexual cisgender woman (W_WH), belonging to a (iii) gender (non-binary, G_NB; or trans, G_T) or (iv) sexuality (non-heterosexual, S_H) target group. 
 
 
-* *Data*: background knowledge and crowdsourced annotations. The specific annotated categories are shown in [Figure](#hate-speech-annotations) below.
+* *Data*: semantic and crowdsourced annotations. The specific annotated categories are shown in [figure](#hate-speech-annotations) below. Source code for semantic annotation is provided in Jupyter [Notebooks](semantic_annotation).
 
 
 All code to evaluate the two-stage study is in *scripts*. Specifically, in the Python files:
 
 * *dataCollect.py*: generates a table of non-aggregated user annotations without (_1) and with (_2) semantics (data), semantically enriched hate speech sample (samples), and all user information (users). 
 
-* *agreement.py*: functions to compute inter-annotator agreement (Krippendorff's Alpha, Fleiss' Kappa).
+* *agreement.py*: functions to compute inter-annotator agreement (Krippendorff's Alpha, Fleiss' Kappa on 87% of the posts, i.e., with 6 annotations).
 
-* *helper.py*: helper functions to analyse impact with a rule-based categorisation (by agreement and participants' decision rules) and alignment (Pearson's correlation).
+* *helper.py*: helper functions to analyse alignment (Pearson's correlation) and semantics impact with a rule-based categorisation (by agreement and participants' decision).
 
-* *utils.py*: plotting functions for table (agreement, correlation), horizontal bar (frequency), diagram (Sankey shifts) and heatmap (matrix shifts and overlap) plots.
+* *utils.py*: plotting functions for table (agreement, correlation), horizontal bar (frequency), Sankey diagram (shifts) and heatmap (overlap).
 
 ## Hate Speech Annotation Example
 
