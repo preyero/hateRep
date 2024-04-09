@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -40,7 +41,7 @@ def clean_text(texts):
     return clean_texts
 
 
-def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, p_values_df = None, hide_rows = None, hide_columns=False, figsize=(10, 7), colorbar_label: str=None, phase: str=None):
+def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, hide_rows = None, hide_columns=False, figsize=(10, 7), colorbar_label: str=None, phase: str=None):
     # Assuming cell_values_df contains the color values and color_values_df contains the values to display
     # Ranges is a list of column indexes if wanting to boldface the maximum value in a subset of the columns
 
@@ -49,9 +50,7 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
     if hide_rows is not None:
         cell_values_df = cell_values_df.drop(hide_rows)
         color_values_df = color_values_df.drop(hide_rows)
-        if p_values_df is not None:
-            p_values_df = p_values_df.drop(hide_rows)
-    
+
     # Pretty labels
     row_labels = cell_values_df.index.to_list()
     row_labels = clean_text(row_labels)
@@ -91,24 +90,13 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
     if not hide_columns:
         ax.set_title(f'Phase {phase}', fontsize=MEDIUM_SIZE)
 
-    # Add significance
-    if p_values_df is not None:
-        for i in range(len(cell_values_df)):
-            for j in range(len(cell_values_df.columns)):
-                value, p_val = str(cell_values_df.iloc[i, j]), p_values_df.iloc[i, j]
-                if p_val < 0.001:
-                    value += "$^{{**}}$"
-                elif p_val < 0.05:
-                    value += "$^*$"
-                table[i + offset, j].get_text().set_text(value)
-
     # Boldface highest value in each row (by columns subset, if ranges)
     if not boldface_ranges:
         # from all values in the row
         boldface_ranges = [0, cell_values_df.shape[1]]
     for i, row in enumerate(cell_values_df.values):
         for j in range(len(boldface_ranges)-1):
-            max_idx = row[boldface_ranges[j]:boldface_ranges[j+1]].argmax()
+            max_idx = np.nanargmax(row[boldface_ranges[j]:boldface_ranges[j+1]])
             table[i + offset, boldface_ranges[j] + max_idx].get_text().set_weight('bold')
     
     # Adjust by phase (1 is on left with index, 2 is on right with colorbar)
@@ -346,7 +334,7 @@ def export_overlap_count(df, col1, col2, order, labels_type, pdf_filename):
     col1_values = [val - in_both for val, in_both in zip(col1_values, both_values)]
     col2_values = [val - in_both for val, in_both in zip(col2_values, both_values)]
 
-    col1_tag, col2_tag = ['LGBT' if 'LGBT' in col1 else col1][0], ['nonLGBT' if 'nonLGBT' in col2 else col2][0]
+    col1_tag, col2_tag = ['S & G' if 'LGBT' in col1 else 'M & W'][0], ['M & W' if 'nonLGBT' in col2 else 'S and G'][0]
     counts_matrix = pd.DataFrame(data=[both_values, col1_values, col2_values], columns=order, index=['both', col1_tag, col2_tag])
 
     # Create a heatmap using seaborn

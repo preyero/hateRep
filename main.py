@@ -1,4 +1,5 @@
 import os, sys
+import numpy as np
 import pandas as pd
 from typing import List, Dict
 from collections import defaultdict
@@ -178,12 +179,13 @@ def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: Li
                 target_subset = df.loc[df[c] == target]
                 for src in df[c].unique():
                     src_subset = df.loc[df[c] == src] 
-                    corr_coeff, pvalue = pearson_correlation(src_subset, target_subset, f'{sg}_{p}', 'Question ID') # how much they align with it
+                    corr_coeff, _ = pearson_correlation(src_subset, target_subset, f'{sg}_{p}', 'Question ID') # how much they align with it
+                    if corr_coeff == 1.0:
+                        corr_coeff = np.nan
                     try:
                         values[f'r_{p}'][src].append(corr_coeff)
-                        values[f'p_{p}'][src].append(pvalue)
                     except KeyError:
-                        values[f'r_{p}'][src], values[f'p_{p}'][src] = [corr_coeff], [pvalue]
+                        values[f'r_{p}'][src] = [corr_coeff]
 
     # index names and sort by (6 tables: alpha, R, p_val for each phase)
     res_df =  [pd.DataFrame.from_dict(values[k]) for k in values.keys()]
@@ -201,10 +203,10 @@ hide_columns = False
 for g in dc.TARGET_GROUPS:
     # of annotator demographics
     results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), labels = dc.TARGET_LABELS[g], labels_type=g, order_by=table_1_alpha[g])
-    table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f'{g}_p_1'], table_2[f'{g}_r_2'], table_2[f'{g}_p_2'] = results
+    table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f'{g}_r_2'] = results
 
     # Table plots
-    cols = ['nonLGBT', 'LGBT', 'M', 'W', 'S', 'G']
+    cols = ['M', 'W', 'S', 'G']
     for p in dc.PHASES:
         
         # hide rows
@@ -212,21 +214,18 @@ for g in dc.TARGET_GROUPS:
         u.export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                           color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                           pdf_filename=f'results/1_agreement/krippendorff_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
-                          boldface_ranges=[0, 2, 6], 
                           hide_rows=hide_rows[g], 
                           hide_columns=hide_columns,
-                          figsize=(10, 7 - len(hide_rows[g])), 
+                          figsize=(7, 7 - len(hide_rows[g])), 
                           colorbar_label='Krippendorff Alpha', phase = p)  
 
         # show correlation values instead of agreement scores
         u.export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
                           color_values_df=table_2[f'{g}_r_{p}'][cols], 
                           pdf_filename=f'results/2_alignment/pearson_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
-                          boldface_ranges=[0, 2, 6], 
-                          p_values_df=table_2[f'{g}_p_{p}'][cols], 
                           hide_rows=hide_rows[g], 
                           hide_columns=hide_columns,
-                          figsize=(10, 7 - len(hide_rows[g])), 
+                          figsize=(7, 7 - len(hide_rows[g])), 
                           colorbar_label='Correlation Coefficient', phase = p)
     hide_columns = True
 
@@ -235,21 +234,18 @@ for g in dc.TARGET_GROUPS:
 g, g_labels = 'other', [f"{l}_bin" for l in dc.TARGET_GROUPS + dc.HATE_QS]
 print(g_labels)
 results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), labels = g_labels, labels_type=g, order_by=table_1_alpha[g])
-table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f'{g}_p_1'], table_2[f'{g}_r_2'], table_2[f'{g}_p_2'] = results
+table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f'{g}_r_2'] = results
 for p in dc.PHASES:
     u.export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                   color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                   pdf_filename=f'results/1_agreement/krippendorff_{g}_{p}_{'_'.join(cols)}.pdf', 
-                  boldface_ranges=[0, 2, 6], 
                   hide_columns=hide_columns,
-                  figsize=(10, 4),
+                  figsize=(7, 4),
                   colorbar_label='Krippendorff Alpha', phase = p)
     
     u.export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
                   color_values_df=table_2[f'{g}_r_{p}'][cols], 
                   pdf_filename=f'results/2_alignment/pearson_{g}_{p}_{'_'.join(cols)}.pdf', 
-                  boldface_ranges=[0, 2, 6], 
-                  p_values_df=table_2[f'{g}_p_{p}'][cols], 
                   hide_columns=hide_columns,
-                  figsize=(10, 4),
+                  figsize=(7, 4),
                   colorbar_label='Correlation Coefficient', phase = p)
