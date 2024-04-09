@@ -187,55 +187,40 @@ def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: Li
 
 # Krippendorff's Alpha and Pearson Correlation
 table_2 = {}
-hide_rows = {'gender':['gender_other', 'non-binary', 'gender_unclear'], 
-             'sexuality': ['asexual', 'sexuality_unclear']}
+hide_rows_g = {'gender':['gender_other', 'non-binary', 'gender_unclear'], 'sexuality': ['asexual', 'sexuality_unclear']}
 hide_columns = False
+show_plot = {}
 for g in dc.TARGET_GROUPS:
+    show_plot[g] = dc.TARGET_LABELS[g]
+show_plot = {**show_plot, **{'other': [f"{l}_bin" for l in dc.TARGET_GROUPS + dc.HATE_QS]}}
+for g, g_labels in show_plot.items():
     # of annotator demographics
-    results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), labels = dc.TARGET_LABELS[g], labels_type=g, order_by=table_1_alpha[g])
+    results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), labels = g_labels, labels_type=g, order_by=table_1_alpha[g])
     table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f'{g}_r_2'] = results
 
     # Table plots
     cols = ['M', 'W', 'S', 'G']
+    if g == 'other':
+        width, hide_rows, tag = 4, None, ''
+    else:
+        width, hide_rows, tag = 7 - len(hide_rows_g[g]), hide_rows_g[g], '_increased'
     for p in dc.PHASES:
         
         # hide rows
-        n_rows = 7 - len(hide_rows[g])
         u.export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                           color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
-                          pdf_filename=f'results/1_agreement/krippendorff_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
-                          hide_rows=hide_rows[g], 
+                          pdf_filename=f'results/1_agreement/krippendorff{tag}_{g}_{p}_{'_'.join(cols)}.pdf', 
+                          hide_rows=hide_rows, 
                           hide_columns=hide_columns,
-                          figsize=(7, 7 - len(hide_rows[g])), 
+                          figsize=(7, width), 
                           colorbar_label='Krippendorff Alpha', phase = p)  
 
         # show correlation values instead of agreement scores
         u.export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
                           color_values_df=table_2[f'{g}_r_{p}'][cols], 
-                          pdf_filename=f'results/2_alignment/pearson_increased_{g}_{p}_{'_'.join(cols)}.pdf', 
-                          hide_rows=hide_rows[g], 
+                          pdf_filename=f'results/2_alignment/pearson{tag}_{g}_{p}_{'_'.join(cols)}.pdf', 
+                          hide_rows=hide_rows, 
                           hide_columns=hide_columns,
-                          figsize=(7, 7 - len(hide_rows[g])), 
+                          figsize=(7, width), 
                           colorbar_label='Correlation Coefficient', phase = p)
     hide_columns = True
-
-
-# other annotations 
-g, g_labels = 'other', [f"{l}_bin" for l in dc.TARGET_GROUPS + dc.HATE_QS]
-print(g_labels)
-results = subgroup_analysis(data, 'krippendorf', dc.CATEG.values(), labels = g_labels, labels_type=g, order_by=table_1_alpha[g])
-table_2[f'{g}_alpha_1'], table_2[f'{g}_alpha_2'], table_2[f'{g}_r_1'], table_2[f'{g}_r_2'] = results
-for p in dc.PHASES:
-    u.export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
-                  color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
-                  pdf_filename=f'results/1_agreement/krippendorff_{g}_{p}_{'_'.join(cols)}.pdf', 
-                  hide_columns=hide_columns,
-                  figsize=(7, 4),
-                  colorbar_label='Krippendorff Alpha', phase = p)
-    
-    u.export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
-                  color_values_df=table_2[f'{g}_r_{p}'][cols], 
-                  pdf_filename=f'results/2_alignment/pearson_{g}_{p}_{'_'.join(cols)}.pdf', 
-                  hide_columns=hide_columns,
-                  figsize=(7, 4),
-                  colorbar_label='Correlation Coefficient', phase = p)
