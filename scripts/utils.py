@@ -116,6 +116,7 @@ def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ra
 
     print(f'Table plot exported to {pdf_filename}.')
 
+
 DECISIONS = ['targeting', 'unclear', 'not-targeting']
 CATEGORIES_Gr = [f'all_{d}'for d in DECISIONS]
 CATEGORIES_GrYl = [f'majority_{d}'for d in DECISIONS]
@@ -135,6 +136,7 @@ def draw_color(categories):
         else:
             raise Exception(f'Unrecognised category type: {category}')
     return colors
+
 
 def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
     # Calculate frequencies
@@ -188,38 +190,6 @@ def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
     plt.close()
 
     print(f'Bar plot exported to {pdf_filename}.')
-
-
-def export_alluvial_diagram(df, col1, col2, order, labels_type, pdf_filename):
-
-    # Calculate the links between nodes
-    values_1, values_2, counts = [], [], []
-    for source in order:
-        for target in order:
-            value = len(df[(df[col1] == source) & (df[col2] == target)])
-            if value > 0:
-                values_1.append(source)
-                values_2.append(target)
-                counts.append(value)
-
-    fig = go.Figure(
-        go.Parcats(
-            dimensions=[
-                {'label': 'Phase 1',
-                 'values': values_1},
-                 {'label': 'Phase 2', 
-                  'values': values_2},
-            ],
-            counts=counts
-        )
-    )
-
-    # Set node labels
-    fig.update_layout(title_text=labels_type, font_size=10, title_x=0.5, title_y=0.85)
-
-
-    # Save the plot as a PDF
-    fig.write_image(pdf_filename)
 
 
 def export_sankey_diagram(df, col1, col2, order, labels_type, pdf_filename, opacity=0.9, case=''):
@@ -308,18 +278,6 @@ def draw_heatmap(table, pdf_filename, figsize, title, vmax, vmin=0, label_x="", 
 
     plt.close()
 
-
-def export_matrix_viz(df, col1, col2, order, labels_type, pdf_filename):
-    # Create a pivot table
-    pivot_table = pd.crosstab(df[col1], df[col2], margins=True, margins_name='Total')
-
-    # Reorder the pivot table based on the specified order
-    pivot_table = pivot_table.reindex(index=order, columns=order, fill_value=0)
-
-    # Create a heatmap using seaborn
-    draw_heatmap(pivot_table, pdf_filename, figsize=(10, 6), title=labels_type, vmax=50, label_x="Phase 2", label_y="Phase 1")
-
-    print(f'Matrix exported to {pdf_filename}.')
 
 def export_overlap_count(df, col1, col2, order, labels_type, pdf_filename):
     # Create a pivot table with counts overlapping in columns

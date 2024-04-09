@@ -77,14 +77,14 @@ print('... unique texts (Fleiss)', len(d_filter['Question ID'].unique()))
 # table_1_kappa = analyse_IAA(d_filter, 'fleiss', table_1_alpha)
 
 ################################################
-# Types of hate speech annotation for understanding changes
+# Rule-based categorisation
 ################################################
-# TODO: preprocesar los labels del Y-axis para quitar underscores y quizas en bold los targeting.
 
 # ANALYSIS 1.2: Types of hate speech annotation for understanding changes
 # data.to_csv('results/data.csv', index=False)
     
-def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], samples: pd.DataFrame=samples, export_plots: bool = False):
+def analyse_types(df: pd.DataFrame, group: str, by_order: List[str], samples: pd.DataFrame=samples, export_plots: bool = False):
+    """ Assign categories to posts based on group annotations """
     with open(f'results/3_categorisation/annotation-type_examples_{group}', 'w') as output_file:
         sys.stdout = output_file
         for id in samples['Question ID']:
@@ -102,7 +102,7 @@ def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], samples: pd
             u.export_frequency_plot(df=samples, 
                                 col1=f"{g}_types_{group}_1", 
                                 col2=f"{g}_types_{group}_2", 
-                                order=types_hs, 
+                                order=by_order, 
                                 labels_type=g, 
                                 pdf_filename=f'results/3_categorisation/types_freq-plot_{g}_{group}.pdf')
 
@@ -110,22 +110,16 @@ def analyse_types(df: pd.DataFrame, group: str, types_hs: List[str], samples: pd
             u.export_sankey_diagram(df=samples, 
                                 col1=f"{g}_types_{group}_1", 
                                 col2=f"{g}_types_{group}_2", 
-                                order=types_hs[::-1], 
+                                order=by_order[::-1], 
                                 labels_type=g, 
                                 pdf_filename=f'results/3_categorisation/types_shifts-sankey_{g}_{group}.pdf', 
                                 case=group)
-            u.export_matrix_viz(df=samples, 
-                                col1=f"{g}_types_{group}_1", 
-                                col2=f"{g}_types_{group}_2", 
-                                order=types_hs[::-1], 
-                                labels_type=g, 
-                                pdf_filename=f'results/3_categorisation/types_shifts-matrix_{g}_{group}.pdf')
+
         
 # Categorisation based on level of disagreement and decision made
 types_hs = [f'{a}_{d}' for a in ['all', 'majority', 'opinions'] for d in u.DECISIONS] + \
     ['no-agreement']
-
-analyse_types(df=data, group='all', types_hs=types_hs, export_plots=True)
+analyse_types(df=data, group='all', by_order=types_hs, export_plots=True)
 
 # Categorisation by groups
 for group in data[dc.CATEG['c1']].unique():
@@ -133,7 +127,7 @@ for group in data[dc.CATEG['c1']].unique():
     subset = data.loc[data[dc.CATEG['c1']]==group].copy()
     print(group, ': ', subset.shape)
 
-    analyse_types(df=subset, group=group, types_hs=types_hs)
+    analyse_types(df=subset, group=group, by_order=types_hs)
 
 samples.to_csv('results/samples.csv', index=False)
 for g in dc.TARGET_GROUPS:
@@ -153,11 +147,7 @@ for g in dc.TARGET_GROUPS:
 
 # ANALYSIS 2: Disaggregated IAA scores and correlation with target groups
 def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: List[int], labels: List[str], labels_type: str, order_by: pd.DataFrame = None, manual_expert: bool = True):
-    """ Compute a list of resulting dataframes: with IAA and correlation (R and p-val) on each phase """
-    if manual_expert:
-        MANUAL_EXPERT = {'group': {'gender': 'LGBT', 'sexuality': 'LGBT'}, 'subgroupA': {'gender': 'G', 'sexuality': 'S'}}
-    else:
-        MANUAL_EXPERT = {}
+    """ Compute a list of dataframes: with IAA and correlation on each phase """
     values = defaultdict(dict)
     for c in annotator_categories:
         print(df[c].value_counts())
@@ -174,12 +164,11 @@ def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: Li
         for p in dc.PHASES:
             for i, sg in enumerate(labels):
                 # target group with highest agreement on sg label
-                target = [MANUAL_EXPERT[c][labels_type] if c in MANUAL_EXPERT and labels_type in MANUAL_EXPERT[c] 
-                          else define_expert(values=values[f'alpha_{p}'], position=i, categ_level=c)][0]
+                target = define_expert(values=values[f'alpha_{p}'], position=i, categ_level=c)
                 target_subset = df.loc[df[c] == target]
                 for src in df[c].unique():
                     src_subset = df.loc[df[c] == src] 
-                    corr_coeff, _ = pearson_correlation(src_subset, target_subset, f'{sg}_{p}', 'Question ID') # how much they align with it
+                    corr_coeff, _ = pearson_correlation(src_subset, target_subset, f'{sg}_{p}', 'Question ID') 
                     if corr_coeff == 1.0:
                         corr_coeff = np.nan
                     try:
@@ -187,12 +176,13 @@ def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: Li
                     except KeyError:
                         values[f'r_{p}'][src] = [corr_coeff]
 
-    # index names and sort by (6 tables: alpha, R, p_val for each phase)
+    # index names and sort by (6 tables: alpha and R for each phase)
     res_df =  [pd.DataFrame.from_dict(values[k]) for k in values.keys()]
     for i in range(0, len(res_df)):
         res_df[i].index = labels
         if isinstance(order_by, pd.DataFrame):
             res_df[i] = res_df[i].reindex(order_by.index.to_list())
+
     return res_df
 
 # Krippendorff's Alpha and Pearson Correlation
