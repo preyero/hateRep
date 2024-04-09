@@ -44,9 +44,3 @@ The code runs in a conda environment using Python version 3.12
     hateRep <user-login>$ python main.py
 ```
 
-
-## Baseline repositories
-
-[1] [Knowledge-Grounded Target Group Language Recognition in Hate Speech](https://github.com/preyero/hate-speech-identities) by Reyero Lobo et al (2023). In Knowledge Graphs: Semantics, Machine Learning, and Languages. IOS Press, 1--18.
-
-[2] [Development of the Gender, Sex, and Sexual Orientation Ontology: Evaluation and Workflow.](https://github.com/Superraptor/GSSO) by Kronk et al (2020). In Journal of the American Medical Informatics Association.
