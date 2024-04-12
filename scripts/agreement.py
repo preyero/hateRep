@@ -8,31 +8,15 @@ import krippendorff
 # Inter-annotator agreement (IAA)/Interrater reliability
 #########################
 
-# 1. Cohen's Kappa: agreement between two raters
-# https://www.surgehq.ai/blog/inter-rater-reliability-metrics-understanding-cohens-kappa
-from sklearn.metrics import cohen_kappa_score
-# y1: label assigned by first rater (i think is nominal, a variable with n_classes) 
-# y2: label by rater 2
-# only in the intersect between two raters!
-#from statsmodels.stats.inter_rater import cohens_kappa
-# For more than two raters, it can create a contigency of n_raters-dimensions (instead of 2-dimen)
-# https://www.statsmodels.org/stable/generated/statsmodels.stats.inter_rater.to_table.html
-# sample x annotations. BUT no NaN (have to delete them?? i think it does use the information of which labeler for p_e.
-# look kappa with missing data (at random): listwise deletion https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6506991/ 
-# Maybe one against the others? gives one value per annotator and calculate mean + std deviation.
-
-# 2. Fleiss' Kappa: agreement between more than 3 raters (nominal: x in {A, B, C}) > 
-# Kendall for ordinal (A<B<C), intra-class correlation for a metric.
-# https://datatab.net/tutorial/fleiss-kappa
-# from counts of category assigned: Fleiss Kappa can be specially used when participants are rated by different sets of raters. This means that the raters responsible for rating one subject are not assumed to be the same as those responsible for rating another (Fleiss et al., 2003).
-def keep_by_annotation_count(df: pd.DataFrame, by: str, n_counts: int, method: str):
-    # Get counts
+# Fleiss' Kappa: agreement between more than 3 raters (nominal: x in {A, B, C}) > 
+# Fleiss Kappa can be specially used when participants are rated by different sets of raters. 
+# This means that the raters responsible for rating one subject are not assumed to be the same as those responsible for rating another (Fleiss et al., 2003).
+def keep_by_annotation_count(df: pd.DataFrame, by: str, n_counts: int):
+    """ Keep rows over counts by a column """
     c = df.groupby(by)[by].transform('count')
 
-    if method == 'filter':
-        return df[ c == n_counts ]
-    elif method == 'downsample':
-        return
+    return df[ c == n_counts ]
+
 
 
 def fleiss(df: pd.DataFrame, subject_col: str, rating_col: str, verbose: bool = False):
@@ -58,8 +42,6 @@ def fleiss(df: pd.DataFrame, subject_col: str, rating_col: str, verbose: bool = 
     return fleiss_kappa(table)
 
 # 3. Krippendorf's Alpha: incomplete data (not every annotator each sample) and arbitrary number of raters (not always 2 or 3)
-# https://www.surgehq.ai/blog/inter-rater-reliability-metrics-an-introduction-to-krippendorffs-alpha
-# https://www.lighttag.io/blog/krippendorffs-alpha/
 def krippendorf(df: pd.DataFrame, rater_col: str, subject_col: str, rating_col: str, verbose: bool = False):
     if verbose:
         print(f'computing Krippendorf on {rating_col}')
@@ -81,7 +63,7 @@ def krippendorf(df: pd.DataFrame, rater_col: str, subject_col: str, rating_col: 
 
 
 def get_scores_and_delta(data_subset: pd.DataFrame, score: str, rating_col: str, rater_col: str = 'User', subject_col: str = 'Question ID', verbose: bool = False):
-    """ IAA in both phases and delta between them """
+    """ Fleiss or Krippendorff values in both phases and delta between them """
 
     # get alpha values
     if score == 'krippendorf':

@@ -71,7 +71,7 @@ for key, table in table_1_alpha.items():
 
 
 # Fleiss Kappa scores keeping only those with 6 annotations
-d_filter = keep_by_annotation_count(df=data, by='Question ID', n_counts=6, method='filter') 
+d_filter = keep_by_annotation_count(df=data, by='Question ID', n_counts=6) 
 print('... unique texts (Fleiss)', len(d_filter['Question ID'].unique()))
 
 # table_1_kappa = analyse_IAA(d_filter, 'fleiss', table_1_alpha)
