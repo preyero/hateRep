@@ -5,13 +5,9 @@ from scipy import stats
 #########################
 # Alignment
 #########################
-# 1. Test-retest: correlation at two distinct occassions, agreement in repeated measures
-# https://www.sciencedirect.com/topics/nursing-and-health-professions/test-retest-reliability
-# 2. Intraclass Correaltion Coefficients (ICC): consistency in repeated measures
-
 EXPERT = {'group': ['LGBT'], 'subgroupA': ['S', 'G'], 'subgroupB': ['NB', 'T', 'H']}
 def define_expert(values: Dict[str, List[float]], position: int, categ_level: str) -> str:
-    """ Given a dict of alpha values for each subcategory in categ_level, return the one with highest value of label at position """
+    """ Given a dict of float values of a string subcategory (in categ_level), returns the one with highest value of label at position """
     candidates = EXPERT[categ_level]
     if len(candidates) > 1:
         candidates_values = [values[sc][position] for sc in candidates]
@@ -22,6 +18,7 @@ def define_expert(values: Dict[str, List[float]], position: int, categ_level: st
 
 
 def pearson_correlation(src_df: pd.DataFrame, target_df: pd.DataFrame, label: str, id_col: str):
+    """ Compute correlation coefficients between a source (src_df) and target (target_df) label column, aggregating values (by id_col) """
 
     # other studies using correlation and kappa to uncover non-random examiner error: https://pubmed.ncbi.nlm.nih.gov/3455967/
 
@@ -31,21 +28,16 @@ def pearson_correlation(src_df: pd.DataFrame, target_df: pd.DataFrame, label: st
 
     to_compare = pd.merge(target_agg, src_agg, on=[id_col], how='inner', suffixes=['_target', '_src'])
 
-    # if to_compare.shape[0]!= 240:
-    #     print(f' less samples seen in {label}: {to_compare.shape[0]}')
-
-    # pearson coeffs and p values
+    # pearson coeffs 
     pearson = stats.pearsonr(to_compare[f'{label}_src'], to_compare[f'{label}_target'])
-    corr_coeff, pval = pearson.statistic, pearson.pvalue
-    # Bonferroni correction: https://www.ibm.com/support/pages/calculation-bonferroni-adjusted-p-values
-    pval_corrected = pval * to_compare.shape[0]
-    return round(corr_coeff, 2), pval_corrected
+
+    return round(pearson.statistic, 2)
 
 #########################
 # Categorisation
 #########################
 def group_by_value(input_data: List[List[str]]):
-    # Create a dictionary to store sublists grouped by their unique values
+    """ Create annotation vectors: dictionaries of count and sublists of unique values """
     group_dict = {}
     for sublist in input_data:
         key = tuple(sorted(set(sublist)))
@@ -63,6 +55,7 @@ def group_by_value(input_data: List[List[str]]):
 
 
 def is_majority(same: int, total: int):
+    """ Returns True if integer value of counts (same) is a majority given a total integer number (total) """
     if same > total/2:
         return True
     else:
@@ -70,6 +63,7 @@ def is_majority(same: int, total: int):
 
 
 def define_category(subset_annot: pd.DataFrame, col: str, labels_type: str) -> str:
+    """ Rule-based categorisation by agreement and decision on target groups """
     annotations = subset_annot[col].to_list()
     print(len(annotations), annotations)
     subgroup_annots, subgroup_counts = group_by_value(annotations)
@@ -112,7 +106,7 @@ def define_category(subset_annot: pd.DataFrame, col: str, labels_type: str) -> s
 
 
 def process_rationale(d: pd.DataFrame, annot: pd.DataFrame, labels_type: str):
-    """ Print counts and unique entities learnt with semantics in c1 groups """
+    """ Print counts and unique entities learnt with semantics in participant groups """
     N, agreed = d.shape[0],  ['all', 'majority', 'opinions']
     yes = [f'{a}_targeting' for a in agreed]
     no = [f'{a}_not-targeting' for a in agreed] # + [f'{a}_unclear' for a in agreed] + ['no-agreement']
@@ -136,5 +130,3 @@ def process_rationale(d: pd.DataFrame, annot: pd.DataFrame, labels_type: str):
             other_sg = ['LGBT' if sg == 'nonLGBT' else 'nonLGBT'][0]
             print(f'\n by {other_sg}')
             print(subset_id.loc[subset_id['group']==other_sg, [f'{labels_type}_cat_2', f'justify_change_{labels_type}', f'Justify {labels_type.capitalize()}_2']])            
-
-    return

@@ -168,7 +168,7 @@ def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: Li
                 target_subset = df.loc[df[c] == target]
                 for src in df[c].unique():
                     src_subset = df.loc[df[c] == src] 
-                    corr_coeff, _ = pearson_correlation(src_subset, target_subset, f'{sg}_{p}', 'Question ID') 
+                    corr_coeff = pearson_correlation(src_subset, target_subset, f'{sg}_{p}', 'Question ID') 
                     if corr_coeff == 1.0:
                         corr_coeff = np.nan
                     try:
