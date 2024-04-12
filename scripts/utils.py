@@ -1,3 +1,4 @@
+from typing import List
 import numpy as np
 import pandas as pd 
 import matplotlib.pyplot as plt
@@ -19,7 +20,8 @@ plt.rc('ytick', labelsize=MEDIUM_SIZE)    # fontsize of the tick labels
 plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
 plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
 
-def clean_text(texts):
+def clean_text(texts: List[str]):
+    """ Helper function to print labels """
     clean_texts = []
     for t in texts:
         
@@ -41,7 +43,9 @@ def clean_text(texts):
     return clean_texts
 
 
-def export_table_plot(cell_values_df, color_values_df, pdf_filename, boldface_ranges = None, hide_rows = None, hide_columns=False, figsize=(10, 7), colorbar_label: str=None, phase: str=None):
+def export_table_plot(cell_values_df:pd.DataFrame, color_values_df:pd.DataFrame, pdf_filename:str, boldface_ranges: List[int] = None, 
+                      hide_rows: bool = None, hide_columns: bool=False, figsize=(10, 7), colorbar_label: str=None, phase: str=None):
+    """ Helper function to print table with values in cell_values_df with colors """
     # Assuming cell_values_df contains the color values and color_values_df contains the values to display
     # Ranges is a list of column indexes if wanting to boldface the maximum value in a subset of the columns
 
@@ -123,6 +127,17 @@ CATEGORIES_GrYl = [f'majority_{d}'for d in DECISIONS]
 CATEGORIES_Or = [f'opinions_{a}' for a in ['one', 'two', 'three'] + DECISIONS]
 CATEGORIES_Rd = ['no-agreement']
 def draw_color(categories):
+    """ Assign matplotlib colors to categories
+
+    Args:
+        categories (_type_): _description_
+
+    Raises:
+        Exception: _description_
+
+    Returns:
+        _type_: _description_
+    """
     colors = []
     for category in categories:
         if category in CATEGORIES_Gr:
@@ -138,7 +153,8 @@ def draw_color(categories):
     return colors
 
 
-def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
+def export_frequency_plot(df:pd.DataFrame, col1:str, col2:str, order:List[str], labels_type:str, pdf_filename:str):
+    """ Horizontal bar matplolib plot """
     # Calculate frequencies
     freq_col1 = df[col1].value_counts(normalize=True) * 100
     sorted_freq1 = freq_col1.reindex(order, fill_value=0)
@@ -192,7 +208,8 @@ def export_frequency_plot(df, col1, col2, order, labels_type, pdf_filename):
     print(f'Bar plot exported to {pdf_filename}.')
 
 
-def export_sankey_diagram(df, col1, col2, order, labels_type, pdf_filename, opacity=0.9, case=''):
+def export_sankey_diagram(df: pd.DataFrame, col1:str, col2:str, order: List[str], labels_type:str, pdf_filename:str, opacity=0.9, case=''):
+    """ Sankey diagram using plotly library """
     
     # Create nodes (values in col1 and col2 following order)
     nodes = order + order
@@ -260,7 +277,8 @@ def export_sankey_diagram(df, col1, col2, order, labels_type, pdf_filename, opac
     print(f'Sankey diagram exported to {pdf_filename}.')
 
 
-def draw_heatmap(table, pdf_filename, figsize, title, vmax, vmin=0, label_x="", label_y=""):
+def draw_heatmap(table: pd.DataFrame, pdf_filename:str, figsize:tuple, title: str, vmax: int, vmin=0, label_x="", label_y=""):
+    """ Heatmap using seaborn library """
 
     # Create a heatmap using seaborn
     annot = table.map(lambda x: f'{x}' if x > 0 else '')
@@ -279,7 +297,8 @@ def draw_heatmap(table, pdf_filename, figsize, title, vmax, vmin=0, label_x="", 
     plt.close()
 
 
-def export_overlap_count(df, col1, col2, order, labels_type, pdf_filename):
+def export_overlap_count(df: pd.DataFrame, col1: str, col2: str, order: List[str], labels_type: str, pdf_filename: str):
+    """ Create overlap tables """
     # Create a pivot table with counts overlapping in columns
     pivot_table = pd.crosstab(df[col1], df[col2], margins=True, margins_name='Total')
     pivot_table = pivot_table.reindex(index=order+['Total'], columns=order+['Total'], fill_value=0)
