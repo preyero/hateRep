@@ -146,7 +146,7 @@ for g in dc.TARGET_GROUPS:
 ################################################
 
 # ANALYSIS 2: Disaggregated IAA scores and correlation with target groups
-def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: List[int], labels: List[str], labels_type: str, order_by: pd.DataFrame = None, manual_expert: bool = True):
+def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: List[int], labels: List[str], labels_type: str, order_by: pd.DataFrame = None):
     """ Compute a list of dataframes: with IAA and correlation on each phase """
     values = defaultdict(dict)
     for c in annotator_categories:
@@ -164,7 +164,7 @@ def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: Li
         for p in dc.PHASES:
             for i, sg in enumerate(labels):
                 # target group with highest agreement on sg label
-                target = define_expert(values=values[f'alpha_{p}'], position=i, categ_level=c)
+                target = define_expert(values=values[f'alpha_{p}'], position=i, categ_level=c, labels_type=labels_type)
                 target_subset = df.loc[df[c] == target]
                 for src in df[c].unique():
                     src_subset = df.loc[df[c] == src] 

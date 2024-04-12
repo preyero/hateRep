@@ -6,15 +6,20 @@ from scipy import stats
 # Alignment
 #########################
 EXPERT = {'group': ['LGBT'], 'subgroupA': ['S', 'G'], 'subgroupB': ['NB', 'T', 'H']}
-def define_expert(values: Dict[str, List[float]], position: int, categ_level: str) -> str:
+MANUAL_EXPERT = {'group': {'gender': 'LGBT', 'sexuality': 'LGBT'}, 'subgroupA': {'gender': 'G', 'sexuality': 'S'}}
+
+def define_expert(values: Dict[str, List[float]], position: int, categ_level: str, manual_expert=True, labels_type:str=None) -> str:
     """ Given a dict of float values of a string subcategory (in categ_level), returns the one with highest value of label at position """
-    candidates = EXPERT[categ_level]
-    if len(candidates) > 1:
-        candidates_values = [values[sc][position] for sc in candidates]
-        expert_i = max(range(len(candidates_values)), key=candidates_values.__getitem__)
+    if manual_expert and categ_level in MANUAL_EXPERT.keys() and labels_type in MANUAL_EXPERT[categ_level].keys():
+        return MANUAL_EXPERT[categ_level][labels_type]
     else:
-        expert_i = 0
-    return candidates[expert_i]
+        candidates = EXPERT[categ_level]
+        if len(candidates) > 1:
+            candidates_values = [values[sc][position] for sc in candidates]
+            expert_i = max(range(len(candidates_values)), key=candidates_values.__getitem__)
+        else:
+            expert_i = 0
+        return candidates[expert_i]
 
 
 def pearson_correlation(src_df: pd.DataFrame, target_df: pd.DataFrame, label: str, id_col: str):
