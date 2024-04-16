@@ -5,7 +5,6 @@ from typing import List, Dict
 from collections import defaultdict
 
 import scripts.dataCollect as dc
-from scripts.dataCollect import load_hateRep
 from scripts.agreement import get_scores_and_delta, keep_by_annotation_count
 from scripts.helper import define_expert, pearson_correlation
 from scripts.helper import define_category, process_rationale
@@ -21,7 +20,7 @@ D_PATH = os.path.join(PROJ_DIR, 'data')
 # Import data
 ################################################
 
-data, samples, users = load_hateRep(u_path=U_PATH, d_path=D_PATH)
+data, samples, users = dc.load_hateRep(u_path=U_PATH, d_path=D_PATH)
 print('Imported data with samples, annotations, and user tables')
 
 
