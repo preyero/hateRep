@@ -12,12 +12,14 @@ Detecting online hate requires dealing with different perceptions of what consti
 
 ## Repo structure
 
-Data is organised in three folders: 
+Data is organised in the following folders: 
 
-* *Annotators*: anonymised demographic tables exported from Prolific's database. Participants appear under only one of the following categories, subject to: being a (i) heterosexual cis men (M_MH), (ii) a heterosexual cis women (W_WH), or belonging to (iii) gender (trans, G_T, or non-binary, G_NB) or (iv) sexuality (non-heterosexual, S_H) groups frequently targeted. 
+* *Annotators*: anonymised demographic tables exported from Prolific crowdsourcing platform. Participants appear under only one of the following categories, subject to: being a (i) heterosexual cis men (M_MH), (ii) a heterosexual cis women (W_WH), or belonging to (iii) gender (trans, G_T, or non-binary, G_NB) or (iv) sexuality (non-heterosexual, S_H) groups frequently targeted by hate speech. 
 
 
-* *Data*: contains semantic and crowdsourced annotations. The specific categories are shown in [figure](#hate-speech-annotations) below. Semantic annotations were provided with Jupyter [Notebooks](semantic_annotation) (*semantic_annotation*).
+* *Data*: contains semantic and crowdsourcing annotations. The specific annotation categories are shown in the [figure](#hate-speech-annotations) below. 
+
+* *Semantic_annotation*: contains the background knowledge of the hate speech sample, which was mainly provided by a domain-specific KG, i.e., the [GSSO](https://github.com/Superraptor/GSSO) (`pruned_concepts.csv`) and completed with generic semantic resources (`missing_concepts.csv`).
 
 * *Documentation*: contains the approved ethics application form and participant information sheet.
 
