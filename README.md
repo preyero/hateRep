@@ -18,7 +18,7 @@ Data is organised in the following folders:
 
 * *Semantic_annotation*: contains the background knowledge of the hate speech sample, which was mainly provided by a domain-specific KG, i.e., the [GSSO](https://github.com/Superraptor/GSSO) (`pruned_concepts.csv`) and completed with generic semantic resources (`missing_concepts.csv`).
 
-* *Documentation*: contains the approved ethics application form, participant information sheet, and description for each data file.
+* *Documentation*: contains the approved Ethics Application Form and Participant Information Sheet.
 
 Source code is in *scripts*, specifically in the Python files:
 
@@ -29,6 +29,8 @@ Source code is in *scripts*, specifically in the Python files:
 * *helper.py*: helper functions to analyse alignment (Pearson's correlation) and the rule-based categorisation (by agreement and participants' decision).
 
 * *utils.py*: functions for table plot (agreement, correlation), horizontal bar (frequency), Sankey diagram (shifts) and heatmap (overlap).
+
+All files used for evaluation in the paper are in folder *results*.
 
 ## Hate Speech Annotation Example
 
