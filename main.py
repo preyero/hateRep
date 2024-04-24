@@ -186,7 +186,6 @@ def subgroup_analysis(df: pd.DataFrame, iaa_score: str, annotator_categories: Li
 
 # Krippendorff's Alpha and Pearson Correlation
 table_2 = {}
-hide_rows_g = {'gender':['gender_other', 'non-binary', 'gender_unclear'], 'sexuality': ['asexual', 'sexuality_unclear']}
 hide_columns = False
 show_plot = {}
 for g in dc.TARGET_GROUPS:
@@ -199,17 +198,13 @@ for g, g_labels in show_plot.items():
 
     # Table plots
     cols = ['M', 'W', 'S', 'G']
-    if g == 'other':
-        width, hide_rows, tag = 4, None, ''
-    else:
-        width, hide_rows, tag = 7 - len(hide_rows_g[g]), hide_rows_g[g], '_increased'
+    width = [4 if g == 'other' else 7][0]
     for p in dc.PHASES:
         
         # hide rows
         u.export_table_plot(cell_values_df=table_2[f'{g}_alpha_{p}'][cols], 
                           color_values_df=table_2[f'{g}_alpha_{p}'][cols], 
-                          pdf_filename=f'results/1_agreement/krippendorff{tag}_{g}_{p}_{'_'.join(cols)}.pdf', 
-                          hide_rows=hide_rows, 
+                          pdf_filename=f'results/1_agreement/krippendorff_{g}_{p}_{'_'.join(cols)}.pdf', 
                           hide_columns=hide_columns,
                           figsize=(7, width), 
                           colorbar_label='Krippendorff Alpha', phase = p)  
@@ -217,8 +212,7 @@ for g, g_labels in show_plot.items():
         # show correlation values instead of agreement scores
         u.export_table_plot(cell_values_df=table_2[f'{g}_r_{p}'][cols], 
                           color_values_df=table_2[f'{g}_r_{p}'][cols], 
-                          pdf_filename=f'results/2_alignment/pearson{tag}_{g}_{p}_{'_'.join(cols)}.pdf', 
-                          hide_rows=hide_rows, 
+                          pdf_filename=f'results/2_alignment/pearson_{g}_{p}_{'_'.join(cols)}.pdf', 
                           hide_columns=hide_columns,
                           figsize=(7, width), 
                           colorbar_label='Correlation Coefficient', phase = p)
