@@ -84,7 +84,7 @@ print('... unique texts (Fleiss)', len(d_filter['Question ID'].unique()))
     
 def analyse_types(df: pd.DataFrame, group: str, by_order: List[str], samples: pd.DataFrame=samples, export_plots: bool = False):
     """ Assign categories to posts based on group annotations """
-    with open(f'results/3_categorisation/annotation-type_examples_{group}', 'w') as output_file:
+    with open(f'results/4_qualitative/annotation-type_examples_{group}', 'w') as output_file:
         sys.stdout = output_file
         for id in samples['Question ID']:
             print('\n\nQUESTION ID: ', id)
