@@ -1,6 +1,6 @@
 [![Python](https://upload.wikimedia.org/wikipedia/commons/5/50/Blue_Python_3.12%2B_Shield_Badge.svg)](https://www.python.org/downloads/release/python-3120/)
 
-# divHateRep: A Diversified Hate Speech Dataset with Repetitions
+# HateRep: A Diversified Hate Speech Dataset with Repetitions
 
 This dataset contains 2880 annotations from participants with diverse gender and sexual orientations. Social media posts have been extracted from for existing hate speech databases ([Measuring Hate Speech](https://huggingface.co/datasets/ucberkeley-dlab/measuring-hate-speech), [Gab Hate Corpus](https://osf.io/edua3/), [HateXplain](), and [XtremeSpeech](https://github.com/antmarakis/xtremespeech)).
 
