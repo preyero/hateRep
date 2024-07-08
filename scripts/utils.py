@@ -10,9 +10,9 @@ import plotly.graph_objects as go
 #plt.rcParams.update({'font.size': 22})
 SMALL_SIZE = 15
 MEDIUM_SIZE = 17
-BIGGER_SIZE = 19
+BIGGER_SIZE = 21
 
-plt.rc('font', size=MEDIUM_SIZE)          # controls default text sizes
+plt.rc('font', size=BIGGER_SIZE)          # controls default text sizes
 plt.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
 plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
 plt.rc('xtick', labelsize=MEDIUM_SIZE)    # fontsize of the tick labels
@@ -174,8 +174,8 @@ def export_frequency_plot(df:pd.DataFrame, col1:str, col2:str, order:List[str], 
 
     # Display percentages in each bar
     for i, (bar1, freq1, bar2, freq2) in enumerate(zip(bars1, sorted_freq1, bars2, sorted_freq2)):
-        ax.text(bar1.get_width() - 10.5, bar1.get_y() + bar1.get_height() / 2, f'{freq1:.2f}%', va='center', ha='left', color='blue')
-        ax.text(bar2.get_width() + 11.5, bar2.get_y() + bar2.get_height() / 2, f'{freq2:.2f}%', va='center', ha='right', color='orange')
+        ax.text(bar1.get_width() - 10.5, bar1.get_y() + bar1.get_height() / 2, f'{freq1:.2f}%', va='center', ha='left', color='blue', fontsize=MEDIUM_SIZE)
+        ax.text(bar2.get_width() + 11.5, bar2.get_y() + bar2.get_height() / 2, f'{freq2:.2f}%', va='center', ha='right', color='orange', fontsize=MEDIUM_SIZE)
 
     # Set X-axis labels and legend
     #ax.set_xlabel('Percentage')
@@ -283,12 +283,12 @@ def draw_heatmap(table: pd.DataFrame, pdf_filename:str, figsize:tuple, title: st
     # Create a heatmap using seaborn
     annot = table.map(lambda x: f'{x}' if x > 0 else '')
     fig, ax = plt.subplots(figsize=figsize)
-    sns.heatmap(table, annot=annot, fmt='', cmap='Blues', cbar=True, linewidths=.5, vmin=vmin, vmax=vmax, ax=ax)
-
+    sns.heatmap(table, annot=annot, fmt='', cmap='Blues', cbar=True, linewidths=.5, vmin=vmin, vmax=vmax, ax=ax, annot_kws={"fontsize":MEDIUM_SIZE})
+    
     # Set plot title and labels
-    plt.title(title, fontsize=16)
+    plt.title(title, fontsize=SMALL_SIZE)
     ax.set(xlabel=label_x, ylabel=label_y)
-    ax.set_yticklabels(clean_text(table.index), ha='right', color='black', fontsize=SMALL_SIZE)
+    ax.set_yticklabels(clean_text(table.index), ha='right', color='black')
 
     # Export to PDF
     with PdfPages(pdf_filename) as pdf:
