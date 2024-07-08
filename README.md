@@ -1,4 +1,6 @@
 [![Python](https://upload.wikimedia.org/wikipedia/commons/5/50/Blue_Python_3.12%2B_Shield_Badge.svg)](https://www.python.org/downloads/release/python-3120/)
+[![DOI](https://zenodo.org/badge/730161779.svg)](https://zenodo.org/doi/10.5281/zenodo.12687196)
+
 
 # Diversified Hate Speech Dataset with Repeated Measures
 
