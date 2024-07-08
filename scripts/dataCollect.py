@@ -55,7 +55,7 @@ def import_survey(d_path: str):
     # time to complete each phase
     for p in PHASES:
         for t in ['Started', 'Finished']:
-           questions[f'Phase {p} {t}'] = questions[f'Phase {p} {t}'].apply(lambda x: datetime.strptime(x, "%Y-%m-%d %H:%M:%S")) 
+           questions[f'Phase {p} {t}'] = questions[f'Phase {p} {t}'].apply(lambda x: datetime.strptime(x, "%d/%m/%Y %H:%M")) 
         questions[f'Complete_{p}'] = questions[f'Phase {p} Finished'] - questions[f'Phase {p} Started'] 
 
     return samples, annot, questions
@@ -108,12 +108,6 @@ def load_hateRep(u_path: str, d_path: str):
     # Survey data
     samples, annot, questions = import_survey(d_path)
 
-    
-    # ... fix users that added prolific ID incorreclty
-    to_replace = [id for id in users['User'] if id not in annot.User.to_list()]
-    to_replace = {'605212ecea6f5a8c7909f293@email.prolific.com': '605212ecea6f5a8c7909f293'}
-    annot['User'].replace(to_replace=to_replace, inplace=True)
-    questions['User'].replace(to_replace=to_replace, inplace=True)
 
     # ... one-hot encodings of user info
     questions['Personal Experience'] = questions['Personal Experience'].apply(lambda labels: str(labels).split(','))
