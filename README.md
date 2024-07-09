@@ -2,7 +2,7 @@
 [![DOI](https://zenodo.org/badge/730161779.svg)](https://zenodo.org/doi/10.5281/zenodo.12687196)
 
 
-# Diversified Hate Speech Dataset with Repeated Measures
+# Hate speech dataset for Target Group Identification
 
 This dataset contains 2880 annotations from participants with diverse gender and sexual orientations on whether a text contains hate speech, or targets a specific gender/sexuality group. Social media posts have been extracted from existing hate speech databases ([Measuring Hate Speech](https://huggingface.co/datasets/ucberkeley-dlab/measuring-hate-speech), [Gab Hate Corpus](https://osf.io/edua3/), [HateXplain](), and [XtremeSpeech](https://github.com/antmarakis/xtremespeech)).
 
@@ -18,7 +18,7 @@ Data is organised in the following folders:
 
 * *Data*: contains semantic and crowdsourcing annotations. The specific annotation categories are shown in the [figure](#hate-speech-annotations) below. 
 
-* *Semantic_annotation*: contains the background knowledge of the hate speech sample, which was mainly provided by a domain-specific KG, i.e., the [GSSO](https://github.com/Superraptor/GSSO) (`pruned_concepts.csv`) and completed with generic semantic resources (`missing_concepts.csv`).
+* *Semantic_annotation*: contains the background knowledge of the hate speech sample, which was mainly provided by a domain-specific KG, i.e., the [GSSO](https://github.com/Superraptor/GSSO) (`pruned_concepts.csv`) and completed with other linguistic resources (`missing_concepts.csv`).
 
 * *Documentation*: contains the approved Ethics Application Form and Participant Information Sheet.
 
@@ -34,11 +34,13 @@ Source code is in *scripts*, specifically in the Python files:
 
 All files used for evaluation in the paper are in folder *results*.
 
-## Hate Speech Annotation Example
+## Phase 2 Annotation Example (with semantics)
 
 <p align="center">
  <img src="data/survey_items.png" alt="drawing" width="700" class="center"/>
 </p>
+
+In Phase 1, the same layout is presented but without underlined terms in the post and with an empty column on the left.
 
 ## Run files
 
