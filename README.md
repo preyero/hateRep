@@ -2,7 +2,7 @@
 [![DOI](https://zenodo.org/badge/730161779.svg)](https://zenodo.org/doi/10.5281/zenodo.12687196)
 
 
-# Hate speech dataset for Target Group Identification
+# Semantically-Enhanced Crowdsourcing Study for Target Group Identification
 
 This dataset contains 2880 annotations from participants with diverse gender and sexual orientations on whether a text contains hate speech, or targets a specific gender/sexuality group. Social media posts have been extracted from existing hate speech databases ([Measuring Hate Speech](https://huggingface.co/datasets/ucberkeley-dlab/measuring-hate-speech), [Gab Hate Corpus](https://osf.io/edua3/), [HateXplain](), and [XtremeSpeech](https://github.com/antmarakis/xtremespeech)).
 
