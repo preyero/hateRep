@@ -2,11 +2,14 @@
 [![DOI](https://zenodo.org/badge/730161779.svg)](https://zenodo.org/doi/10.5281/zenodo.12687196)
 
 
-# Semantically-Enhanced Crowdsourcing Study for Target Group Identification
+[![ORDO - 10.21954/ou.rd.26212604.v1](https://img.shields.io/badge/ORDO-10.21954/ou.rd.26212604.v1-2ea44f)](https://doi.org/10.21954/ou.rd.26212604.v1)
 
-This dataset contains 2880 annotations from participants with diverse gender and sexual orientations on whether a text contains hate speech, or targets a specific gender/sexuality group. Social media posts have been extracted from existing hate speech databases ([Measuring Hate Speech](https://huggingface.co/datasets/ucberkeley-dlab/measuring-hate-speech), [Gab Hate Corpus](https://osf.io/edua3/), [HateXplain](), and [XtremeSpeech](https://github.com/antmarakis/xtremespeech)).
+# Semantic-Enhanced Crowdsourcing Study for Target Group Identification
 
-The methodology and findings from this study will be presented in ECAI 2024: **Enhancing Hate Speech Annotations with Background Semantics**
+
+This is the Source Code repository to reproduce the methodology presented in: **Enhancing Hate Speech Annotations with Background Semantics (ECAI 2024).**
+
+The Data repository is available at [The Open University Research Repository](https://doi.org/10.21954/ou.rd.26212604.v1). The dataset contains 2880 annotations from participants with diverse gender and sexual orientations on whether a text contains hate speech, or targets a specific gender/sexuality group. Social media posts have been extracted from existing hate speech databases ([Measuring Hate Speech](https://huggingface.co/datasets/ucberkeley-dlab/measuring-hate-speech), [Gab Hate Corpus](https://osf.io/edua3/), [HateXplain](https://github.com/hate-alert/HateXplain/tree/master/Data), and [XtremeSpeech](https://github.com/antmarakis/xtremespeech)).
 
 
 ## Repo structure
