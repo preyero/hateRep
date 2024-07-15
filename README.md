@@ -2,26 +2,28 @@
 [![DOI](https://zenodo.org/badge/730161779.svg)](https://zenodo.org/doi/10.5281/zenodo.12687196)
 
 
-[![ORDO - 10.21954/ou.rd.26212604.v1](https://img.shields.io/badge/ORDO-10.21954/ou.rd.26212604.v1-2ea44f)](https://doi.org/10.21954/ou.rd.26212604.v1)
+Data Repository: [![ORDO - 10.21954/ou.rd.26212604.v1](https://img.shields.io/badge/ORDO-10.21954/ou.rd.26212604.v1-2ea44f)](https://doi.org/10.21954/ou.rd.26212604.v1)
+
+Paper Preprint: [![ORO-198676](https://img.shields.io/badge/ORO-oro.open.ac.uk/98676/-2ea49f)](https://oro.open.ac.uk/98676/)
 
 # Semantic-Enhanced Crowdsourcing Study for Target Group Identification
 
 
-This is the Source Code repository to reproduce the methodology presented in: **Enhancing Hate Speech Annotations with Background Semantics (ECAI 2024).**
+This is the source code to reproduce the paper: **Enhancing Hate Speech Annotations with Background Semantics (ECAI 2024): https://oro.open.ac.uk/98676/**
 
-The Data repository is available at [The Open University Research Repository](https://doi.org/10.21954/ou.rd.26212604.v1). The dataset contains 2880 annotations from participants with diverse gender and sexual orientations on whether a text contains hate speech, or targets a specific gender/sexuality group. Social media posts have been extracted from existing hate speech databases ([Measuring Hate Speech](https://huggingface.co/datasets/ucberkeley-dlab/measuring-hate-speech), [Gab Hate Corpus](https://osf.io/edua3/), [HateXplain](https://github.com/hate-alert/HateXplain/tree/master/Data), and [XtremeSpeech](https://github.com/antmarakis/xtremespeech)).
+The Data repository is available in Open Research Data Online ([ORDO](https://doi.org/10.21954/ou.rd.26212604.v1)). 
 
 
 ## Repo structure
 
-Data is organised in the following folders: 
+The raw data is organised in the following folders: 
 
-* *Annotators*: anonymised demographic tables exported from Prolific crowdsourcing platform. Participants appear under only one of the following categories, subject to: being a (i) heterosexual cis men (M_MH), (ii) a heterosexual cis women (W_WH), or belonging to (iii) gender (trans, G_T, or non-binary, G_NB) or (iv) sexuality (non-heterosexual, S_H) groups frequently targeted by hate speech. 
+* *Annotators*: anonymised demographic tables from [Prolific](https://www.prolific.com/). Each participant appears in one file only, subject to being (i) heterosexual cis men (M_MH), (ii) heterosexual cis women (W_WH), or an LGBTQ+ (iii) gender (trans, G_T, or non-binary, G_NB) or (iv) sexuality (non-heterosexual, S_H) group. 
 
 
-* *Data*: contains semantic and crowdsourcing annotations. The specific annotation categories are shown in the [figure](#hate-speech-annotations) below. 
+* *Data*: contains semantic and crowdsourcing annotations. Crowdsourcing annotations were obtained as shown in the [figure](#hate-speech-annotations) below. 
 
-* *Semantic_annotation*: contains the background knowledge of the hate speech sample, which was mainly provided by a domain-specific KG, i.e., the [GSSO](https://github.com/Superraptor/GSSO) (`pruned_concepts.csv`) and completed with other linguistic resources (`missing_concepts.csv`).
+* *Semantic_annotation*: Jupyter notebooks to provide background knowledge to the hate speech sample using a knowledge graph, i.e., the [GSSO](https://github.com/Superraptor/GSSO) (`pruned_concepts.csv`) and other linguistic resources (`missing_concepts.csv`).
 
 * *Documentation*: contains the approved Ethics Application Form and Participant Information Sheet.
 
@@ -31,19 +33,11 @@ Source code is in *scripts*, specifically in the Python files:
 
 * *agreement.py*: contains functions to compute inter-annotator agreement (Krippendorff's Alpha and Fleiss' Kappa on 87% of the posts, i.e., with 6 annotations).
 
-* *helper.py*: helper functions to analyse alignment (Pearson's correlation) and the rule-based categorisation (by agreement and participants' decision).
+* *helper.py*: helper functions to analyse alignment (Pearson's correlation) and change after semantics (categorisation by agreement and decision made on target groups).
 
-* *utils.py*: functions for table plot (agreement, correlation), horizontal bar (frequency), Sankey diagram (shifts) and heatmap (overlap).
+* *utils.py*: functions for table plot (agreement and correlation, Figure 2), horizontal bar and Sankey diagram (frequency and shifts, Figure 3) and heatmaps (categories overlap, Figure 4).
 
 All files used for evaluation in the paper are in folder *results*.
-
-## Phase 2 Annotation Example (with semantics)
-
-<p align="center">
- <img src="data/survey_items.png" alt="drawing" width="700" class="center"/>
-</p>
-
-In Phase 1, the same layout is presented but without underlined terms in the post and with an empty column on the left.
 
 ## Run files
 
@@ -52,4 +46,12 @@ The code runs in Python version 3.12 using packages in `requirements.txt`:
 ```commandline
     hateRep <user-login>$ python main.py
 ```
+
+## Phase 2 Annotation Example (with semantics)
+
+<p align="center">
+ <img src="data/survey_items.png" alt="drawing" width="400" class="center"/>
+</p>
+
+In Phase 1, the same layout is presented but without underlined terms in the post and with an empty column on the left.
 
