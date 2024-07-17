@@ -6,7 +6,7 @@ Data Repository: [![ORDO - 10.21954/ou.rd.26212604.v1](https://img.shields.io/ba
 
 Paper Preprint: [![ORO-198676](https://img.shields.io/badge/ORO-oro.open.ac.uk/98676/-2ea49f)](https://oro.open.ac.uk/98676/)
 
-# Semantic-Enhanced Crowdsourcing Study for Target Group Identification
+# Semantic-Enhanced Crowdsourcing Study for Target Group Identification - Code
 
 
 This is the source code to reproduce the paper: **Enhancing Hate Speech Annotations with Background Semantics (ECAI 2024): https://oro.open.ac.uk/98676/**
@@ -18,10 +18,10 @@ The Data repository is available in Open Research Data Online ([ORDO](https://do
 
 The raw data is organised in the following folders: 
 
-* *Annotators*: anonymised demographic tables from [Prolific](https://www.prolific.com/). Each participant appears in one file only, subject to being (i) heterosexual cis men (M_MH), (ii) heterosexual cis women (W_WH), or an LGBTQ+ (iii) gender (trans, G_T, or non-binary, G_NB) or (iv) sexuality (non-heterosexual, S_H) group. 
+* *Annotators*: anonymised demographic tables from [Prolific](https://www.prolific.com/). Each participant appears in one file only, subject to being (i) heterosexual cis men (M_MH), (ii) heterosexual cis women (W_WH), or LGBTQ+ member because of their (iii) gender (trans, G_T, or non-binary, G_NB) or (iv) sexuality (non-heterosexual, S_H). 
 
 
-* *Data*: contains semantic and crowdsourcing annotations. Crowdsourcing annotations were obtained as shown in the [figure](#hate-speech-annotations) below. 
+* *Data*: contains semantic and crowdsourcing annotations. Crowdsourcing annotations were collected as shown in the example [figure](#hate-speech-annotations) and full [documentation](documentation/Survey_Questionnaire.pdf). 
 
 * *Semantic_annotation*: Jupyter notebooks to provide background knowledge to the hate speech sample using a knowledge graph, i.e., the [GSSO](https://github.com/Superraptor/GSSO) (`pruned_concepts.csv`) and other linguistic resources (`missing_concepts.csv`).
 
@@ -35,7 +35,7 @@ Source code is in *scripts*, specifically in the Python files:
 
 * *helper.py*: helper functions to analyse alignment (Pearson's correlation) and change after semantics (categorisation by agreement and decision made on target groups).
 
-* *utils.py*: functions for table plot (agreement and correlation, Figure 2), horizontal bar and Sankey diagram (frequency and shifts, Figure 3) and heatmaps (categories overlap, Figure 4).
+* *utils.py*: functions for table plot (agreement and correlation, Figure 2), horizontal bar and Sankey diagram (frequency and shifts, Figure 3) and, heatmap (categories overlap, Figure 4).
 
 All files used for evaluation in the paper are in folder *results*.
 
@@ -49,9 +49,14 @@ The code runs in Python version 3.12 using packages in `requirements.txt`:
 
 ## Phase 2 Annotation Example (with semantics)
 
+There is a [PDF](documentation/Survey_Questionnaire.pdf) showing the full annotation study with examples provided by participants. 
+
+Texts in Phase 2 were annotated as shown below:
+
 <p align="center">
  <img src="data/survey_items.png" alt="drawing" width="400" class="center"/>
 </p>
 
 In Phase 1, the same layout is presented but without underlined terms in the post and with an empty column on the left.
+
 
